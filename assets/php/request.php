@@ -17,7 +17,7 @@ catch(Exception $e)
     return $ps->fetchAll();
 };
 
-function selectTables($table)
+function selectTables($table,$row)
 {
     try
     {
@@ -29,7 +29,7 @@ function selectTables($table)
         // En cas d'erreur, on affiche un message et on arrête tout
             die('Erreur : '.$e->getMessage());
     }
-    $tables= 'SELECT * from '.$table.' order by created_at DESC';
+    $tables= 'SELECT * from '.$table.' order by' .$row. ' DESC';
     $ps=$bdd->prepare($tables);
     $ps->execute();
 };
