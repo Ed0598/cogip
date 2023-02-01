@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+fetch('http://localhost:3000/users', 
+{ method: 'GET',
+  credentials: 'include',
+  mode:"cors",
+    // headers: {
+    //     'Access-Control-Allow-Origin':'*'
+    //     'Access-Control-Allow-Methods':'*'
+    // }
+}
+)
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error('There was a problem with the fetch operation:', error);
+  });  
+
+
+//         const getUsers = async () => {
+//   try {
+//     const response = await fetch('http://localhost:3000/users',{    
+//       method: 'GET',    
+//       withCredentials: true,    
+//       crossorigin: true,    
+//       mode: 'no-cors'     
+//     });
+
+//     console.log(await response.json());
+//   } catch (error) {
+//     console.error('There was a problem fetching the users:', error);
+//   }
+// };
+
+// getUsers();
+        // async function fetchParams(link, method)
+        // {
+        //     let linkGlob = `http://localhost:3000`;
+        //     const response = await fetch(linkGlob + link, method);
+        //     let stock = await response.json();
+        //     return stock;
+        // }
+
+        // async function giveAllEventsAPI()
+        // {
+        //     let method = {
+        //         method: 'GET'
+        //     }
+        //     return await fetchParams(`/users`, method);
+        // }
+
+
+        // console.log(giveAllEventsAPI());
+        // const fetchName = () => fetch('http://localhost:3000/');
+
+        // fetchName()
+        //     .then((response) => {
+        //         console.log(response);
+        //     })
+        //     .catch((error) => {
+        //         console.log("There was an error!", error);
+        //     });
+    </script>
+    
+</body>
+</html>
