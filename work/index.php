@@ -21,6 +21,10 @@ $router->mount('/contacts',function() use($router){
     $router->get('/(\d+)', function ($id) use ($defaultRequest) {
         echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
     });
+    $router->post('/test', function(){
+        $data= $_POST;
+        echo json_encode(['message' => 'Données reçues avec succès']);
+    });
 });
 
 $router->mount('/factures', function () use ($router) {
@@ -47,6 +51,9 @@ $router->mount('/compagnies', function () use ($router) {
     $router->get('/(\d+)', function ($id) use ($defaultRequest) {
         echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
     });
+    
 });
+
+
 
 $router->run();

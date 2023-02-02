@@ -11,7 +11,7 @@
   
     <script>
 
-let url = 'http://localhost:8001/contacts/five'
+let url = 'http://localhost:8001/contacts/all'
 
 fetch(url,{method:"GET"}) 
     .then((response) => {
@@ -20,6 +20,24 @@ fetch(url,{method:"GET"})
     .then((data) => {
       console.log(data)
     })
+let url2= 'http://localhost:8001/contacts/test'
+
+fetch(url2,{
+    method:"POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: "test" })
+  })
+  .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data)
+    })
+
+
+
+
+
     </script> 
 </body>
 </html>
