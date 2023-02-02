@@ -8,7 +8,7 @@ function selectHome($table){
     $ps->execute();
     return $ps->fetchAll();
 };
-
+//SELECT companies.name, companies.TVA, companies.country, companies.created_at, types.name AS type FROM companies JOIN types ON companies.type_id = types.id;
 function selectTables($table,$row)
 {
     try                 { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
