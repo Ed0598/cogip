@@ -11,7 +11,7 @@
   
     <script>
 
-let url = 'http://localhost:8001/users'
+let url = 'http://localhost:8001/contacts/1'
 
 fetch(url,{method:"GET"}) 
     .then((response) => {
