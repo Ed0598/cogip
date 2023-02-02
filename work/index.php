@@ -33,8 +33,14 @@ $router->mount('/contacts',function() use($router){
         echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
     });
     $router->post('/test', function(){
-        $data= $_POST;
-        echo json_encode(['message' => 'Données reçues avec succès']);
+        $payload = json_decode(file_get_contents('php://input'), true);
+
+        $name = $payload['name'];
+
+        echo json_encode([
+            'success' => true,
+            'message' => 'The API received the following name: ' . $name
+        ]);
     });
 });
 

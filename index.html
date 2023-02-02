@@ -25,7 +25,7 @@ let url2= 'http://localhost:8001/contacts/test'
 fetch(url2,{
     method:"POST",
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: "test" })
+    body: JSON.stringify({ name : "test" })
   })
   .then((response) => {
       return response.json();
