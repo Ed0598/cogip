@@ -33,15 +33,17 @@ $router->get('/factures/(\d+)', function ($id) {
 });
 
 
-
-$router->get('/compagnies/five', function () {
-    echo json_encode(selectHome('companies'));
-});
-$router->get('/compagnies/all', function () {
-    echo json_encode(selectTables('companies','created_at'));
-});
-$router->get('/compagnies/(\d+)', function ($id) {
-    echo json_encode(selectTables('companies',$id));
+$router->mount('/compagnies', function () use ($router) {
+    $defaultRequest = 'SELECT companies.name, companies.TVA, companies.country, companies.created_at, types.name AS type FROM companies JOIN types ON companies.type_id = types.id;';
+    $router->get('/five', function () use ($defaultRequest) {
+        echo json_encode(createRequest($defaultRequest, 1, '', ''));
+    });
+    $router->get('/all', function () use ($defaultRequest) {
+        echo json_encode(createRequest($defaultRequest,2,'created_at',''));
+    });
+    $router->get('/(\d+)', function ($id) use ($defaultRequest) {
+        echo json_encode(createRequest($defaultRequest,3,'',$id));
+    });
 });
 
 $router->run();

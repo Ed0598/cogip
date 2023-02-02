@@ -1,5 +1,26 @@
 <?php
 
+function createRequest($request, $id, $row, $id_param)
+{
+    switch ($id) {
+        case 1:
+            $request = $request.' order by created_at DESC limit 5 ';
+            break;
+        case 2:
+            $request = $request.' order by ' .$row. ' DESC';
+            break;
+        default:
+            $request = $request.' WHERE id='.$id_param;
+            break;
+    }
+    try                 { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
+    catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
+
+    $ps= $bdd->prepare($request);
+    $ps->execute();
+    return $ps->fetchAll();
+}
+
 function selectHome($table){
     try                 { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
     catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
