@@ -11,7 +11,7 @@
   
     <script>
 
-let url = 'http://localhost:8001/factures/all'
+let url = 'http://localhost:8001/contacts/five'
 
 fetch(url,{method:"GET"}) 
     .then((response) => {

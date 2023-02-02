@@ -10,18 +10,8 @@ header("Content-Type: application/json");
 
 $router = new \Bramus\Router\Router();
 
-$router->get('/contacts/five', function () {
-    echo json_encode(selectHome('contacts'));
-});
-$router->get('/contacts/all', function () {
-    echo json_encode(selectTables('contacts','name'));
-});
-$router->get('/contacts/(\d+)', function ($id) {
-    echo json_encode(selectTables('contacts',$id));
-});
-
 $router->mount('/contacts',function() use($router){
-    $defaultRequest='SELECT contacts.name, contacts.email, contacts.phone contacts.created_at companies.name AS name FROM contacts JOIN companies ON companies.id = contacts.company_id';
+    $defaultRequest='SELECT contacts.name, contacts.email, contacts.phone, contacts.created_at, companies.name AS name FROM contacts JOIN companies ON companies.id = contacts.company_id';
     $router->get('/five',function() use ($defaultRequest){
         echo json_encode(createRequest($defaultRequest.' order by created_at DESC limit 5 '));
     });
