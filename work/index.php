@@ -32,14 +32,32 @@ $router->mount('/contacts',function() use($router){
     $router->get('/(\d+)', function ($id) use ($defaultRequest) {
         echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
     });
-    $router->post('/test', function(){
+    $router->post('/add', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
-
         $name = $payload['name'];
+        $company_id= $payload['company_id'];
+        $email= $payload['email'];
+        $phone= $payload['phone'];
+        $created_at= $payload['created_at'];
+        $update_at= $payload['update_at'];
+        try
+            {
+                // On se connecte à MySQL
+                $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', '');
+            }
+            catch(Exception $e)
+            {
+                // En cas d'erreur, on affiche un message et on arrête tout
+                    die('Erreur : '.$e->getMessage());
+            }
+
+            $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$name."','".$company_id."','".$email."','".$phone."','".$created_at."','".$update_at."')";
+            $ps=$bdd->prepare($requestAdd);
+            $ps->execute();
 
         echo json_encode([
             'success' => true,
-            'message' => 'The API received the following name: ' . $name
+            'message' => 'GG BRO'
         ]);
     });
 });
