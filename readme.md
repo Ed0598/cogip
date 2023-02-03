@@ -4,24 +4,28 @@
 Start the API
 
 ```bash
-  php -S localhost:8001 -t work/
+  ### Create a DB named cogip and execute inside the file cogip.sql
+
+  php -S localhost:8001 -t API/
 ```
     
 ## API Reference
 
 #### Get all items
 
-| Method | Endpoint | Body | Response |
-| - | - | - | - |
-| GET | /compagnies/all | | Return every companies |
-| GET | /compagnies/five | | Return the last 5 companies |
-| GET | /compagnies/[id] | | Return the company with the id [id]|
-| GET | /factures/all | | Return every factures |
-| GET | /factures/five | | Return the last 5 factures |
-| GET | /factures/[id] | | Return the facture with the id [id]|
-| GET | /contacts/all | | Return every contacts |
-| GET | /contacts/five | | Return the last 5 contacts |
-| GET | /contacts/[id] | | Return the contact with the id [id]|
+| Method | Endpoint                                 | Body                                                                                                                            | Response                            |
+| ------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| GET    | /[compagnies - factures - contacts]/all  |                                                                                                                                 | Return every elements               |
+| GET    | /[compagnies - factures - contacts]/five |                                                                                                                                 | Return the last 5 elements          |
+| GET    | /[compagnies - factures - contacts]/[id] |                                                                                                                                 | Return the element with the id [id] |
+| POST   | /compagnies/                             | `{ name : <string>, type_id: <int>,  country:<string>, tva:<string>,  phone:<string>,  created_at: <date>, update_at: <date>}`  | Add compagny                        |
+| POST   | /contacts/                               | `{ name : <string>,  company_id: <int>, email:<string>, phone:<string>, created_at: <date>, update_at: <date>}`                 | Add contact                         |
+| POST   | /factures/                               | `{ ref : <string>, id_company: <int>, created_at: <date>, update_at: <date>}`                                                   | Add facture                         |
+| PATCH  | /compagnies/                             | `{ name : <string>, type_id: <int>,  country:<string>, tva:<string>,  phone:<string>,  created_at: <date>, update_at: <date>}`  | Update compagny                     |
+| PATCH  | /contacts/                               | `{ name : <string>,  company_id: <int>, email:<string>, phone:<string>, created_at: <date>, update_at: <date>}`                 | Update contact                      |
+| PATCH  | /factures/                               | `{ ref : <string>, id_company: <int>, created_at: <date>, update_at: <date>}`                                                   | Update facture                      |
+| DELETE | /[compagnies - factures - contacts]/[id] |                                                                                                                                 | Remove the element with the id [id] |
+
 
 
 ## Authors

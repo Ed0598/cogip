@@ -10,27 +10,26 @@
   
     <script>
 
-    // let url = 'http://localhost:8001/factures/1'
-    // fetch(url,{method:"GET"}) 
-    //     .then((response) => { return response.json(); })
-    //     .then((data) => { console.log(data) })
+    let url = 'http://localhost:8001/contacts/all'
+    fetch(url,{method:"GET"}) 
+        .then((response) => { return response.json(); })
+        .then((data) => { console.log(data) })
 
-    // let url2= 'http://localhost:8001/factures/add'
+    // let url2= 'http://localhost:8001/contacts/add'
     // fetch(url2,{
     //     method:"POST",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ ref : "INV0010", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
-
+    //     body: JSON.stringify({ name : "test",  company_id: 1, email:"test.test@test.com", phone:"00000000000", created_at: "2023-02-02", update_at: "2023-02-02"})})
     //   .then((response) => { return response.json(); })
     //   .then((data) => { console.log(data) })
 
-    let url3= 'http://localhost:8001/factures/update'
-    fetch(url3,{
-        method:"PATCH",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ref : "INV0007", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
-      .then((response) => { return response.json(); })
-      .then((data) => { console.log(data) })
+    // let url3= 'http://localhost:8001/factures/update'
+    // fetch(url3,{
+    //     method:"PATCH",
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ ref : "INV0007", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //   .then((response) => { return response.json(); })
+    //   .then((data) => { console.log(data) })
 
     // let url4= 'http://localhost:8001/compagnies/update'
     // fetch(url4,{
