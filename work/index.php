@@ -83,22 +83,17 @@ $router->mount('/factures', function () use ($router) {
     {
         echo $controller->get($id);
     });
-    $router->post('/add', function(){
+    $router->post('/add', function() use ($controller){
         $payload = json_decode(file_get_contents('php://input'), true);
         $ref = $payload['ref'];
         $id_company= $payload['id_company'];
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$ref','$id_company','$created_at','$update_at')";
-        createRequest($requestAdd);
-
-        echo json_encode([
-            'success' => true,
-            'message' => 'GG BRO'
-        ]);
+        $requestAdd= "INSERT INTO `invoices`(`ref`, `id_company`, `created_at`, `update_at`) VALUES ('$ref','$id_company','$created_at','$update_at')";
+        echo $controller->postAll($requestAdd);
     });
-    $router->patch('/update', function(){
+    $router->patch('/update', function() use ($controller){
         $payload = json_decode(file_get_contents('php://input'), true);
         $ref = $payload['ref'];
         $id_company= $payload['id_company'];
@@ -106,12 +101,7 @@ $router->mount('/factures', function () use ($router) {
         $update_at= $payload['update_at'];
 
         $requestUpdate="UPDATE invoices SET ref='$ref', id_company='$id_company', created_at='$created_at', update_at='$update_at'";
-        createRequest($requestUpdate);
-
-        echo json_encode([
-            'success' => true,
-            'message' => "GG BRO",
-        ]);
+        echo $controller->patchAll($requestUpdate);
 
     });
     $router->delete('/delete/{id}',function($id){

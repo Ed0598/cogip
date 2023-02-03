@@ -26,4 +26,20 @@ class Controler
     {
         return json_encode(createRequest($this->defaultRequestPrivate." WHERE $this->tablePrivate.id=$id"));
     }
+
+    public function postAll($requestAdd)
+    {
+        return json_encode([
+            'success' => true,
+            'message' => createRequest($requestAdd)
+        ]);   
+    }
+
+    public function patchAll($requestUpdate)
+    {
+        return json_encode([
+            'success' => true,
+            'message' => createRequest($requestUpdate)
+        ]);   
+    }
 }
