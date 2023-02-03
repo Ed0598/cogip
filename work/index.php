@@ -29,7 +29,7 @@ $router->mount('/contacts',function() use($router){
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$name."','".$company_id."','".$email."','".$phone."','".$created_at."','".$update_at."')";
+        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$name','$company_id','$email','$phone','$created_at','$update_at')";
         createRequest($requestAdd);
 
         echo json_encode([
@@ -46,7 +46,7 @@ $router->mount('/contacts',function() use($router){
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestUpdate="UPDATE contacts SET name='".$name."', company_id=".$company_id.", email='".$email."', phone='".$phone."', created_at='".$created_at."', update_at='".$update_at."'";
+        $requestUpdate="UPDATE contacts SET name='$name', company_id=$company_id, email='$email', phone='$phone', created_at='$created_at', update_at='$update_at'";
         createRequest($requestUpdate);
 
         echo json_encode([
@@ -56,8 +56,10 @@ $router->mount('/contacts',function() use($router){
 
     });
     $router->delete('/delete/{id}',function($id){
-        $requedelete= 'DELETE FROM contacts where id='.$id;
+
+        $requedelete= "DELETE FROM contacts where id=$id";
         createRequest($requedelete);
+
         echo json_encode([
             'success' => true,
             'message' => "GG BRO",
@@ -86,7 +88,7 @@ $router->mount('/factures', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."')";
+        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$ref','$id_company','$created_at','$update_at')";
         createRequest($requestAdd);
 
         echo json_encode([
@@ -101,7 +103,7 @@ $router->mount('/factures', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestUpdate="UPDATE invoices SET ref='".$ref."', id_company='".$id_company."', created_at='".$created_at."', update_at='".$update_at."'";
+        $requestUpdate="UPDATE invoices SET ref='$ref', id_company='$id_company', created_at='$created_at', update_at='$update_at'";
         createRequest($requestUpdate);
 
         echo json_encode([
@@ -111,8 +113,10 @@ $router->mount('/factures', function () use ($router) {
 
     });
     $router->delete('/delete/{id}',function($id){
-        $requedelete= 'DELETE FROM invoices where id='.$id;
+
+        $requedelete= "DELETE FROM invoices where id=$id";
         createRequest($requedelete);
+
         echo json_encode([
             'success' => true,
             'message' => "GG BRO",
@@ -143,7 +147,7 @@ $router->mount('/compagnies', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$name."','".$type_id."','".$country."','".$tva."','".$created_at."','".$update_at."')";
+        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at')";
         createRequest($requestAdd);
 
         echo json_encode([
@@ -160,7 +164,7 @@ $router->mount('/compagnies', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestUpdate="UPDATE companies SET name='".$name."', type_id=".$type_id.", country='".$country."', tva='".$tva."', created_at='".$created_at."', update_at='".$update_at."'";
+        $requestUpdate="UPDATE companies SET name='$name', type_id=$type_id, country='$country', tva='$tva', created_at='$created_at', update_at='$update_at'";
         createRequest($requestUpdate);
 
         echo json_encode([
@@ -169,8 +173,10 @@ $router->mount('/compagnies', function () use ($router) {
         ]);
     });
     $router->delete('/delete/{id}',function($id){
-        $requedelete= 'DELETE FROM companies where id='.$id;
+
+        $requedelete= "DELETE FROM companies where id=$id";
         createRequest($requedelete);
+
         echo json_encode([
             'success' => true,
             'message' => "GG BRO",
