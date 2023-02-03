@@ -1,14 +1,20 @@
 <?php
 
-namespace App\Controller ;
+namespace App\Controller;
 
-class Controler 
+class Controler
 {
+    /**
+    * Variables privées
+    */
     private $defaultRequestPrivate;
     private $tablePrivate;
+    /**
+     * Fonctions publiques
+     */
 
     /**
-     * Attribue les donnees privees de la requete par defaut et de la table utilisee
+     * Attribue les données privées de la requête par défaut et de la table utilisée
      * @param mixed $defaultRequestPublic
      * @param mixed $tablePublic
      */
@@ -17,9 +23,9 @@ class Controler
         $this->defaultRequestPrivate = $defaultRequestPublic;
         $this->tablePrivate = $tablePublic;
     }
-    
+
     /**
-     * Execute la requete pour obtenir tous les elements de la requetes SQL
+     * Exécute la requête pour obtenir tous les éléments de la requête SQL
      * @return bool|string
      */
     public function getAll()
@@ -28,7 +34,7 @@ class Controler
     }
 
     /**
-     * Execute la requete pour obtenir les 5 premiers resultats en triant par date
+     * Exécute la requête pour obtenir les 5 premiers résultats en triant par date
      * @return bool|string
      */
     public function getFive()
@@ -37,7 +43,7 @@ class Controler
     }
 
     /**
-     * Execute la requete SQL avec en condition l'id de l'element cherche
+     * Exécute la requête SQL avec en condition l'ID de l'élément cherché
      * @param int $id
      * @return bool|string
      */
@@ -47,42 +53,55 @@ class Controler
     }
 
     /**
-     * Execute the request and return a JSON with the status and a message
+     * Exécute la requête et renvoie un JSON avec le statut et un message
      * @param mixed $request
      * @return bool|string
      */
-    private function executeRequest($request)
-    {
-        return json_encode([
-            'success' => true,
-            'message' => createRequest($request)
-        ]);   
-    }
-    
     public function post($requestAdd)
     {
-        //return $this->executeRequest($requestAdd);
         return json_encode([
             'success' => true,
             'message' => createRequest($requestAdd)
         ]);   
     }
-    
+
     public function patch($requestUpdate)
     {
-        //return $this->executeRequest($requestUpdate);
         return json_encode([
             'success' => true,
             'message' => createRequest($requestUpdate)
         ]);   
     }
-    
+
     public function delete($requestUpdate)
     {
-        //return $this->executeRequest($requestUpdate);
         return json_encode([
             'success' => true,
             'message' => createRequest($requestUpdate)
         ]);   
+    }
+
+    /**
+     * Fonctions privées
+     */
+
+    private function executeRequest($request)
+    {
+        $success = 'La requête a été exécutée avec succès';
+        $error = "La requête n'a pas fonctionné";
+        try {
+            createRequest($request);
+            return json_encode([
+                'success' => true,
+                'message' => $success,
+            ]); 
+        } catch (\Exception $e) {
+            $recup = $e->getMessage();
+            return json_encode([
+                'success' => false,
+                'message' => $error
+
+            ]);
+        } 
     }
 }

@@ -11,9 +11,7 @@ function createRequest($request)
     }
     catch(Exception $e) 
     { 
-        return('Erreur : '.$e->getMessage());
+        die('Erreur : '.$e->getMessage());
     }
-
-    
 }
 ?>

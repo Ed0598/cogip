@@ -120,8 +120,8 @@ $router->mount('/compagnies', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at')";
-        echo $controller->patch($requestAdd);
+        $requestAdd= "INSERT INTO `companies`(`name`, `type_id`, `country`, `tva`, `created_at`, `update_at`) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at')";
+        echo $controller->post($requestAdd);
     });
     $router->patch('/update', function() use ($controller) {
         $payload = json_decode(file_get_contents('php://input'), true);
