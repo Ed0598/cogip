@@ -86,6 +86,22 @@ $router->mount('/factures', function () use ($router) {
             'message' => 'GG BRO'
         ]);
     });
+    $router->patch('/update', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $ref = $payload['ref'];
+        $id_company= $payload['id_company'];
+        $created_at= $payload['created_at'];
+        $update_at= $payload['update_at'];
+
+        $requestUpdate="UPDATE invoices SET ref='".$ref."', id_company='".$id_company."', created_at='".$created_at."', update_at='".$update_at."'";
+        createRequest($requestUpdate);
+
+        echo json_encode([
+            'success' => true,
+            'message' => "GG BRO",
+        ]);
+
+    });
 });
 
 $router->mount('/compagnies', function () use ($router) {
@@ -118,6 +134,24 @@ $router->mount('/compagnies', function () use ($router) {
             'success' => true,
             'message' => 'GG BRO'
         ]);
+    });
+    $router->patch('/update', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $name = $payload['name'];
+        $type_id= $payload['type_id'];
+        $country= $payload['country'];
+        $tva= $payload['tva'];
+        $created_at= $payload['created_at'];
+        $update_at= $payload['update_at'];
+
+        $requestUpdate="UPDATE companies SET name='".$name."', type_id=".$type_id.", country='".$country."', tva='".$tva."', created_at='".$created_at."', update_at='".$update_at."'";
+        createRequest($requestUpdate);
+
+        echo json_encode([
+            'success' => true,
+            'message' => "GG BRO",
+        ]);
+
     });
 });
 
