@@ -41,6 +41,29 @@ $router->mount('/contacts',function() use($router){
             'message' => 'GG BRO'
         ]);
     });
+    $router->patch('/update', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $name = $payload['name'];
+        $company_id= $payload['company_id'];
+        $email= $payload['email'];
+        $phone= $payload['phone'];
+        $created_at= $payload['created_at'];
+        $update_at= $payload['update_at'];
+
+        //connect to sql and request
+        // try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
+        // catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
+
+        $requestUpdate='UPDATE contacts SET name='.$name.' company_id='.$company_id.' email='.$email.' phone='.$phone.' created_at='.$created_at.'update_at='.$update_at;
+        // $ps=$bdd->prepare($requestUpdate);
+        // $ps->execute();
+
+        echo json_encode([
+            'success' => true,
+            'message' => $requestUpdate,
+        ]);
+
+    });
 });
 
 $router->mount('/factures', function () use ($router) {
@@ -57,6 +80,25 @@ $router->mount('/factures', function () use ($router) {
     {
         echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
     });
+    $router->post('/add', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $ref = $payload['ref'];
+        $id_company= $payload['id_company'];
+        $created_at= $payload['created_at'];
+        $update_at= $payload['update_at'];
+
+        //connect to sql and request
+        try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
+        catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
+        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."')";
+        $ps=$bdd->prepare($requestAdd);
+        $ps->execute();
+
+        echo json_encode([
+            'success' => true,
+            'message' => 'GG BRO'
+        ]);
+    });
 });
 
 $router->mount('/compagnies', function () use ($router) {
@@ -72,6 +114,27 @@ $router->mount('/compagnies', function () use ($router) {
     $router->get('/(\d+)', function ($id) use ($defaultRequest) 
     {
         echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
+    });
+    $router->post('/add', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $name = $payload['name'];
+        $type_id= $payload['type_id'];
+        $country= $payload['country'];
+        $tva= $payload['tva'];
+        $created_at= $payload['created_at'];
+        $update_at= $payload['update_at'];
+
+        //connect to sql and request
+        try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
+        catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
+        $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$name."','".$type_id."','".$country."','".$tva."','".$created_at."','".$update_at."')";
+        $ps=$bdd->prepare($requestAdd);
+        $ps->execute();
+
+        echo json_encode([
+            'success' => true,
+            'message' => 'GG BRO'
+        ]);
     });
 });
 
