@@ -29,12 +29,8 @@ $router->mount('/contacts',function() use($router){
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        //connect to sql and request
-        try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
-        catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
         $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$name."','".$company_id."','".$email."','".$phone."','".$created_at."','".$update_at."')";
-        $ps=$bdd->prepare($requestAdd);
-        $ps->execute();
+        createRequest($requestAdd);
 
         echo json_encode([
             'success' => true,
@@ -50,17 +46,12 @@ $router->mount('/contacts',function() use($router){
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        //connect to sql and request
-        // try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
-        // catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
-
-        $requestUpdate='UPDATE contacts SET name='.$name.' company_id='.$company_id.' email='.$email.' phone='.$phone.' created_at='.$created_at.'update_at='.$update_at;
-        // $ps=$bdd->prepare($requestUpdate);
-        // $ps->execute();
+        $requestUpdate="UPDATE contacts SET name='".$name."', company_id=".$company_id.", email='".$email."', phone='".$phone."', created_at='".$created_at."', update_at='".$update_at."'";
+        createRequest($requestUpdate);
 
         echo json_encode([
             'success' => true,
-            'message' => $requestUpdate,
+            'message' => "GG BRO",
         ]);
 
     });
@@ -87,12 +78,8 @@ $router->mount('/factures', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        //connect to sql and request
-        try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
-        catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
         $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."')";
-        $ps=$bdd->prepare($requestAdd);
-        $ps->execute();
+        createRequest($requestAdd);
 
         echo json_encode([
             'success' => true,
@@ -124,12 +111,8 @@ $router->mount('/compagnies', function () use ($router) {
         $created_at= $payload['created_at'];
         $update_at= $payload['update_at'];
 
-        //connect to sql and request
-        try { $bdd = new PDO('mysql:host=127.0.0.1;dbname=cogip;charset=utf8', 'root', ''); }
-        catch(Exception $e) { die('Erreur : '.$e->getMessage()); }
         $requestAdd= "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('".$name."','".$type_id."','".$country."','".$tva."','".$created_at."','".$update_at."')";
-        $ps=$bdd->prepare($requestAdd);
-        $ps->execute();
+        createRequest($requestAdd);
 
         echo json_encode([
             'success' => true,
