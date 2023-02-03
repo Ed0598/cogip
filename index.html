@@ -10,18 +10,18 @@
   
     <script>
 
-    // let url = 'http://localhost:8001/contacts/all'
-    // fetch(url,{method:"GET"}) 
-    //     .then((response) => { return response.json(); })
-    //     .then((data) => { console.log(data) })
+    let url = 'http://localhost:8001/factures/1'
+    fetch(url,{method:"GET"}) 
+        .then((response) => { return response.json(); })
+        .then((data) => { console.log(data) })
 
-    let url2= 'http://localhost:8001/contacts/add'
-    fetch(url2,{
-        method:"POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name : "test",  company_id: 1, email:"test.test@test.com", phone:"00000000000", created_at: "2023-02-02", update_at: "2023-02-02"})})
-      .then((response) => { return response.json(); })
-      .then((data) => { console.log(data) })
+    // let url2= 'http://localhost:8001/contacts/add'
+    // fetch(url2,{
+    //     method:"POST",
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ name : "test",  company_id: 1, email:"test.test@test.com", phone:"00000000000", created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //   .then((response) => { return response.json(); })
+    //   .then((data) => { console.log(data) })
 
     // let url3= 'http://localhost:8001/factures/update'
     // fetch(url3,{

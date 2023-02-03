@@ -3,6 +3,8 @@
 require __DIR__ . '/vendor/autoload.php';
 require "../assets/php/request.php";
 require "./setHeader.php";
+require "./controller.php";
+use App;
 
 $router = new \Bramus\Router\Router();
 
@@ -69,17 +71,17 @@ $router->mount('/contacts',function() use($router){
 
 $router->mount('/factures', function () use ($router) {
     $defaultRequest = 'SELECT invoices.ref, invoices.created_at, companies.name AS name FROM invoices JOIN companies ON companies.id = invoices.id_company';
-    $router->get('/five', function () use ($defaultRequest) 
-    {
-        echo json_encode(createRequest($defaultRequest.' order by created_at DESC limit 5 '));
+    $controller = new App\Controler($defaultRequest, 'invoices');
+    $router->get('/five', function () use ($controller) {
+        echo $controller->getFive();
     });
-    $router->get('/all', function () use ($defaultRequest) 
+    $router->get('/all', function () use ($controller) 
     {
-        echo json_encode(createRequest($defaultRequest.' order by created_at DESC'));
+        echo $controller->getAll();
     });
-    $router->get('/(\d+)', function ($id) use ($defaultRequest) 
+    $router->get('/(\d+)', function ($id) use ($controller) 
     {
-        echo json_encode(createRequest($defaultRequest.' WHERE id='.$id));
+        echo $controller->get($id);
     });
     $router->post('/add', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
