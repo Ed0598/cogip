@@ -9,11 +9,8 @@ import Header from '../Header';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ChakraProvider>
-
-    <Header />
-
+        <Header />
     </ChakraProvider>
-
 );
 
 
