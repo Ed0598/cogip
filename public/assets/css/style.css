@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  background-color: white;
+}
+
+@media screen and (min-width: 725px) {
+  body, html {
+    background-color: white;
+  }
+}/*# sourceMappingURL=style.css.map */
