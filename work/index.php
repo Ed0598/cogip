@@ -55,6 +55,14 @@ $router->mount('/contacts',function() use($router){
         ]);
 
     });
+    $router->delete('/delete/{id}',function($id){
+        $requedelete= 'DELETE FROM contacts where id='.$id;
+        createRequest($requedelete);
+        echo json_encode([
+            'success' => true,
+            'message' => "GG BRO",
+        ]);
+    });
 });
 
 $router->mount('/factures', function () use ($router) {
@@ -101,6 +109,14 @@ $router->mount('/factures', function () use ($router) {
             'message' => "GG BRO",
         ]);
 
+    });
+    $router->delete('/delete/{id}',function($id){
+        $requedelete= 'DELETE FROM invoices where id='.$id;
+        createRequest($requedelete);
+        echo json_encode([
+            'success' => true,
+            'message' => "GG BRO",
+        ]);
     });
 });
 
@@ -151,7 +167,14 @@ $router->mount('/compagnies', function () use ($router) {
             'success' => true,
             'message' => "GG BRO",
         ]);
-
+    });
+    $router->delete('/delete/{id}',function($id){
+        $requedelete= 'DELETE FROM companies where id='.$id;
+        createRequest($requedelete);
+        echo json_encode([
+            'success' => true,
+            'message' => "GG BRO",
+        ]);
     });
 });
 
