@@ -4,12 +4,12 @@
 }
 //variable
 @font-face {
-    font-family: "Roboto";
-    src: url("./assets/font/Roboto/Roboto-Black.ttf");
+    font-family: Roboto;
+    src: url("../src/assets/font/Roboto/Roboto-Black.ttf");
 }
 @font-face {
-    font-family: "Roboto Medium";
-    src: url("../font/Roboto-Light.ttf");
+    font-family: 'Roboto Medium';
+    src: url("../src/assets/font/Roboto/Roboto-Light.ttf");
 }
 @font-face {
     font-family: "Inter";
@@ -28,6 +28,8 @@ body,html, .root{
         background-color: $yellow;
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
+        height: 15vh;
         h2{
             font-family: 'Roboto';
             font-weight: 900;
@@ -36,10 +38,14 @@ body,html, .root{
             color: black;
         }
         .nav__link{
-            font-family: "Roboto";
+            font-family: Roboto;
             font-weight: 600;
             font-size: 1rem;
             display: none;
+        }
+        .nav__log{
+            font-family: Inter;
+            font-weight: 900;
         }
         .css-18ikiee{
             background-color: none;
