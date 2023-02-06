@@ -18,33 +18,47 @@
 body, html, .root {
   background-color: white;
 }
-body nav, html nav, .root nav {
+body header, html header, .root header {
+  background-color: rgb(249, 222, 78);
+}
+body header nav, html header nav, .root header nav {
   background-color: rgb(249, 222, 78);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 15vh;
 }
-body nav h2, html nav h2, .root nav h2 {
-  font-family: "Roboto";
+body header nav h2, html header nav h2, .root header nav h2 {
+  font-family: Roboto;
   font-weight: 900;
   font-size: 2rem;
   background-color: rgb(249, 222, 78);
   color: black;
 }
-body nav .nav__link, html nav .nav__link, .root nav .nav__link {
+body header nav .nav__link, html header nav .nav__link, .root header nav .nav__link {
   font-family: Roboto;
   font-weight: 600;
   font-size: 1rem;
   display: none;
 }
-body nav .nav__log, html nav .nav__log, .root nav .nav__log {
+body header nav .nav__log, html header nav .nav__log, .root header nav .nav__log {
+  font-family: Roboto;
+  font-weight: 600;
+}
+body header nav .nav__log a, html header nav .nav__log a, .root header nav .nav__log a {
+  margin-right: 2vw;
+  font-size: 0.8rem;
+}
+body header nav .nav__log #Sign_up, html header nav .nav__log #Sign_up, .root header nav .nav__log #Sign_up {
+  background-color: white;
+  padding: 1vh;
+  border-radius: 10px;
+}
+body header .header__manage h2, html header .header__manage h2, .root header .header__manage h2 {
   font-family: Inter;
   font-weight: 900;
-}
-body nav .css-18ikiee, html nav .css-18ikiee, .root nav .css-18ikiee {
-  background-color: none;
-  border-color: 1px black solid;
+  font-size: 2rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 725px) {

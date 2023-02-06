@@ -23,6 +23,10 @@ body,html, .root{
 
 //home
 
+//header
+header{
+    background-color: $yellow;
+
     //nav
     nav{
         background-color: $yellow;
@@ -31,7 +35,7 @@ body,html, .root{
         align-items: center;
         height: 15vh;
         h2{
-            font-family: 'Roboto';
+            font-family: Roboto;
             font-weight: 900;
             font-size: 2rem;
             background-color: $yellow;
@@ -44,16 +48,30 @@ body,html, .root{
             display: none;
         }
         .nav__log{
+            font-family: Roboto;
+            font-weight: 600;
+            a{
+                margin-right: 2vw;
+                font-size: 0.8rem;
+                
+            }
+            #Sign_up{
+                background-color: white;
+                padding: 1vh;
+                border-radius: 10px;
+            }
+        }    
+    }
+    .header__manage{
+        h2{
             font-family: Inter;
             font-weight: 900;
-        }
-        .css-18ikiee{
-            background-color: none;
-            border-color: 1px black solid;
+            font-size: 2rem;
+            text-align: center;
         }
     }
-
-    //header
+}
+    
 
     //tableau
 
