@@ -36,6 +36,21 @@ body nav .nav__link, html nav .nav__link, .root nav .nav__link {
   font-size: 1rem;
   display: none;
 }
+body nav .css-18ikiee, html nav .css-18ikiee, .root nav .css-18ikiee {
+  background-color: none;
+  border-color: 1px black solid;
+}
+body footer, html footer, .root footer {
+  background-color: red;
+}
+body .footer__title, html .footer__title, .root .footer__title {
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 2rem;
+  border-style: solid;
+  border-color: rgb(249, 222, 78);
+  color: black;
+}
 
 @media screen and (min-width: 725px) {
   body, html {

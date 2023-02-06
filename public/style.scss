@@ -56,6 +56,20 @@ body,html, .root{
     //down_body
 
     //footer
+    footer{
+        background-color: red;
+
+    }
+    .footer__title{
+        font-family: 'Roboto';
+        font-weight: 900;
+        font-size: 2rem;
+        border-style: solid;
+        border-color: $yellow;
+        color: black;
+    }
+
+
 
 //invoices, contacts, companies
 
