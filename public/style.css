@@ -3,8 +3,15 @@
   margin: 0;
 }
 
-body, html {
+body, html, .root {
   background-color: white;
+}
+body p, html p, .root p {
+  color: red;
+}
+body a, html a, .root a {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media screen and (min-width: 725px) {
