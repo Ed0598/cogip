@@ -1,11 +1,12 @@
+import Menuburg from './Menu';
 function Header() {
     return (
         <header>
             <nav>
-                <p>
+                <h2>
                     COGIP
-                </p>
-                <div className="link">
+                </h2>
+                <div className="nav__link">
                     <a href="#">
                         Home
                     </a>
@@ -19,7 +20,7 @@ function Header() {
                         Contacts
                     </a>
                 </div>
-                <div className="log">
+                <div className="nav__log">
                     <a href="#">
                         Sign up
                     </a>
@@ -27,6 +28,7 @@ function Header() {
                         Login
                     </a>
                 </div>
+                <Menuburg />
             </nav>
         </header>
     );
