@@ -21,7 +21,8 @@ function Footer () {
                 </Box>
                 <Box>
                     <Flex>
-                        <img src={Map} alt="Map location icon"/><h4>Square des Martyrs, 6000 Charleroi</h4>
+                        <img src={Map} alt="Map location icon"/>
+                        <h4>Square des Martyrs, 6000 Charleroi</h4>
                     </Flex>
                     <Flex>
                         <Box>
