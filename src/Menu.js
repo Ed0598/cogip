@@ -20,16 +20,16 @@ function Menuburg(){
       />
       <MenuList>
         <MenuItem>
-          New Tab
+          Home
         </MenuItem>
         <MenuItem>
-          New Window
+          Invoices
         </MenuItem>
         <MenuItem>
-          Open Closed Tab
+          Companies
         </MenuItem>
         <MenuItem>
-          Open File...
+          Contacts
         </MenuItem>
       </MenuList>
     </Menu>

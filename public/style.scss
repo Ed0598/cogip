@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+//variable
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/font/Roboto/Roboto-Black.ttf");
+}
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("../font/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/font/Inter/static/Inter-Black.ttf");
+}
+
+$yellow: rgba(249,222,78,1);
+
+body,html, .root{
+    background-color: white;
+
+//home
+
+    //nav
+    nav{
+        background-color: $yellow;
+        display: flex;
+        justify-content: space-evenly;
+        h2{
+            font-family: 'Roboto';
+            font-weight: 900;
+            font-size: 2rem;
+            background-color: $yellow;
+            color: black;
+        }
+        .nav__link{
+            font-family: "Roboto";
+            font-weight: 600;
+            font-size: 1rem;
+            display: none;
+        }
+        .css-18ikiee{
+            background-color: none;
+            border-color: 1px black solid;
+        }
+    }
+
+    //header
+
+    //tableau
+
+    //images
+
+    //down_body
+
+    //footer
+
+//invoices, contacts, companies
+
+    //tableau
+
+//show_invoices
+
+    //contact_name
+
+    //contact_poeple
+
+//show_contact
+
+
+}
+
+                //VERSION DESKTOP
+
+body,html {
+    @media screen and (min-width: 725px) {
+        background-color: white;
+
+    //home
+
+        //nav
+
+        //header
+
+        //tableau
+
+        //images
+
+        //down_body
+
+        //footer
+
+    //invoices, contacts, companies
+
+        //tableau
+
+    //show_invoices
+
+        //contact_name
+
+        //contact_poeple
+
+    //show_contact
+
+
+    }
+}

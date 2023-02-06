@@ -3,15 +3,38 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/font/Roboto/Roboto-Black.ttf");
+}
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../font/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/font/Inter/static/Inter-Black.ttf");
+}
 body, html, .root {
   background-color: white;
 }
-body p, html p, .root p {
-  color: red;
-}
-body a, html a, .root a {
+body nav, html nav, .root nav {
+  background-color: rgb(249, 222, 78);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+body nav h2, html nav h2, .root nav h2 {
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 2rem;
+  background-color: rgb(249, 222, 78);
+  color: black;
+}
+body nav .nav__link, html nav .nav__link, .root nav .nav__link {
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 1rem;
+  display: none;
 }
 
 @media screen and (min-width: 725px) {
