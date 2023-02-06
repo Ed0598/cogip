@@ -11,7 +11,7 @@ function Footer () {
             </Box>
             <Box>
                 <Box>
-                    <img src="public/assets/images/Map.svg../" alt="Map location icon"/>
+                    <img src="/public/assets/images/Map.svg" alt="Map location icon"/>
                     <h4>345 Faulconer Drive, Suite 4, Charlottesville, CA, 12345</h4>
                 </Box>
                 <Box>
@@ -45,3 +45,5 @@ function Footer () {
 
     )
 }
+
+export default Footer;
