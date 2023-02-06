@@ -4,6 +4,7 @@ import Footer from './footer';
 import Navigation from './Navigation';
 import Manage from './Manage';
 
+
 // 1. import `ChakraProvider` component
 import { ChakraProvider, Link } from '@chakra-ui/react'
 

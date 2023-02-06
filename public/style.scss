@@ -80,6 +80,22 @@ header{
     //down_body
 
     //footer
+   
+    footer{
+        margin-top: 2rem;
+    a{
+        padding : 1rem;
+    };
+    .footer__title{
+        font-family: 'Roboto';
+        font-weight: 900;
+        font-size: 2rem;
+        border : 5px solid $yellow;
+        color: black;
+    }
+
+    };
+
 
 //invoices, contacts, companies
 

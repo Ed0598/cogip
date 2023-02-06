@@ -1,4 +1,5 @@
 import { Box, Divider, Flex, Spacer } from '@chakra-ui/react';
+import Navbar from './navbar';
 import Map from './assets/images/Map.svg';
 import Phone from './assets/images/Tel.svg';
 import Fax from './assets/images/Fax.svg';
@@ -14,14 +15,15 @@ import RSS from './assets/images/RSS.svg';
 function Footer () {
     return (
         <footer>
-            <Divider orientation='horizontal' />
-            <Flex>
+            <Divider orientation='horizontal' colorScheme='yellow'/>
+            <Flex justify="space-between">
                 <Box>
-                    <h3>COGIP</h3>
+                    <h3 className='footer__title'>COGIP</h3>
                 </Box>
                 <Box>
                     <Flex>
-                        <img src={Map} alt="Map location icon"/><h4>Square des Martyrs, 6000 Charleroi</h4>
+                        <img src={Map} alt="Map location icon"/>
+                        <h4>Square des Martyrs, 6000 Charleroi</h4>
                     </Flex>
                     <Flex>
                         <Box>
@@ -46,9 +48,9 @@ function Footer () {
                     </Flex>
                 </Box>
             </Flex>
-            <Divider orientation='horizontal' />
+            <Divider orientation='horizontal' color='#FFFFFF' />
 
-
+            <Navbar />
 
 
         </footer>
