@@ -15,8 +15,8 @@ import RSS from './assets/images/RSS.svg';
 function Footer () {
     return (
         <footer>
-            <Divider orientation='horizontal' />
-            <Flex>
+            <Divider orientation='horizontal' colorScheme='yellow'/>
+            <Flex justify="space-between">
                 <Box>
                     <h3 className='footer__title'>COGIP</h3>
                 </Box>
@@ -48,7 +48,7 @@ function Footer () {
                     </Flex>
                 </Box>
             </Flex>
-            <Divider orientation='horizontal' />
+            <Divider orientation='horizontal' color='#FFFFFF' />
 
             <Navbar />
 

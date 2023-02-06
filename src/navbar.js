@@ -1,10 +1,10 @@
-import { Box, } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 
 function Navbar () {
     return (
 
-        <Box className="footer__nav" spacing='8px'>
+        <Flex className="footer__nav" >
             <div className="nav__link">
                     <a href="#">
                         Home
@@ -19,7 +19,7 @@ function Navbar () {
                         Contacts
                     </a>
                 </div>
-        </Box>
+        </Flex>
 
 
     )

@@ -46,19 +46,17 @@ body nav .css-18ikiee, html nav .css-18ikiee, .root nav .css-18ikiee {
   background-color: none;
   border-color: 1px black solid;
 }
-body nav .css-18ikiee, html nav .css-18ikiee, .root nav .css-18ikiee {
-  background-color: none;
-  border-color: 1px black solid;
-}
 body footer, html footer, .root footer {
-  background-color: red;
+  margin-top: 2rem;
 }
-body .footer__title, html .footer__title, .root .footer__title {
+body footer a, html footer a, .root footer a {
+  padding: 1rem;
+}
+body footer .footer__title, html footer .footer__title, .root footer .footer__title {
   font-family: "Roboto";
   font-weight: 900;
   font-size: 2rem;
-  border-style: solid;
-  border-color: rgb(249, 222, 78);
+  border: 5px solid rgb(249, 222, 78);
   color: black;
 }
 
