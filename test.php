@@ -126,7 +126,7 @@
     // // .then((response) => { return response.json(); })
     // // .then((data) => { console.log(data) })
 
-    user= 'http://localhost:8001/user'
+    user= 'http://localhost:8001/password'
     fetch(user, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -136,7 +136,7 @@
                             role_id:1,
                             last_name:"de romree",
                             email: "edouard0598@outlook.be",
-                            password:"<?= sha1('salut')?>",
+                            password:"<?= sha1('zizi')?>",
                             created_at: "2023-02-07",
                             update_at: "2023-02-07"})
     })

@@ -114,18 +114,25 @@ $router->mount('/compagnies', function () use ($router) {
 
         try
         {
-            if ($user['password']== sha1(createRequest($recupPassword)))
+            $password= createRequest($recupPassword);
+            if ($user['password']===($password))
             {
-                echo json_encode
-                ([
+                echo json_encode([
                     'success'=>true,
                     'message'=> "Mot de passe correct !"
+                ]);
+            }
+            else
+            {
+                echo json_encode([
+                    'success'=>false,
+                    'message'=> "Mot de passe incorrect !"
                 ]);
             }
         }
         catch (\Exception $e){
             $recup = $e->getMessage();
-            return json_encode([
+            echo json_encode([
                 'success'=> false,
                 'message'=> $error,
             ]);
