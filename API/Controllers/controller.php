@@ -30,7 +30,7 @@ class Controler
      */
     public function getAll()
     {
-        return json_encode(createRequest($this->defaultRequestPrivate.' order by created_at DESC'));
+        return (self::errorRequest($this->defaultRequestPrivate.' order by created_at DESC'));
     }
 
     /**
@@ -39,7 +39,7 @@ class Controler
      */
     public function getFive()
     {
-        return json_encode(createRequest($this->defaultRequestPrivate.' order by created_at DESC limit 5 '));
+        return (self::errorRequest($this->defaultRequestPrivate.' order by created_at DESC limit 5 '));
     }
 
     /**
@@ -49,7 +49,7 @@ class Controler
      */
     public function get($id)
     {
-        return json_encode(createRequest($this->defaultRequestPrivate." WHERE $this->tablePrivate.id=$id"));
+        return (self::errorRequest($this->defaultRequestPrivate." WHERE $this->tablePrivate.id=$id"));
     }
 
     /**
@@ -95,4 +95,22 @@ class Controler
             ]);
         } 
     }
+    private function errorRequest($request)
+    {
+        $error = "La requête n'a pas fonctionné car ";
+        try {
+            $success = createRequest($request);
+            return json_encode([
+                'success' => true,
+                'message' => $success,
+            ]); 
+        } catch (\Exception $e) {
+            $recup = $e->getMessage();
+            return json_encode([
+                'success' => false,
+                'message' => $error. $recup,
+            ]);
+        } 
+    }
+    
 }
