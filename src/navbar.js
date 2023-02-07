@@ -5,19 +5,22 @@ function Navbar () {
     return (
 
         <div className="footer__nav">
-            <hr/>
+            <hr className='hr_grey'/>
             <div className="nav__link">
                     <a href="#">
-                        Home
+                        HOME
                     </a>
                     <a href="#">
-                        Invoices
+                        INVOICES
                     </a>
                     <a href="#">
-                        Companies
+                        COMPANIES
                     </a>
                     <a href="#">
-                        Contacts
+                        CONTACTS
+                    </a>
+                    <a href="#">
+                        PRIVACY POLICY
                     </a>
                 </div>
                 <div className='copyright'>
