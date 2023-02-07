@@ -1,8 +1,22 @@
 
 
 function SmallTable() {
-    return (
-        <table>
+    let compagnies = 'http://localhost:8001/compagnies/all'
+    fetch(compagnies,{method:"GET"}) 
+        .then((response) => { return response.json(); })
+        .then((data) => { console.log("tous les compagnies"); console.log(data) })
+
+
+
+
+        
+
+}
+
+export default SmallTable;
+
+
+{/* <table>
             <tr>
                 <th>
                     Invoice number
@@ -87,8 +101,4 @@ function SmallTable() {
                     Date
                 </td>
             </tr>
-        </table>
-    )
-}
-
-export default SmallTable;
+        </table> */}
