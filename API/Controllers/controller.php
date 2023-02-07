@@ -59,26 +59,17 @@ class Controler
      */
     public function post($requestAdd)
     {
-        return json_encode([
-            'success' => true,
-            'message' => createRequest($requestAdd)
-        ]);   
+        return self::executeRequest($requestAdd);  
     }
 
     public function patch($requestUpdate)
     {
-        return json_encode([
-            'success' => true,
-            'message' => createRequest($requestUpdate)
-        ]);   
+        return self::executeRequest($requestUpdate);  
     }
 
-    public function delete($requestUpdate)
+    public function delete($requestDelete)
     {
-        return json_encode([
-            'success' => true,
-            'message' => createRequest($requestUpdate)
-        ]);   
+        return self::executeRequest($requestDelete);
     }
 
     /**

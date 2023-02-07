@@ -2,7 +2,7 @@
 
 namespace App\Controller ;
 
-class invoices extends Controler
+class Invoices extends Controler
 {
     private function querryInvoices($type,$payload)
     {
@@ -21,7 +21,7 @@ class invoices extends Controler
         return "UPDATE invoices SET ref='$ref', id_company='$id_company',  created_at='$created_at', update_at='$update_at'";
     }
 
-    private $defaultRequest='SELECT invoices.ref, invoices.id_company, invoices.created_at, invoices.update_at AS name FROM invoices JOIN companies ON companies.id = invoices.company_id';
+    private $defaultRequest='SELECT invoices.ref, invoices.id_company, invoices.created_at, invoices.update_at AS name FROM invoices JOIN companies ON companies.id = invoices.id_company ';
     private $table = 'invoices';
 
     public function __construct()

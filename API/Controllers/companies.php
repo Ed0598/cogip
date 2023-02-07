@@ -2,12 +2,13 @@
 
 namespace App\Controller ;
 
-Class companies extends Controler{
+Class Companies extends Controler
+{
     
-    private $defaultRequest='SELECT companies.name, companies.type_id,companies.country,companies.tva, companies.created_at, companies.update_at AS name FROM companies JOIN types ON types.id = company.type_id';
+    private $defaultRequest='SELECT companies.name, companies.type_id,companies.country,companies.tva, companies.created_at, companies.update_at AS name FROM companies JOIN types ON types.id = companies.type_id ';
     private $table = 'companies';
 
-    private function __construct(){
+    public function __construct(){
         parent::__construct($this->defaultRequest,$this->table);
     }
 
@@ -25,10 +26,9 @@ Class companies extends Controler{
 
     private function querryCompanies($type,$payload){
         if ($type == 'delete')
+            return "DELETE FROM companies where id=$payload";
 
-        return "DELETE FROM companies where id=$payload";
-
-        $name= $payload['name '];
+        $name= $payload['name'];
         $type_id=$payload['type_id'];
         $country=$payload['country'];
         $tva=$payload["tva"];
@@ -36,7 +36,7 @@ Class companies extends Controler{
         $update_at=$payload['update_at'];
 
         if ($type=='insert')
-        return "INSERT into invoices (name,type_id,country,tva,created_at,update_at) VALUES ('".$name."','".$type_id."','".$country."','".$tva."','".$created_at."','".$update_at."');";
+            return "INSERT into companies (name,type_id,country,tva,created_at,update_at) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at');";
 
         return "UPDATE companies SET name='$name', type_id='$type_id', country='$country', tva='$tva', created_at='$created_at', update_at='$update_at'";
     }
