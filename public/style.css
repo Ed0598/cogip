@@ -64,6 +64,7 @@ body table, html table, .root table {
   margin: auto;
   width: 80%;
   overflow-x: auto;
+  overflow: scroll;
 }
 body table tr, html table tr, .root table tr {
   font-family: Roboto;
@@ -76,7 +77,6 @@ body table th, html table th, .root table th {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  padding: 1%;
 }
 body table td, html table td, .root table td {
   padding: 1%;
