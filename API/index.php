@@ -2,10 +2,10 @@
 require("./Assets/setHeader.php");
 
 require('./Assets/request.php');
-require('./Controllers/controller.php');
-require('./Controllers/contact.php');
-require('./Controllers/companies.php');
-require('./Controllers/invoices.php');
+require('./Controllers/Controler.class.php');
+require('./Controllers/Contact.class.php');
+require('./Controllers/Companies.class.php');
+require('./Controllers/Invoices.class.php');
 require('./Routes/config.php');
 
 ?>
