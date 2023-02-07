@@ -9,7 +9,6 @@ class Invoices extends Controler
         if ($type == 'delete')
             return "DELETE FROM invoices where id= $payload";
         
-
         $ref= $payload['ref'];
         $id_company=$payload['id_company'];
         $created_at=$payload['created_at'];
@@ -18,7 +17,8 @@ class Invoices extends Controler
         if($type == 'insert')
             return "INSERT into invoices (ref,id_company,created_at,update_at) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."');";
 
-        return "UPDATE invoices SET ref='$ref', id_company='$id_company',  created_at='$created_at', update_at='$update_at'";
+        $id= $payload['id'];
+        return "UPDATE invoices SET ref='$ref', id_company='$id_company',  created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }
 
     private $defaultRequest='SELECT invoices.ref, invoices.id_company, invoices.created_at, invoices.update_at AS name FROM invoices JOIN companies ON companies.id = invoices.id_company ';

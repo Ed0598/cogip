@@ -79,7 +79,7 @@ class Controler
     private function executeRequest($request)
     {
         $success = 'La requête a été exécutée avec succès';
-        $error = "La requête n'a pas fonctionné";
+        $error = "La requête n'a pas fonctionné car ";
         try {
             createRequest($request);
             return json_encode([
@@ -90,8 +90,7 @@ class Controler
             $recup = $e->getMessage();
             return json_encode([
                 'success' => false,
-                'message' => $error
-
+                'message' => $error . $recup,
             ]);
         } 
     }
@@ -108,7 +107,7 @@ class Controler
             $recup = $e->getMessage();
             return json_encode([
                 'success' => false,
-                'message' => $error. $recup,
+                'message' => $error.$recup,
             ]);
         } 
     }

@@ -57,6 +57,7 @@ class Contacts extends Controler
     {
         if ($type == "delete")
             return "DELETE FROM contacts where id=$payload";
+
         $name = $payload['name'];
         $company_id = $payload['company_id'];
         $email = $payload['email'];
@@ -66,6 +67,7 @@ class Contacts extends Controler
 
         if ($type == "insert")
             return "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$name',$company_id,'$email','$phone','$created_at','$update_at')";
-        return "UPDATE contacts SET name='$name', company_id=$company_id, email='$email', phone='$phone', created_at='$created_at', update_at='$update_at'";
+        $id= $payload['id'];
+        return "UPDATE contacts SET name='$name', company_id=$company_id, email='$email', phone='$phone', created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }
 }

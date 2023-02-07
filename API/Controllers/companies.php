@@ -36,9 +36,10 @@ Class Companies extends Controler
         $update_at=$payload['update_at'];
 
         if ($type=='insert')
-            return "INSERT into companies (name,type_id,country,tva,created_at,update_at) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at');";
+            return "INSET into companies (name,type_id,country,tva,created_at,update_at) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at');";
 
-        return "UPDATE companies SET name='$name', type_id='$type_id', country='$country', tva='$tva', created_at='$created_at', update_at='$update_at'";
+        $id= $payload['id'];
+        return "UPDATE companies SET name='$name', type_id='$type_id', country='$country', tva='$tva', created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }
 
 }
