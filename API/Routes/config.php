@@ -77,6 +77,59 @@ $router->mount('/compagnies', function () use ($router) {
     $router->delete('/delete/{id}',function($id) use ($controller) {
         echo $controller->delete($id);
     });
-});
 
+    
+});
+    $router->post('/user',function()
+    {
+        $user= json_decode(file_get_contents('php://input'), true);
+
+        $recupUser= "SELECT first_name from users where first_name='".$user['first_name']."'";
+
+        $error= "Nom d'utilisateur incorrect ! ";
+
+        try{
+            createRequest($recupUser);
+            echo json_encode([
+                'success'=>true,
+                'message'=> "Utilisateur reconnu brav !"
+            ]);
+        }
+
+        catch (\Exception $e){
+            $recup = $e->getMessage();
+            return json_encode([
+                'success'=> false,
+                'message'=> $error,
+            ]);
+        }
+    });
+    $router->post('/password',function()
+    {
+        $user= json_decode(file_get_contents('php://input'), true);
+
+        $recupPassword= "SELECT password from users where first_name='".$user['first_name']."'";
+
+        $error= "Mot de passe incorrect ! ";
+
+        try
+        {
+            if ($user['password']== sha1(createRequest($recupPassword)))
+            {
+                echo json_encode
+                ([
+                    'success'=>true,
+                    'message'=> "Mot de passe correct !"
+                ]);
+            }
+        }
+        catch (\Exception $e){
+            $recup = $e->getMessage();
+            return json_encode([
+                'success'=> false,
+                'message'=> $error,
+            ]);
+        }
+    });
 $router->run();
+
