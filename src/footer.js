@@ -16,11 +16,11 @@ function Footer () {
     return (
         <footer>
             <hr/>
-            <div className="bloc-footer">
+            <div className="block-footer">
                 <div>
                     <h3 className='footer__title'>COGIP</h3>
                 </div>
-                <div>
+                <div className='infos'>
                     <div className='map'>
                         <img src={Map} alt="Map location icon" />
                         <h4>Square des Martyrs, 6000 Charleroi</h4>

@@ -90,14 +90,23 @@ header{
             }
     
             img {
-                margin-left: 1rem;
-                margin-right: 1rem;
+                margin: 0.8rem;
             }
 
             .block-footer{
                 display: flex;
+                flex-direction: column;
             }
 
+            .infos {
+                display:flex;
+                flex-direction: column;
+                margin-left: 2rem;
+            }
+
+            .map {
+                flex-direction: row;
+            }
             .hr-yellow{
                 color: yellow;
                 size: 3px;
@@ -109,6 +118,10 @@ header{
                 font-size: 2rem;
                 border: 5px solid $yellow;
                 color: black;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin: 2rem;
+                width : 8rem;
             }
         }
     

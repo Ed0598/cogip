@@ -67,11 +67,19 @@ body footer a, html footer a, .root footer a {
   padding: 1rem;
 }
 body footer img, html footer img, .root footer img {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0.8rem;
 }
 body footer .block-footer, html footer .block-footer, .root footer .block-footer {
   display: flex;
+  flex-direction: column;
+}
+body footer .infos, html footer .infos, .root footer .infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+body footer .map, html footer .map, .root footer .map {
+  flex-direction: row;
 }
 body footer .hr-yellow, html footer .hr-yellow, .root footer .hr-yellow {
   color: yellow;
@@ -83,6 +91,10 @@ body footer .footer__title, html footer .footer__title, .root footer .footer__ti
   font-size: 2rem;
   border: 5px solid rgb(249, 222, 78);
   color: black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin: 2rem;
+  width: 8rem;
 }
 
 @media screen and (min-width: 725px) {
