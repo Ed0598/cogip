@@ -22,7 +22,7 @@ function SmallTable() {
                     Date
                 </td>
                 <td>
-                    Date jean pas content
+                    Date
                 </td>
                 <td>
                     Date
