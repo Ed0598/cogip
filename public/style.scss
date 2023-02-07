@@ -79,8 +79,8 @@ header{
         margin: auto;
         width: 80%;
         overflow-x: auto;
+        overflow: scroll;
         tr{
-            
             font-family: Roboto;
             font-weight: 500;
             font-size: 1rem;
@@ -89,7 +89,6 @@ header{
             background-color: $yellow;
             padding: 1%;
             width: min-content;
-            padding: 1%;
         }
         td{
             padding: 1%;
