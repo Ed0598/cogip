@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Spacer } from '@chakra-ui/react';
+import { Box, Divider, Flex, Spacer, Stack, VStack, HStack } from '@chakra-ui/react';
 import Navbar from './navbar';
 import Map from './assets/images/Map.svg';
 import Phone from './assets/images/Tel.svg';
@@ -15,28 +15,29 @@ import RSS from './assets/images/RSS.svg';
 function Footer () {
     return (
         <footer>
-            <Divider orientation='horizontal' colorScheme='yellow'/>
-            <Flex justify="space-between">
-                <Box>
+            <hr/>
+            <div className="bloc-footer">
+                <div>
                     <h3 className='footer__title'>COGIP</h3>
-                </Box>
-                <Box>
-                    <Flex>
-                        <img src={Map} alt="Map location icon"/>
+                </div>
+                <div>
+                    <div className='map'>
+                        <img src={Map} alt="Map location icon" />
                         <h4>Square des Martyrs, 6000 Charleroi</h4>
-                    </Flex>
-                    <Flex>
-                        <Box>
+                    </div>
+                    <div>
+                        <div className='phone'>
                         <img src={Phone} alt="Phone icon"/>
                         <h4>[123] 456-7890</h4>
-                        </Box>
-                        <Box>
+                        </div>
+                        <div className='fax'>
                             <img src={Fax} alt="Fax icon"/>
                             <h4>[123] 456-7890</h4>
-                        </Box>
-                    </Flex>
-                    <Flex>
-                        <h5>Social Media</h5>
+                        </div>
+                    </div>
+                    
+                    <Box>
+                        <h5 className='social-media'>Social Media</h5>
                         <img src={Facebook} alt="Facebook icon"/>
                         <img src={Twitter} alt="Twitter icon"/>
                         <img src={LinkedIn} alt="LinkedIn icon"/>
@@ -45,10 +46,12 @@ function Footer () {
                         <img src={GooglePlus} alt="Google Plus icon"/>
                         <img src={Pinterest} alt="Pinterest icon"/>
                         <img src={RSS} alt="RSS icon"/>
-                    </Flex>
-                </Box>
-            </Flex>
-            <Divider orientation='horizontal' color='#FFFFFF' />
+                    </Box>
+                    
+                </div>
+            </div>
+
+            
 
             <Navbar />
 

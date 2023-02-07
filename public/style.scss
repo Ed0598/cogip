@@ -105,20 +105,38 @@ header{
 
     //footer
    
-    footer{
-        margin-top: 2rem;
-    a{
-        padding : 1rem;
-    };
-    .footer__title{
-        font-family: 'Roboto';
-        font-weight: 900;
-        font-size: 2rem;
-        border : 5px solid $yellow;
-        color: black;
-    }
+        footer {
+            margin-top: 2rem;
 
-    };
+            
+            a {
+                padding: 1rem;
+            }
+    
+            img {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .block-footer{
+                display: flex;
+            }
+
+            .hr-yellow{
+                color: yellow;
+                size: 3px;
+            }
+
+            .footer__title {
+                font-family: 'Roboto';
+                font-weight: 900;
+                font-size: 2rem;
+                border: 5px solid $yellow;
+                color: black;
+            }
+        }
+    
+        ;
 
 
 //invoices, contacts, companies
