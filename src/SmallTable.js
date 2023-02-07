@@ -1,19 +1,27 @@
 
-
-function SmallTable() {
-    let compagnies = 'http://localhost:8001/compagnies/all'
-    fetch(compagnies,{method:"GET"}) 
+function SmallTable(props) {
+    let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display;
+    const table= document.getElementsByName('table')
+    fetch(url,{method:"GET"}) 
         .then((response) => { return response.json(); })
-        .then((data) => { console.log("tous les compagnies"); console.log(data) })
+        .then((data) => { 
+            console.log(data);
+            let list=data.message
+            for(let elem of list){
+                console.log(elem.id)
 
 
+                //reprendre ici
+                let tr=document.createElement('tr');
+                table.appendChild(tr);
 
-
-        
-
+                let td=document.createElement('td');
+                td.textContent= elem.id
+                tr.appendChild(td);
+            }
+    })       
 }
 
-export default SmallTable;
 
 
 {/* <table>
@@ -102,3 +110,4 @@ export default SmallTable;
                 </td>
             </tr>
         </table> */}
+export default SmallTable;

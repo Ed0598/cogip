@@ -18,7 +18,9 @@ root.render(
             <Navigation />
             <Manage />
         </header>
-        <SmallTable />
+        <table>
+        <SmallTable table='contacts' display="five" />
+        </table>
         <Footer />
     </ChakraProvider>
 );
