@@ -3,7 +3,8 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  IconButton
+  IconButton,
+  Box
 } from '@chakra-ui/react';
 import {
 HamburgerIcon
@@ -11,12 +12,13 @@ HamburgerIcon
 
 function Menuburg(){
     return (
+      <>
+    <Box bg='red' />
     <Menu>
       <MenuButton
         as={IconButton}
         aria-label='Options'
         icon={<HamburgerIcon />}
-        variant='outline'
       />
       <MenuList>
         <MenuItem>
@@ -33,6 +35,7 @@ function Menuburg(){
         </MenuItem>
       </MenuList>
     </Menu>
+    </>
   )
 }
 
