@@ -4,7 +4,8 @@ import { Box, Flex } from '@chakra-ui/react';
 function Navbar () {
     return (
 
-        <Flex className="footer__nav" >
+        <div className="footer__nav">
+            <hr/>
             <div className="nav__link">
                     <a href="#">
                         Home
@@ -19,7 +20,7 @@ function Navbar () {
                         Contacts
                     </a>
                 </div>
-        </Flex>
+        </div>
 
 
     )
