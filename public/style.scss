@@ -126,9 +126,11 @@ header{
                     font-size: 2rem;
                     border: 5px solid $yellow;
                     color: black;
+                    margin-left: auto;
+                    margin-right: auto;
                     padding-left: 0.5rem;
                     padding-right: 0.5rem;
-                    margin: 2rem;
+                   // margin: 2rem;
                     width : 8rem;
                 }
 
@@ -138,27 +140,39 @@ header{
                     margin-left: 2rem;
 
                     .map {
+
                         img{
                             margin-left: auto;
-                            //margin-right: auto;
-                            //margin-bottom: 1rem;
+                            margin-right: auto;
                         }
                         flex-direction: row;
                     }
 
+                    .phone-fax{
+
+                        img{
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                    }
+
+
                     .social-media {
-                        flex-direction: row;
-                        flex-wrap: wrap;
+                        flex-flow: row wrap;
+                        margin-top: 2rem;
                     }
                 }
+
+               
             }
 
             
 
            
             .hr-yellow{
-                color: yellow;
-                size: 3px;
+                border: 1px solid #F9DE4E;
+                margin-bottom: 2rem; 
             }
 
            
@@ -166,6 +180,17 @@ header{
          
         }
     
+        .footer__nav {
+            display: flex;
+            flex-wrap: wrap;
+            color: #737373;
+
+            .copyright{
+            text-align: center;
+            }
+        }
+
+
         ;
 
 

@@ -103,9 +103,10 @@ body footer .block-footer .footer__title, html footer .block-footer .footer__tit
   font-size: 2rem;
   border: 5px solid rgb(249, 222, 78);
   color: black;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  margin: 2rem;
   width: 8rem;
 }
 body footer .block-footer .infos, html footer .block-footer .infos, .root footer .block-footer .infos {
@@ -118,14 +119,27 @@ body footer .block-footer .infos .map, html footer .block-footer .infos .map, .r
 }
 body footer .block-footer .infos .map img, html footer .block-footer .infos .map img, .root footer .block-footer .infos .map img {
   margin-left: auto;
+  margin-right: auto;
+}
+body footer .block-footer .infos .phone-fax img, html footer .block-footer .infos .phone-fax img, .root footer .block-footer .infos .phone-fax img {
+  margin-left: auto;
+  margin-right: auto;
 }
 body footer .block-footer .infos .social-media, html footer .block-footer .infos .social-media, .root footer .block-footer .infos .social-media {
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  margin-top: 2rem;
 }
 body footer .hr-yellow, html footer .hr-yellow, .root footer .hr-yellow {
-  color: yellow;
-  size: 3px;
+  border: 1px solid #F9DE4E;
+  margin-bottom: 2rem;
+}
+body .footer__nav, html .footer__nav, .root .footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  color: #737373;
+}
+body .footer__nav .copyright, html .footer__nav .copyright, .root .footer__nav .copyright {
+  text-align: center;
 }
 
 @media screen and (min-width: 725px) {

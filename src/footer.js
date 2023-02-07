@@ -15,7 +15,7 @@ import RSS from './assets/images/RSS.svg';
 function Footer () {
     return (
         <footer>
-            <hr/>
+            <hr className='hr-yellow'/>
             <div className="block-footer">
                 <div>
                     <h3 className='footer__title'>COGIP</h3>
@@ -25,7 +25,7 @@ function Footer () {
                         <img src={Map} alt="Map location icon" />
                         <h4>Square des Martyrs, 6000 Charleroi</h4>
                     </div>
-                    <div>
+                    <div className='phone-fax'>
                         <div className='phone'>
                         <img src={Phone} alt="Phone icon"/>
                         <h4>[123] 456-7890</h4>

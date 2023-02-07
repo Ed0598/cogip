@@ -20,8 +20,8 @@ function Navbar () {
                         Contacts
                     </a>
                 </div>
-                <div>
-                    <p></p>
+                <div className='copyright'>
+                    <p>Copyright © 2022 • COGIP Inc.</p>
                 </div>
         </div>
 
