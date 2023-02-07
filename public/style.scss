@@ -120,33 +120,51 @@ header{
             .block-footer{
                 display: flex;
                 flex-direction: column;
+
+                .footer__title {
+                    font-family: 'Roboto';
+                    font-weight: 900;
+                    font-size: 2rem;
+                    border: 5px solid $yellow;
+                    color: black;
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                    margin: 2rem;
+                    width : 8rem;
+                }
+
+                .infos {
+                    display:flex;
+                    flex-direction: column;
+                    margin-left: 2rem;
+
+                    .map {
+                        img{
+                            margin-left: auto;
+                            //margin-right: auto;
+                            //margin-bottom: 1rem;
+                        }
+                        flex-direction: row;
+                    }
+
+                    .social-media {
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+                }
             }
 
-            .infos {
-                display:flex;
-                flex-direction: column;
-                margin-left: 2rem;
-            }
+            
 
-            .map {
-                flex-direction: row;
-            }
+           
             .hr-yellow{
                 color: yellow;
                 size: 3px;
             }
 
-            .footer__title {
-                font-family: 'Roboto';
-                font-weight: 900;
-                font-size: 2rem;
-                border: 5px solid $yellow;
-                color: black;
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
-                margin: 2rem;
-                width : 8rem;
-            }
+           
+
+         
         }
     
         ;

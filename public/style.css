@@ -97,19 +97,7 @@ body footer .block-footer, html footer .block-footer, .root footer .block-footer
   display: flex;
   flex-direction: column;
 }
-body footer .infos, html footer .infos, .root footer .infos {
-  display: flex;
-  flex-direction: column;
-  margin-left: 2rem;
-}
-body footer .map, html footer .map, .root footer .map {
-  flex-direction: row;
-}
-body footer .hr-yellow, html footer .hr-yellow, .root footer .hr-yellow {
-  color: yellow;
-  size: 3px;
-}
-body footer .footer__title, html footer .footer__title, .root footer .footer__title {
+body footer .block-footer .footer__title, html footer .block-footer .footer__title, .root footer .block-footer .footer__title {
   font-family: "Roboto";
   font-weight: 900;
   font-size: 2rem;
@@ -119,6 +107,25 @@ body footer .footer__title, html footer .footer__title, .root footer .footer__ti
   padding-right: 0.5rem;
   margin: 2rem;
   width: 8rem;
+}
+body footer .block-footer .infos, html footer .block-footer .infos, .root footer .block-footer .infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+body footer .block-footer .infos .map, html footer .block-footer .infos .map, .root footer .block-footer .infos .map {
+  flex-direction: row;
+}
+body footer .block-footer .infos .map img, html footer .block-footer .infos .map img, .root footer .block-footer .infos .map img {
+  margin-left: auto;
+}
+body footer .block-footer .infos .social-media, html footer .block-footer .infos .social-media, .root footer .block-footer .infos .social-media {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body footer .hr-yellow, html footer .hr-yellow, .root footer .hr-yellow {
+  color: yellow;
+  size: 3px;
 }
 
 @media screen and (min-width: 725px) {
