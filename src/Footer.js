@@ -1,5 +1,5 @@
 import { Box, Divider, Flex, Spacer, Stack, VStack, HStack } from '@chakra-ui/react';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import Map from './assets/images/Map.svg';
 import Phone from './assets/images/Tel.svg';
 import Fax from './assets/images/Fax.svg';
