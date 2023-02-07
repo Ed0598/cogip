@@ -74,7 +74,6 @@ body table tr, html table tr, .root table tr {
 body table th, html table th, .root table th {
   background-color: rgb(249, 222, 78);
   padding: 1%;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
@@ -83,6 +82,30 @@ body table td, html table td, .root table td {
 }
 body table .grey, html table .grey, .root table .grey {
   background-color: #F5F5F5;
+}
+body .work, html .work, .root .work {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+body .work .title_work, html .work .title_work, .root .work .title_work {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 50vw;
+}
+body .work h2, html .work h2, .root .work h2 {
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 1rem;
+}
+body .work .illus, html .work .illus, .root .work .illus {
+  display: flex;
+  align-items: center;
+  max-width: 50vw;
 }
 body footer, html footer, .root footer {
   color: #737373;
