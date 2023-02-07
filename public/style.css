@@ -60,6 +60,30 @@ body header .header__manage h2, html header .header__manage h2, .root header .he
   font-size: 2rem;
   text-align: center;
 }
+body table, html table, .root table {
+  margin: auto;
+  width: 80%;
+  overflow-x: auto;
+}
+body table tr, html table tr, .root table tr {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 1rem;
+}
+body table th, html table th, .root table th {
+  background-color: rgb(249, 222, 78);
+  padding: 1%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 1%;
+}
+body table td, html table td, .root table td {
+  padding: 1%;
+}
+body table .grey, html table .grey, .root table .grey {
+  background-color: #F5F5F5;
+}
 body footer, html footer, .root footer {
   margin-top: 2rem;
 }
