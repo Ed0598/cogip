@@ -36,8 +36,8 @@ function Footer () {
                         </div>
                     </div>
                     
-                    <Box>
-                        <h5 className='social-media'>Social Media</h5>
+                    <div className='social-media'>
+                        <h5>Social Media</h5>
                         <img src={Facebook} alt="Facebook icon"/>
                         <img src={Twitter} alt="Twitter icon"/>
                         <img src={LinkedIn} alt="LinkedIn icon"/>
@@ -46,7 +46,7 @@ function Footer () {
                         <img src={GooglePlus} alt="Google Plus icon"/>
                         <img src={Pinterest} alt="Pinterest icon"/>
                         <img src={RSS} alt="RSS icon"/>
-                    </Box>
+                    </div>
                     
                 </div>
             </div>

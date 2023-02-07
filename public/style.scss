@@ -105,6 +105,7 @@ header{
     //footer
    
         footer {
+            color:#737373;
             margin-top: 2rem;
 
             
@@ -140,27 +141,36 @@ header{
                     margin-left: 2rem;
 
                     .map {
-
-                        img{
-                            margin-left: auto;
-                            margin-right: auto;
-                        }
-                        flex-direction: row;
+                        display: flex;
+                        align-items: center;
+                        flex-flow: row wrap;
+                        margin-top: 2rem;
                     }
 
                     .phone-fax{
+                        display: flex;
+                        align-items: center;
+                        flex-flow: row wrap;
 
-                        img{
-                            margin-left: auto;
-                            margin-right: auto;
+                        .phone{
+                            display: flex;
+                            align-items: center;
+                            flex-flow: row wrap;
                         }
-
+                        
+                        .fax {
+                            display: flex;
+                            align-items: center;
+                            flex-flow: row wrap;
+                        }
                     }
 
 
                     .social-media {
+                        display: flex;
+                        align-items: center;
                         flex-flow: row wrap;
-                        margin-top: 2rem;
+                        margin-top: 0.5rem;
                     }
                 }
 
@@ -173,6 +183,8 @@ header{
             .hr-yellow{
                 border: 1px solid #F9DE4E;
                 margin-bottom: 2rem; 
+                margin-left: 2rem;
+                margin-right: 2rem;
             }
 
            
@@ -184,14 +196,28 @@ header{
             display: flex;
             flex-wrap: wrap;
             color: #737373;
+            padding : 2rem;
 
-            .copyright{
-            text-align: center;
+            .hr_grey{
+                border: 1px solid #737373;
+                width: 100%;
             }
+
+            .nav__link{
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+        
+
+            p{
+                margin: 1rem;
+            }
+
         }
 
 
-        ;
+  
 
 
 //invoices, contacts, companies
