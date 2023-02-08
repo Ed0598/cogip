@@ -51,7 +51,7 @@ body,html, .root{
             .nav__log{
                 font-family: Roboto;
                 font-weight: 600;
-                a{
+                Link{
                     margin-right: 2vw;
                     font-size: 0.8rem;
                 }
@@ -71,81 +71,78 @@ body,html, .root{
             text-align: center;
         }
     }
+    main{
 
-
-    //table
-    .over{
-        overflow-x: auto;
-        margin: auto;
-        width: 80%;
-
-        table {
+        //table
+        .over{
+            overflow-x: auto;
             margin: auto;
             width: 80%;
-            font-family: Roboto;
-            font-weight: 500;
-            font-size: 1rem;
-            border-collapse: collapse;
-            border-spacing: 2%;
-        
-            tr {
-                text-align: center;
+
+            table {
+                margin: auto;
+                width: 80%;
                 font-family: Roboto;
                 font-weight: 500;
                 font-size: 1rem;
+                border-collapse: collapse;
+                border-spacing: 2%;
         
-                th {
+                tr {
                     text-align: center;
-                    background-color: $yellow;
-                    padding: 1%;
-                    white-space: nowrap;
-                }
+                    font-family: Roboto;
+                    font-weight: 500;
+                    font-size: 1rem;
+
+                    th {
+                        text-align: center;
+                        background-color: $yellow;
+                        padding: 1%;
+                        white-space: nowrap;
+                    }
         
-                td {
-                    white-space: nowrap;
-                    width: 4rem;
-                    text-align: center;
-                    margin: 2%;
-                    padding: 2%;
+                    td {
+                        white-space: nowrap;
+                        width: 4rem;
+                        text-align: center;
+                        margin: 2%;
+                        padding: 2%;
+                    }
                 }
             }
         }
-    }
-    //images
+        //images
+        
 
-    //down_body
-    .work{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        margin-left: 2rem;
-        margin-right: 2rem;
-
-        .title_work{
+        //down_body
+        .work{
             display: flex;
             flex-flow: row wrap;
-            max-width: 50vw;
+            justify-content: center;
+            margin-left: 2rem;
+            margin-right: 2rem;
+
+            .title_work{
+                display: flex;
+                flex-flow: row wrap;
+                max-width: 50vw;
+            }
+
+            h2{
+                font-family: Inter;
+                font-weight: 900;
+                font-size: 1.7rem;
+                text-align: center;
+                margin: 1rem;
+            }
+
+            .illus{
+                display: flex;
+                align-items: center;
+                max-width: 50vw;
+            }
         }
-
-        h2{
-            font-family: Inter;
-            font-weight: 900;
-            font-size: 1.7rem;
-            text-align: center;
-            margin: 1rem;
-            
-
-        }
-
-        .illus{
-            display: flex;
-            align-items: center;
-            max-width: 50vw;
-        }
-
-    
     }
-
     //footer
    
         footer {

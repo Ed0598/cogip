@@ -19,7 +19,7 @@ function Navigation() {
 
                 </div>
                 <div className="nav__log">
-                <Link to="/Dashboard">Sign Up</Link>
+                <Link to="/Dashboard" id="Sign_up">Sign Up</Link>
                 <Link to="/Dashboard">Log In</Link>
 
                 </div>

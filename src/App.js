@@ -1,7 +1,7 @@
 import {Routes, Route} from "react-router-dom";
 //import Index from "./index.js";
 import Dashboard from "./pages/Dashboard";
-import Home from "./Home";
+import Home from "./pages/Home";
 import Invoices from "./pages/Invoices";
 import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";

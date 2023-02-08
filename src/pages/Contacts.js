@@ -1,7 +1,5 @@
 import Footer from '../Footer';
 import Navigation from '../Navigation';
-import Manage from '../Manage';
-import Work from '../Work';
 import Table from '../Table';
 
 import { ChakraProvider } from '@chakra-ui/react'
@@ -13,13 +11,16 @@ function Contacts() {
             <header>
                 <Navigation />
             </header>
-            <h1>All Contacts</h1>
-            <div className='over'>
-        <Table table='factures' display="five" 
-        id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
-        th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" />
-        </div>
-            <Table />
+            <main>
+                <h1>
+                    All Contacts
+                </h1>
+                <div className='over'>
+                    <Table table="contacts" display="all"
+                    id="id" td1="name" td2="phone" td3="email" td4="name_companie" td5="created_at"
+                    th1="Name" th2="Phone" th3="Mail" th4="Company" th5="Created at" />
+                </div>
+            </main>
             <Footer />
         </ChakraProvider>
 )

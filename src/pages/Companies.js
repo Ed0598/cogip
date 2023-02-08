@@ -13,13 +13,16 @@ function Companies() {
             <header>
                 <Navigation />
             </header>
-            <h1>All Companies</h1>
-            <div className='over'>
-        <Table table='factures' display="five" 
-        id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
-        th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" />
-        </div>
-            <Table />
+            <main>
+                <h1>
+                    All Companies
+                </h1>
+                <div className='over'>
+                    <Table table="compagnies" display="all"
+                    id="id" td1="name" td2="tva" td3="country" td4="type" td5="created_at"
+                    th1="Name" th2="TVA" th3="Country" th4="Type" th5="Created at" />
+                </div>
+            </main>
             <Footer />
         </ChakraProvider>
 )

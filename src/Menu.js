@@ -23,7 +23,7 @@ function Menuburg(){
       />
       <MenuList>
         <MenuItem>
-        <Link to="/">HOME</Link>
+        <Link to="/">Home</Link>
         </MenuItem>
         <MenuItem>
         <Link to="/Invoices">Invoices</Link>

@@ -45,7 +45,7 @@ body header nav .nav__log, html header nav .nav__log, .root header nav .nav__log
   font-family: Roboto;
   font-weight: 600;
 }
-body header nav .nav__log a, html header nav .nav__log a, .root header nav .nav__log a {
+body header nav .nav__log Link, html header nav .nav__log Link, .root header nav .nav__log Link {
   margin-right: 2vw;
   font-size: 0.8rem;
 }
@@ -60,12 +60,12 @@ body .header__manage h2, html .header__manage h2, .root .header__manage h2 {
   font-size: 2rem;
   text-align: center;
 }
-body .over, html .over, .root .over {
+body main .over, html main .over, .root main .over {
   overflow-x: auto;
   margin: auto;
   width: 80%;
 }
-body .over table, html .over table, .root .over table {
+body main .over table, html main .over table, .root main .over table {
   margin: auto;
   width: 80%;
   font-family: Roboto;
@@ -74,45 +74,45 @@ body .over table, html .over table, .root .over table {
   border-collapse: collapse;
   border-spacing: 2%;
 }
-body .over table tr, html .over table tr, .root .over table tr {
+body main .over table tr, html main .over table tr, .root main .over table tr {
   text-align: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 1rem;
 }
-body .over table tr th, html .over table tr th, .root .over table tr th {
+body main .over table tr th, html main .over table tr th, .root main .over table tr th {
   text-align: center;
   background-color: rgb(249, 222, 78);
   padding: 1%;
   white-space: nowrap;
 }
-body .over table tr td, html .over table tr td, .root .over table tr td {
+body main .over table tr td, html main .over table tr td, .root main .over table tr td {
   white-space: nowrap;
   width: 4rem;
   text-align: center;
   margin: 2%;
   padding: 2%;
 }
-body .work, html .work, .root .work {
+body main .work, html main .work, .root main .work {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin-left: 2rem;
   margin-right: 2rem;
 }
-body .work .title_work, html .work .title_work, .root .work .title_work {
+body main .work .title_work, html main .work .title_work, .root main .work .title_work {
   display: flex;
   flex-flow: row wrap;
   max-width: 50vw;
 }
-body .work h2, html .work h2, .root .work h2 {
+body main .work h2, html main .work h2, .root main .work h2 {
   font-family: Inter;
   font-weight: 900;
   font-size: 1.7rem;
   text-align: center;
   margin: 1rem;
 }
-body .work .illus, html .work .illus, .root .work .illus {
+body main .work .illus, html main .work .illus, .root main .work .illus {
   display: flex;
   align-items: center;
   max-width: 50vw;

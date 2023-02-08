@@ -9,13 +9,14 @@ function Navbar () {
             <hr className='hr_grey'/>
             <div className="nav__link">
                     <Link to="/">HOME</Link>
-                    <Link to="/Invoices">Invoices</Link>
+                    
+                    <Link to="/Invoices">INVOICES</Link>
 
-                    <Link to="/Companies">Companies</Link>
+                    <Link to="/Companies">COMPANIES</Link>
 
-                    <Link to="/Contacts">Contacts</Link>
+                    <Link to="/Contacts">CONTACTS</Link>
 
-                    <Link to="/PrivacyPolicy">Privacy Policy</Link>
+                    <Link to="/PrivacyPolicy">PRIVACY POLICY</Link>
 
                 </div>
                 <div className='copyright'>
