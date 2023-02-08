@@ -32,7 +32,7 @@ import {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>
-              <img src='' alt=''>
+              <img src='' alt='' />
               <h3>Name Henry George</h3>
             
             </DrawerHeader>
