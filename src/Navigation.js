@@ -19,12 +19,9 @@ function Navigation() {
 
                 </div>
                 <div className="nav__log">
-                    <a href="#" id="Sign_up">
-                        Sign up
-                    </a>
-                    <a href="#" id="Login">
-                        Login
-                    </a>
+                <Link to="/Dashboard">Sign Up</Link>
+                <Link to="/Dashboard">Log In</Link>
+
                 </div>
                 <Menuburg />
             </nav>
