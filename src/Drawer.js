@@ -1,4 +1,6 @@
 import {
+    Button,
+    useDisclosure,
     Drawer,
     DrawerBody,
     DrawerFooter,
@@ -7,15 +9,18 @@ import {
     DrawerContent,
     DrawerCloseButton,
   } from '@chakra-ui/react';
+
+  import React from 'react';
+
   import Dashboard from './assets/images/Dashboard.svg';
   import Invoices from './assets/images/Invoices.svg';
   import Companies from './assets/images/Companies.svg';
-  import Contacts from './assets/images/Contacts.svg';
+  import Contacts from './assets/images/Contact.svg';
 
 
-  function Drawer() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
+  function MenuDrawer() {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const btnRef = React.useRef();
   
     return (
       <>
@@ -67,3 +72,4 @@ import {
       </>
     )
   }
+   export default MenuDrawer;

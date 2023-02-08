@@ -1,4 +1,7 @@
 import Menuburg from './Menu';
+import {Link} from 'react-router-dom';
+
+
 function Navigation() {
     return (
             <nav>
@@ -6,26 +9,19 @@ function Navigation() {
                     COGIP
                 </h2>
                 <div className="nav__link">
-                    <a href="#">
-                        Home
-                    </a>
-                    <a href="#">
-                        Invoices
-                    </a>
-                    <a href="#">
-                        Companies
-                    </a>
-                    <a href="#">
-                        Contacts
-                    </a>
+                <Link to="/">HOME</Link>
+
+                <Link to="/Invoices">Invoices</Link>
+
+                <Link to="/Companies">Companies</Link>
+
+                <Link to="/Contacts">Contacts</Link>
+
                 </div>
                 <div className="nav__log">
-                    <a href="#" id="Sign_up">
-                        Sign up
-                    </a>
-                    <a href="#" id="Login">
-                        Login
-                    </a>
+                <Link to="/Dashboard">Sign Up</Link>
+                <Link to="/Dashboard">Log In</Link>
+
                 </div>
                 <Menuburg />
             </nav>

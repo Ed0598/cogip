@@ -9,6 +9,7 @@ import {
 import {
 HamburgerIcon
 } from '@chakra-ui/icons';
+import {Link} from 'react-router-dom';
 
 function Menuburg(){
     return (
@@ -22,16 +23,16 @@ function Menuburg(){
       />
       <MenuList>
         <MenuItem>
-          Home
+        <Link to="/">HOME</Link>
         </MenuItem>
         <MenuItem>
-          Invoices
+        <Link to="/Invoices">Invoices</Link>
         </MenuItem>
         <MenuItem>
-          Companies
+        <Link to="/Companies">Companies</Link>
         </MenuItem>
         <MenuItem>
-          Contacts
+        <Link to="/Contacts">Contacts</Link>
         </MenuItem>
       </MenuList>
     </Menu>
