@@ -11,6 +11,7 @@ import {
   } from '@chakra-ui/react';
 
   import React from 'react';
+  import {Link} from 'react-router-dom';
 
   import Dashboard from './assets/images/Dashboard.svg';
   import Invoices from './assets/images/Invoices.svg';
@@ -46,22 +47,24 @@ import {
             <div className="drawer__link">
                     <div>
                     <img src={Dashboard} alt="Map location icon" />
-                    <a href="#">Dashboard</a>
+                    <Link to="/Dashboard">Dashboard</Link>
+
                     </div>
 
                     <div>
                     <img src={Invoices} alt="Map location icon" />
-                    <a href="#">Invoices</a>
+                    <Link to="/Invoices">Invoices</Link>
+
                     </div>
 
                    <div>
                     <img src={Companies} alt="Map location icon" />
-                    <a href="#">Companies</a>
+                    <Link to="/Companies">Companies</Link>
                     </div>
 
                     <div>
                     <img src={Contacts} alt="Map location icon" />
-                    <a href="#">Contacts</a>
+                    <Link to="/Contacts">Contacts</Link>
                     </div>
                 </div>
             </DrawerBody>
