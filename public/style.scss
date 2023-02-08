@@ -265,7 +265,23 @@ body,html, .root{
 
 
 //invoices, contacts, companies
+        .invoices__h1{
+            font-family: Roboto;
+            font-weight: 900;
+            font-size: 2rem;
+            color: black;
+            margin: 2rem;
+        }
 
+        .rectangle_jaune{
+            //position: absolute;
+                width: 6rem;
+                height: 1rem;
+                //left: 293px;
+                //top: 382px;
+            
+                background: #F9DE4E;
+        }
     //tableau
 
 //show_invoices

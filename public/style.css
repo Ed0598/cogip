@@ -198,6 +198,18 @@ body .footer__nav .nav__link, html .footer__nav .nav__link, .root .footer__nav .
 body .footer__nav p, html .footer__nav p, .root .footer__nav p {
   margin: 1rem;
 }
+body .invoices__h1, html .invoices__h1, .root .invoices__h1 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 2rem;
+  color: black;
+  margin: 2rem;
+}
+body .rectangle_jaune, html .rectangle_jaune, .root .rectangle_jaune {
+  width: 6rem;
+  height: 1px;
+  background: #F9DE4E;
+}
 
 @media screen and (min-width: 725px) {
   body, html {

@@ -4,6 +4,7 @@ import Manage from '../Manage';
 import Work from '../Work';
 import Table from '../Table';
 
+
 import { ChakraProvider } from '@chakra-ui/react'
 
 
@@ -13,7 +14,8 @@ function Invoices() {
             <header>
                 <Navigation />
             </header>
-            <h1>All Invoices</h1>
+            <h1 className='invoices__h1'>All Invoices</h1>
+            <div className='rectangle_jaune'></div>
             <div className='over'>
         <Table table='factures' display="five" 
         id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
