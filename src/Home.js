@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 import Manage from './Manage';
 import Work from './Work';
 //import App from './App';
-import SmallTable from './SmallTable';
+import Table from './Table';
 //import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ function Home() {
         id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
         th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" />
         </div>
-            <SmallTable />
+            <Table />
             <Work />
             <Footer />
         </ChakraProvider>
