@@ -54,34 +54,44 @@ body header nav .nav__log #Sign_up, html header nav .nav__log #Sign_up, .root he
   padding: 1vh;
   border-radius: 10px;
 }
-body header .header__manage h2, html header .header__manage h2, .root header .header__manage h2 {
+body .header__manage h2, html .header__manage h2, .root .header__manage h2 {
   font-family: Inter;
   font-weight: 900;
   font-size: 2rem;
   text-align: center;
 }
-body table, html table, .root table {
+body .over, html .over, .root .over {
+  overflow-x: auto;
   margin: auto;
   width: 80%;
-  overflow-x: auto;
-  overflow: scroll;
 }
-body table tr, html table tr, .root table tr {
+body .over table, html .over table, .root .over table {
+  margin: auto;
+  width: 80%;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 1rem;
+  border-collapse: collapse;
+  border-spacing: 2%;
+}
+body .over table tr, html .over table tr, .root .over table tr {
+  text-align: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 1rem;
 }
-body table th, html table th, .root table th {
+body .over table tr th, html .over table tr th, .root .over table tr th {
+  text-align: center;
   background-color: rgb(249, 222, 78);
   padding: 1%;
-  width: -moz-min-content;
-  width: min-content;
+  white-space: nowrap;
 }
-body table td, html table td, .root table td {
-  padding: 1%;
-}
-body table .grey, html table .grey, .root table .grey {
-  background-color: #F5F5F5;
+body .over table tr td, html .over table tr td, .root .over table tr td {
+  white-space: nowrap;
+  width: 4rem;
+  text-align: center;
+  margin: 2%;
+  padding: 2%;
 }
 body .work, html .work, .root .work {
   display: flex;
