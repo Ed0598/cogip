@@ -1,4 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
+import {Link} from 'react-router-dom';
 
 
 function Navbar () {
@@ -7,21 +8,15 @@ function Navbar () {
         <div className="footer__nav">
             <hr className='hr_grey'/>
             <div className="nav__link">
-                    <a href="#">
-                        HOME
-                    </a>
-                    <a href="#">
-                        INVOICES
-                    </a>
-                    <a href="#">
-                        COMPANIES
-                    </a>
-                    <a href="#">
-                        CONTACTS
-                    </a>
-                    <a href="#">
-                        PRIVACY POLICY
-                    </a>
+                    <Link to="/">HOME</Link>
+                    <Link to="/Invoices">Invoices</Link>
+
+                    <Link to="/Companies">Companies</Link>
+
+                    <Link to="/Contacts">Contacts</Link>
+
+                    <Link to="/PrivacyPolicy">Privacy Policy</Link>
+
                 </div>
                 <div className='copyright'>
                     <p>Copyright © 2022 • COGIP Inc.</p>
