@@ -115,7 +115,7 @@ $router->mount('/compagnies', function () use ($router) {
         try
         {
             $password= createRequest($recupPassword);
-            if ($user['password']===($password))
+            if ($user['password']===($password[0][0]))
             {
                 echo json_encode([
                     'success'=>true,
@@ -139,5 +139,3 @@ $router->mount('/compagnies', function () use ($router) {
         }
     });
 $router->run();
-
-

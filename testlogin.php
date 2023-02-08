@@ -12,7 +12,7 @@
 
             async function verifyAndGetPassword()
             {
-                userUrl= 'https://api.hugoorickx.tech/user'
+                userUrl= 'http://localhost:8001/user'
                 userResponse= await fetch(userUrl,{
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -27,7 +27,7 @@
                 console.log(userData)
                 console.log(userData.success)
                 if (userData.success){
-                    passwordUrl= 'https://api.hugoorickx.tech/password'
+                    passwordUrl= 'http://localhost:8001/password'
                     passwordResponse= await fetch (passwordUrl,{
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
