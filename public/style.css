@@ -46,19 +46,37 @@ body header nav .nav__log, html header nav .nav__log, .root header nav .nav__log
   font-weight: 600;
 }
 body header nav .nav__log Link, html header nav .nav__log Link, .root header nav .nav__log Link {
-  margin-right: 2vw;
+  margin-right: 2rem;
+  padding-right: 2rem;
   font-size: 0.8rem;
 }
 body header nav .nav__log #Sign_up, html header nav .nav__log #Sign_up, .root header nav .nav__log #Sign_up {
   background-color: white;
-  padding: 1vh;
+  padding: 0.5rem;
   border-radius: 10px;
+}
+body header nav .nav__log .login, html header nav .nav__log .login, .root header nav .nav__log .login {
+  padding: 0.5rem;
+  margin-left: 2.5rem;
 }
 body .header__manage h2, html .header__manage h2, .root .header__manage h2 {
   font-family: Inter;
   font-weight: 900;
   font-size: 2rem;
   text-align: center;
+}
+body main h2, html main h2, .root main h2 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 2rem;
+  color: black;
+  margin: 2rem;
+}
+body main .img_main, html main .img_main, .root main .img_main {
+  display: flex;
+}
+body main .img_main #main, html main .img_main #main, .root main .img_main #main {
+  margin-left: auto;
 }
 body main .over, html main .over, .root main .over {
   overflow-x: auto;
@@ -67,12 +85,14 @@ body main .over, html main .over, .root main .over {
 }
 body main .over table, html main .over table, .root main .over table {
   margin: auto;
-  width: 80%;
   font-family: Roboto;
   font-weight: 500;
   font-size: 1rem;
   border-collapse: collapse;
   border-spacing: 2%;
+}
+body main .over table tbody, html main .over table tbody, .root main .over table tbody {
+  padding: 1rem;
 }
 body main .over table tr, html main .over table tr, .root main .over table tr {
   text-align: center;
@@ -83,7 +103,7 @@ body main .over table tr, html main .over table tr, .root main .over table tr {
 body main .over table tr th, html main .over table tr th, .root main .over table tr th {
   text-align: center;
   background-color: rgb(249, 222, 78);
-  padding: 1%;
+  padding: 1rem;
   white-space: nowrap;
 }
 body main .over table tr td, html main .over table tr td, .root main .over table tr td {
@@ -91,7 +111,7 @@ body main .over table tr td, html main .over table tr td, .root main .over table
   width: 4rem;
   text-align: center;
   margin: 2%;
-  padding: 2%;
+  padding: 1rem;
 }
 body main .work, html main .work, .root main .work {
   display: flex;
@@ -115,7 +135,7 @@ body main .work h2, html main .work h2, .root main .work h2 {
 body main .work .illus, html main .work .illus, .root main .work .illus {
   display: flex;
   align-items: center;
-  max-width: 50vw;
+  max-width: 100%;
 }
 body footer, html footer, .root footer {
   color: #737373;
