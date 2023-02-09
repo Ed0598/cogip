@@ -51,14 +51,21 @@ body,html, .root{
             .nav__log{
                 font-family: Roboto;
                 font-weight: 600;
+
                 Link{
-                    margin-right: 2vw;
+                    margin-right: 2rem;
+                    padding-right:2rem;
                     font-size: 0.8rem;
                 }
                 #Sign_up{
                     background-color: white;
-                    padding: 1vh;
+                    padding: 0.5rem;
                     border-radius: 10px;
+                }
+
+                .login{
+                    padding: 0.5rem;
+                    margin-left: 2.5rem;
                 }
             }    
         }
@@ -73,20 +80,42 @@ body,html, .root{
     }
     main{
 
+        h2{
+            font-family: Roboto;
+            font-weight: 900;
+            font-size: 2rem;
+            color: black;
+            margin: 2rem;
+        }
+
+        .img_main{
+            display:flex;
+
+            #main{
+                margin-left:auto;
+            }
+        }   
+
         //table
         .over{
             overflow-x: auto;
             margin: auto;
             width: 80%;
+           
+
 
             table {
                 margin: auto;
-                width: 80%;
                 font-family: Roboto;
                 font-weight: 500;
                 font-size: 1rem;
                 border-collapse: collapse;
                 border-spacing: 2%;
+                
+
+                tbody{
+                    padding : 1rem;
+                }
         
                 tr {
                     text-align: center;
@@ -97,7 +126,7 @@ body,html, .root{
                     th {
                         text-align: center;
                         background-color: $yellow;
-                        padding: 1%;
+                        padding: 1rem;
                         white-space: nowrap;
                     }
         
@@ -106,7 +135,8 @@ body,html, .root{
                         width: 4rem;
                         text-align: center;
                         margin: 2%;
-                        padding: 2%;
+                        padding: 1rem;
+                        //padding: 2%;
                     }
                 }
             }
@@ -139,7 +169,7 @@ body,html, .root{
             .illus{
                 display: flex;
                 align-items: center;
-                max-width: 50vw;
+                max-width: 100%;
             }
         }
     }
@@ -246,12 +276,7 @@ body,html, .root{
             p{
                 margin: 1rem;
             }
-
         }
-
-
-  
-
 
 //invoices, contacts, companies
         h1{
