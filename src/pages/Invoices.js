@@ -13,10 +13,11 @@ function Invoices() {
                 <Navigation />
             </header>
             <main>
-                <h1 className='invoices__h1'>
-                    All Invoices
-                </h1>
-                <div className='rectangle_jaune'></div>
+                 <div className='rectangle_jaune'>
+                    <h1 className='invoices__h1'>
+                        All Invoices
+                    </h1>
+                </div>
             <div className='over'>
                     <Table table='factures' display="all" 
                     id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 

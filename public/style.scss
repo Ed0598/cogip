@@ -213,24 +213,16 @@ body,html, .root{
                         flex-flow: row wrap;
                         margin-top: 0.5rem;
                     }
-                }
-
-               
+                }   
             }
 
             
-
-           
             .hr-yellow{
                 border: 1px solid #F9DE4E;
                 margin-bottom: 2rem; 
                 margin-left: 2rem;
                 margin-right: 2rem;
             }
-
-           
-
-         
         }
     
         .footer__nav {
@@ -262,7 +254,7 @@ body,html, .root{
 
 
 //invoices, contacts, companies
-        .invoices__h1{
+        h1{
             font-family: Roboto;
             font-weight: 900;
             font-size: 2rem;
@@ -270,14 +262,15 @@ body,html, .root{
             margin: 2rem;
         }
 
-        .rectangle_jaune{
-            //position: absolute;
-                width: 6rem;
+        h1::after {
+                display:flex;
+                content:"";
+                width: 11rem;
                 height: 1rem;
-                //left: 293px;
-                //top: 382px;
-            
                 background: #F9DE4E;
+                margin:auto;
+                margin-left: 4.5rem;
+                margin-top: -1.4rem;
         }
     //tableau
 
