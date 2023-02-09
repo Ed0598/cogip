@@ -16,9 +16,11 @@ function Companies() {
                 <img src={Rectangle_blanc} alt="#" />
             </header>
             <main>
-                <h1>
-                    All Companies
-                </h1>
+                <div className='rectangle_jaune'>
+                    <h1 className='companies__h1'>
+                        All Companies
+                    </h1>
+                </div>
                 <div className='over'>
                     <Table table="compagnies" display="all"
                     id="id" td1="name" td2="tva" td3="country" td4="type" td5="created_at"
