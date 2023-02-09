@@ -308,7 +308,184 @@ body,html, .root{
 //show_contact
 
 
+
+
+
 }
+
+    //dashboard
+    .body_dashboard{
+        margin: -2rem;
+        background-color: #E7E7E7;
+
+    }
+    .dashboard{
+        margin: 2rem;
+
+        h2{
+            font-family: Roboto;
+            font-size: 1rem;
+            
+        }
+        h5{
+            font-family: Inter;
+            font-weight: 300;
+            color:#737373;
+            font-size: 0.6rem;
+            
+        }
+
+        .rectangle_mauve{
+            margin: 2rem;
+            margin-top: 3rem;
+            border-radius: 20px;
+            background-color: #9698D6;
+            color:#F5F5F5;
+            padding: 2rem;
+
+            img{
+                width: 100%;
+                margin-top: -7rem;
+            }
+
+
+            h3{
+                font-family: Roboto;
+                font-size: 1rem;
+                margin-top:1rem;
+                margin-bottom:0.5rem;
+            }
+
+            p{
+                font-family: Inter;
+                font-size: 0.6rem;
+            }
+
+        }
+    }    
+
+    .body_dashboard_invoice{
+        margin: -2rem;
+        background-color: #E7E7E7;
+
+    }
+
+    .new_invoice{
+        margin: 2rem;
+
+        button{
+            margin-left: 2rem;
+        }
+
+        h2{
+            font-family: Roboto;
+            font-size: 1rem;
+            margin-left: 2rem;
+            
+        }
+        
+        .breadcrumb_div{
+            margin: 2rem;
+        }
+        h5{
+            font-family: Inter;
+            font-weight: 300;
+            color:#737373;
+            font-size: 0.6rem;
+            margin-left: 2rem;            
+        }
+
+        .rectangle_mauve{
+            margin: 2rem;
+            margin-top: 3rem;
+            border-radius: 20px;
+            background-color: #9698D6;
+            color:#F5F5F5;
+            padding: 2rem;
+
+            img{
+                width: 100%;
+                margin-top: -7rem;
+            }
+
+
+            h3{
+                font-family: Roboto;
+                font-size: 1rem;
+                margin-top:1rem;
+                margin-bottom:0.5rem;
+            }
+
+            p{
+                font-family: Inter;
+                font-size: 0.6rem;
+            }
+
+        }
+
+    }
+
+        .div_form{
+            background-color: white;
+            border-radius: 20px;
+            margin: 2rem;
+            padding: 1rem;
+            font-family: Inter;
+            font-size: 1rem;
+            
+            label{
+                font-size: 0.8rem;
+                padding-bottom: 0.5rem;
+                padding-top: 0.8rem;
+                //margin: 0.5rem;
+            }
+
+            input{
+                padding-bottom: 0.5rem;
+            }
+        }
+        .breadcrumb_div{
+            margin-bottom: 2rem;
+        }
+
+        .breadCrumbItem {
+            font-family: Inter;
+            font-weight: 300;
+            color: #737373;
+            font-size: 0.6rem;
+        }
+    //drawer
+    .drawer__header{
+        background-color: white;
+    }
+
+    .drawer__button{
+        padding: 0.4rem;
+       // margin: 0.5rem;
+        padding-left : 0.6rem;
+        padding-right: 0.6rem;
+        margin-top: -3rem;
+        border-radius: 20px;
+        background-color: #9698D6;
+        font-size: 0.5rem;
+        color: white;
+        font-family: Roboto;
+        border: none;
+    }
+    .drawer__title {
+        font-family: Roboto;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+    .drawer__link{
+        padding: 2rem;
+        a{
+            font-family: Roboto;
+            margin-left:0.5rem;
+        }
+
+        
+    }
 
                 //VERSION DESKTOP
 
