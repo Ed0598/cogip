@@ -1,6 +1,7 @@
 import Footer from '../Footer';
 import Navigation from '../Navigation';
 import Table from '../Table';
+import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -10,6 +11,7 @@ function Contacts() {
         <ChakraProvider>    
             <header>
                 <Navigation />
+                <img src={Rectangle_blanc} alt="#" />
             </header>
             <main>
                 <h1>

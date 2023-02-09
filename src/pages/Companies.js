@@ -3,6 +3,7 @@ import Navigation from '../Navigation';
 import Manage from '../Manage';
 import Work from '../Work';
 import Table from '../Table';
+import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -12,6 +13,7 @@ function Companies() {
         <ChakraProvider>    
             <header>
                 <Navigation />
+                <img src={Rectangle_blanc} alt="#" />
             </header>
             <main>
                 <h1>
