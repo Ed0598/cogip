@@ -207,7 +207,7 @@ body .invoices__h1, html .invoices__h1, .root .invoices__h1 {
 }
 body .rectangle_jaune, html .rectangle_jaune, .root .rectangle_jaune {
   width: 6rem;
-  height: 1px;
+  height: 1rem;
   background: #F9DE4E;
 }
 

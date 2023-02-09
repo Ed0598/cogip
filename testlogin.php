@@ -8,38 +8,31 @@
 </head>
 <body>
     <script>
-        
-
             async function verifyAndGetPassword()
             {
-                userUrl= 'http://localhost:8001/user'
+                userUrl= 'https://api.hugoorickx.tech/user'
                 userResponse= await fetch(userUrl,{
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify
-                        ({
-                        first_name:"<?= $_POST['username']?>",
-                        })
-                })
+                        body: JSON.stringify ({ email:"<?= $_POST['username']?>"})
 
+                })
                 let userData= await userResponse.json()
                 console.log("Verification de l'utilisateur")
                 console.log(userData)
                 console.log(userData.success)
                 if (userData.success){
-                    passwordUrl= 'http://localhost:8001/password'
+                    passwordUrl= 'https://api.hugoorickx.tech/password'
                     passwordResponse= await fetch (passwordUrl,{
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify
-                        ({
-                        first_name:"edouard",
-                        password:"salut",
-                        })
-                    })  
-                        let passwordData= await passwordResponse.json()
-                        console.log("Connexion réussie")
-                        console.log(passwordData)
+                        body: JSON.stringify ({ email:"<?= $_POST['username']?>",
+                                                password:"<?= $_POST['password']?>"})
+                    })
+                    console.log("<?= $_POST['username']?>");
+                    let passwordData= await passwordResponse.json()
+                    console.log("Connexion réussie")
+                    console.log(passwordData)
                 }
             }
             verifyAndGetPassword()
