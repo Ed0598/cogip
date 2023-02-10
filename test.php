@@ -9,6 +9,18 @@
 <body>
   
     <script>
+             addUserUrl= 'https://api.hugoorickx.tech/adduser'
+            fetch(addUserUrl,
+            {
+                method:'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username : "test",email: 'coucou.test@test.com', password: 'salut'})})
+                .then((response) => { return response.json(); })
+                .then((data) =>
+                { 
+                    console.log("ajoute un utilisateur "); console.log(data) 
+                });
+
 
     // /***
     //  * CONTACTS
@@ -32,7 +44,7 @@
     // fetch(contacts,{
     //     method:"POST",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ name : "test",  company_id: 1, email:"test.test@test.com", phone:"00000000000", created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //     body: JSON.stringify({ name : "test12",  company_id: 'sqlut', email:"test.test@test.com1", phone:"00000sad000000", created_at: "2023-02-02", update_at: "2023-02-02"})})
     //     .then((response) => { return response.json(); })
     //     .then((data) => { console.log("ajoute un contact"); console.log(data) })
     
@@ -40,7 +52,7 @@
     // fetch(contacts,{
     //     method:"PATCH",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({id:1, name : "test1",  company_id: 1, email:"test.test@test.com", phone:"00000000000", created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //     body: JSON.stringify({id:1, name : "test1&",  company_id: "1er", email:"test.test@test.co12m", phone:"0000000asd0000", created_at: "2023-02-02", update_at: "2023-02-02"})})
     //   .then((response) => { return response.json(); })
     //   .then((data) => { console.log("modifier un contact"); console.log(data) })
     // // contacts= 'https://api.hugoorickx.tech/contacts/delete/1'
@@ -71,7 +83,7 @@
     // fetch(factures,{
     //     method:"POST",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ ref : "INV000X", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //     body: JSON.stringify({ ref : "INV0!@#$%^&&*()00X", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
     //   .then((response) => { return response.json(); })
     //   .then((data) => { console.log("ajoute une facture"); console.log(data) })
 
@@ -79,7 +91,7 @@
     // fetch(factures,{
     //     method:"PATCH",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({id:1, ref : "INV0007", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //     body: JSON.stringify({id:1, ref : "INV0007&", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
     //   .then((response) => { return response.json(); })
     //   .then((data) => { console.log("modifie une facture"); console.log(data) })
     // // factures= 'https://api.hugoorickx.tech/factures/delete/1'
@@ -110,7 +122,7 @@
     // fetch(compagnies,{
     //     method:"POST",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ name : "test", type_id: 1,  country:"belgique", tva:"5555",  created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //     body: JSON.stringify({ name : "test#$%1", type_id: 1,  country:"belgique", tva:"5555",  created_at: "2023-02-02", update_at: "2023-02-02"})})
     //   .then((response) => { return response.json(); })
     //   .then((data) => { console.log("ajoute une compagnie"); console.log(data) })
 
@@ -118,7 +130,7 @@
     // fetch(compagnies,{
     //     method:"PATCH",
     //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({id:1, name : "testmdoif", type_id: 1,  country:"belgique", tva:"5555",  created_at: "2023-02-02", update_at: "2023-02-02"})})
+    //     body: JSON.stringify({id:1, name : "testmdoif1", type_id: 1,  country:"belgique", tva:"5555",  created_at: "2023-02-02", update_at: "2023-02-02"})})
     //   .then((response) => { return response.json(); })
     //   .then((data) => { console.log("modifie une compagnie"); console.log(data) })
     // // compagnies= 'https://api.hugoorickx.tech/compagnies/delete/1'
