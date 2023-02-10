@@ -9,7 +9,7 @@ function Navigation() {
                     COGIP
                 </h2>
                 <div className="nav__link">
-                <Link to="/">HOME</Link>
+                <Link to="/">Home</Link>
 
                 <Link to="/Invoices">Invoices</Link>
 

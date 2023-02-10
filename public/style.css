@@ -389,4 +389,44 @@ body h1::after, html h1::after, .root h1::after {
   body, html {
     background-color: white;
   }
+  body header .header__manage, html header .header__manage {
+    display: flex;
+    align-items: center;
+  }
+  body header .header__manage img, html header .header__manage img {
+    width: 50%;
+  }
+  body header .header__manage h2, html header .header__manage h2 {
+    width: 50%;
+    text-align: center;
+  }
+  body header nav .nav__link, html header nav .nav__link {
+    display: block;
+    width: 50%;
+  }
+  body header nav .nav__link a, html header nav .nav__link a {
+    margin-right: 7.5%;
+  }
+  body header nav .chakra-button, html header nav .chakra-button {
+    display: none;
+  }
+  body .work, html .work {
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+  }
+  body .work .title_work, html .work .title_work {
+    width: 50%;
+    margin: 0;
+  }
+  body .work .title_work h2, html .work .title_work h2 {
+    display: flex;
+    align-items: center;
+  }
+  body .work .illus, html .work .illus {
+    margin: 0;
+  }
+  body .work .illus img, html .work .illus img {
+    width: 50%;
+  }
 }/*# sourceMappingURL=style.css.map */

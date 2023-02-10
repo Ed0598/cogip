@@ -4,7 +4,7 @@ function DisplayContact(props){
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        let url = 'https://api.hugoorickx.tech/compagnies/all';
+        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display;
         fetch(url, { method: 'GET' })
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
@@ -14,24 +14,25 @@ function DisplayContact(props){
     return (
         <>
             <div className='rectangle_jaune'>
-                <h1 className='invoices__h1'>
-                    {contacts[props.name]}
-                </h1>
+                {data.map((elem) => (
+                    <h1 className='invoices__h1'>{elem.name}</h1>
+                ))}
             </div>
             <div className="info">
-                <p>
-                    <b>Name:</b>{data[props.name]} 
-                </p>
-                <p>
-                    <b>TVA:</b>{data[props.tva]}
-                </p>
-                <p>
-                    <b>Country:</b>{data[props.country]}
-                </p>
-                <p>
-                    <b>Type:</b>{data[props.type]}
-                </p>
+                {data.map((elem) => (
+                    <p><b>Name:</b>{elem.name}</p>
+                ))}
+                {data.map((elem) => (
+                    <p><b>TVA:</b>{elem.tva}</p>
+                ))}
+                {data.map((elem) => (
+                    <p><b>Country:</b>{elem.country}</p>
+                ))}
+                {data.map((elem) => (
+                    <p><b>Type:</b>{elem.type}</p>
+                ))}
             </div>
+            <br />
         </>
     );
     }
