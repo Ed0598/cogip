@@ -11,7 +11,7 @@
     <main>
         <div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form action="#" method="post">
+                <form action="createlogin.php" method="post">
                     <h1>Create Account</h1>
                     <input type="text" placeholder="Name" name='username'/>
                     <input type="email" placeholder="Email" name='email'/>

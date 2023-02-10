@@ -9,18 +9,6 @@
 <body>
   
     <script>
-             addUserUrl= 'https://api.hugoorickx.tech/adduser'
-            fetch(addUserUrl,
-            {
-                method:'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username : "test",email: 'coucou.test@test.com', password: 'salut'})})
-                .then((response) => { return response.json(); })
-                .then((data) =>
-                { 
-                    console.log("ajoute un utilisateur "); console.log(data) 
-                });
-
 
     // /***
     //  * CONTACTS

@@ -8,15 +8,15 @@
 </head>
 <body>
     <script>
-            addUserUrl= 'https://api.hugoorickx.tech/adduser'
-                fetch(addUserURl,
+            let addUserUrl= 'https://api.hugoorickx.tech/adduser'
+                fetch(addUserUrl,
                 {
                     method:'post',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
-                        first_name :"<?= $_POST['username']?> ",
-                        email: '<?=$_POST['email']?>',
-                        password: '<?=sha1($_POST['password'])?>'
+                        username:"<?= $_POST['username']?>",
+                        email:'<?=$_POST['email']?>',
+                        password:'<?=sha1($_POST['password'])?>'
                     })})
                     .then((response) => { return response.json(); })
                     .then((data) =>

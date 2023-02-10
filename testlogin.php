@@ -27,7 +27,7 @@
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify ({ email:"<?= $_POST['username']?>",
-                                                password:"<?= $_POST['password']?>"})
+                                                password:"<?= sha1($_POST['password'])?>"})
                     })
                     console.log("<?= $_POST['username']?>");
                     let passwordData= await passwordResponse.json()
