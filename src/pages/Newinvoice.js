@@ -8,13 +8,13 @@ import {
 import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
+import Form from './Form';
 
-
-function Dashboard() {
+function NewInvoice() {
     return(
-        <div className='body_dashboard'>
-        <div className='dashboard'>
-            <h2>Dashboard</h2>
+        <div className='body_dashboard_invoice'>
+        <div className='new_invoice'>
+            <h2>New Invoice</h2>
             <BreadcrumbNav />
             <MenuDrawer />
 
@@ -25,9 +25,12 @@ function Dashboard() {
 
             </div>
 
+            <div className='div_form'>
+               <Form />
+            </div>
         </div>
         </div>
     )
 }
 
-export default Dashboard;
+export default NewInvoice;

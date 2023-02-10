@@ -236,6 +236,155 @@ body h1::after, html h1::after, .root h1::after {
   margin-top: -1.4rem;
 }
 
+.body_dashboard {
+  margin: -2rem;
+  background-color: #E7E7E7;
+}
+
+.dashboard {
+  margin: 2rem;
+}
+.dashboard h2 {
+  font-family: Roboto;
+  font-size: 1rem;
+}
+.dashboard h5 {
+  font-family: Inter;
+  font-weight: 300;
+  color: #737373;
+  font-size: 0.6rem;
+}
+.dashboard .rectangle_mauve {
+  margin: 2rem;
+  margin-top: 3rem;
+  border-radius: 20px;
+  background-color: #9698D6;
+  color: #F5F5F5;
+  padding: 2rem;
+}
+.dashboard .rectangle_mauve img {
+  width: 100%;
+  margin-top: -7rem;
+}
+.dashboard .rectangle_mauve h3 {
+  font-family: Roboto;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.dashboard .rectangle_mauve p {
+  font-family: Inter;
+  font-size: 0.6rem;
+}
+
+.body_dashboard_invoice {
+  margin: -2rem;
+  background-color: #E7E7E7;
+}
+
+.new_invoice {
+  margin: 2rem;
+}
+.new_invoice button {
+  margin-left: 2rem;
+}
+.new_invoice h2 {
+  font-family: Roboto;
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+.new_invoice .breadcrumb_div {
+  margin: 2rem;
+}
+.new_invoice h5 {
+  font-family: Inter;
+  font-weight: 300;
+  color: #737373;
+  font-size: 0.6rem;
+  margin-left: 2rem;
+}
+.new_invoice .rectangle_mauve {
+  margin: 2rem;
+  margin-top: 3rem;
+  border-radius: 20px;
+  background-color: #9698D6;
+  color: #F5F5F5;
+  padding: 2rem;
+}
+.new_invoice .rectangle_mauve img {
+  width: 100%;
+  margin-top: -7rem;
+}
+.new_invoice .rectangle_mauve h3 {
+  font-family: Roboto;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.new_invoice .rectangle_mauve p {
+  font-family: Inter;
+  font-size: 0.6rem;
+}
+
+.div_form {
+  background-color: white;
+  border-radius: 20px;
+  margin: 2rem;
+  padding: 1rem;
+  font-family: Inter;
+  font-size: 1rem;
+}
+.div_form label {
+  font-size: 0.8rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.8rem;
+}
+.div_form input {
+  padding-bottom: 0.5rem;
+}
+
+.breadcrumb_div {
+  margin-bottom: 2rem;
+}
+
+.breadCrumbItem {
+  font-family: Inter;
+  font-weight: 300;
+  color: #737373;
+  font-size: 0.6rem;
+}
+
+.drawer__header {
+  background-color: white;
+}
+
+.drawer__button {
+  padding: 0.4rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  margin-top: -3rem;
+  border-radius: 20px;
+  background-color: #9698D6;
+  font-size: 0.5rem;
+  color: white;
+  font-family: Roboto;
+  border: none;
+}
+
+.drawer__title {
+  font-family: Roboto;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.drawer__link {
+  padding: 2rem;
+}
+.drawer__link a {
+  font-family: Roboto;
+  margin-left: 0.5rem;
+}
+
 @media screen and (min-width: 725px) {
   body, html {
     background-color: white;

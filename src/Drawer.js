@@ -25,7 +25,7 @@ import {
   
     return (
       <>
-        <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+        <Button className='drawer__button' ref={btnRef} colorScheme='teal' onClick={onOpen}>
           Open
         </Button>
         <Drawer
@@ -37,9 +37,9 @@ import {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>
+            <DrawerHeader className='drawer__header'>
               <img src='' alt='' />
-              <h3>Name Henry George</h3>
+              <h3 className='drawer__title'>Name Henry George</h3>
             
             </DrawerHeader>
   
