@@ -28,6 +28,9 @@ $router->mount('/contacts',function() use($router){
     $router->delete('/delete/{id}',function($id) use ($controller) {
         echo $controller->delete($id);
     });
+    $router->get('/company/(\d+)', function ($id) use ($controller) {
+        echo $controller->getCompany($id);
+    });
 });
 
 $router->mount('/factures', function () use ($router) {
@@ -77,70 +80,93 @@ $router->mount('/compagnies', function () use ($router) {
     $router->delete('/delete/{id}',function($id) use ($controller) {
         echo $controller->delete($id);
     });
-
-    
 });
-    $router->post('/user',function()
-    {
-        $user= json_decode(file_get_contents('php://input'), true);
 
-        $recupUser= "SELECT first_name from users where first_name='".$user['first_name']."'";
+$router->post('/user',function()
+{
+    $user = json_decode(file_get_contents('php://input'), true);
 
-        $error= "Nom d'utilisateur incorrect ! ";
+    $email = $user['email'];
 
-        try{
-            createRequest($recupUser);
+    $sqlRequest= "SELECT email from users where email='$email'";
+    $error= "Requete SQL :  ";
+
+    try{
+        $sqlRequest = createRequest($sqlRequest);
+        // echo json_encode([
+        //     'success'=>$first_name,
+        //     'message'=> $sqlRequest[0]['first_name']
+        // ]);
+        if ($email === $sqlRequest[0]['email'])
+        {
             echo json_encode([
                 'success'=>true,
-                'message'=> "Utilisateur reconnu brav !"
+                'message'=> 'username ok'
             ]);
         }
-
-        catch (\Exception $e){
-            $recup = $e->getMessage();
-            return json_encode([
-                'success'=> false,
-                'message'=> $error,
-            ]);
-        }
-    });
-    $router->post('/password',function()
-    {
-        $user= json_decode(file_get_contents('php://input'), true);
-
-        $recupPassword= "SELECT password from users where first_name='".$user['first_name']."'";
-
-        $error= "Mot de passe incorrect ! ";
-
-        try
+        else
         {
-            $password= createRequest($recupPassword);
-            if ($user['password']===($password[0][0]))
-            {
-                echo json_encode([
-                    'success'=>true,
-                    'message'=> "Mot de passe correct !"
-                ]);
-            }
-            else
-            {
-                echo json_encode([
-                    'success'=>false,
-                    'message'=> "Mot de passe incorrect !"
-                ]);
-            }
-        }
-        catch (\Exception $e){
-            $recup = $e->getMessage();
             echo json_encode([
-                'success'=> false,
-                'message'=> $error,
+                'success'=>false,
+                'message'=> 'username no'
             ]);
         }
-    });
+    }
 
-    $router->post('/adduser', function($controller){
-        $payload = json_decode(file_get_contents('php://input'), true);
-        echo $controller->post($payload);
-    });
+    catch (\Exception $e){
+
+        return json_encode([
+            'success'=> false,
+            'message'=> $error . $e->getMessage(),
+        ]);
+    }
+});
+$router->post('/password',function()
+{
+    $user= json_decode(file_get_contents('php://input'), true);
+
+    $password = $user['password'];
+    $email = $user['email'];
+
+    $sqlRequest= "SELECT email, password from users where email='$email'";
+    $error= "Erreur dans le login : ";
+
+    try
+    {
+        $sqlRequest= createRequest($sqlRequest);
+        // echo json_encode([
+        //     'success'=>true,
+        //     'message'=> $password,
+        //     'sdf'=> $sqlRequest[0]['password'],
+        //     'dsf'=> $sqlRequest[0]['first_name'],
+        //     'fds'=> $first_name,
+        // ]);
+        if ($password===($sqlRequest[0]['password']) && $email === $sqlRequest[0]['email'])
+        {
+            echo json_encode([
+                'success'=>true,
+                'message'=> 'password ok'
+            ]);
+        }
+        else
+        {
+            echo json_encode([
+                'success'=>false,
+                'message'=> 'password no'
+            ]);
+        }
+    }
+    catch (\Exception $e){
+        echo json_encode([
+            'success'=> false,
+            'message'=> $error. $e->getMessage(),
+        ]);
+    }
+});
+$router->post('/adduser', function(){
+    $controller = new App\Controller\User('', '');
+
+    $payload = json_decode(file_get_contents('php://input'), true);
+    echo $controller->post($payload);
+});
 $router->run();
