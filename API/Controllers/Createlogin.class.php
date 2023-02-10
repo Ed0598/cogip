@@ -13,7 +13,7 @@ class User extends controler{
                 $username= $payload['username'];
                 $email= $payload['email'];
                 $password= $payload['password'];
-                $creationRequest= 'INSERT INTO users (first_name,email,password,created_at) VALUES ("'.$username.'","'.$email.'","'.$password.'","'.now().'")';
+                $creationRequest= 'INSERT INTO users (first_name,email,password,created_at,update_at) VALUES ("'.$username.'","'.$email.'","'.$password.'","'.now().'","'.now().'")';
 
             }
         }
