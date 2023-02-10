@@ -36,6 +36,19 @@
                 }
             }
             verifyAndGetPassword()
+
+            // addUserUrl= 'https://api.hugoorickx.tech/adduser'
+            // fetch(addUserRl,
+            // {
+            //     method:'post'
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ first_name : "test",email: 'coucou.test@test.com', password: 'salut'})})
+            //     .then((response) => { return response.json(); })
+            //     .then((data) =>
+            //     { 
+            //         console.log("ajoute un utilisateur "); console.log(data) 
+            //     });
+
     </script>        
 </body>
 </html>

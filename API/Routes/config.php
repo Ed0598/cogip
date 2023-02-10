@@ -138,4 +138,9 @@ $router->mount('/compagnies', function () use ($router) {
             ]);
         }
     });
+
+    $router->post('/adduser', function($controller){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        echo $controller->post($payload);
+    });
 $router->run();
