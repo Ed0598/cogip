@@ -73,7 +73,7 @@ import {
                 <div className='drawer__footer'>
                   <hr/>
                   <img src={Boy} alt='photo de la personne enregistrée' />
-                  <Link to="/Dashboard" id="Sign_out" className='signout'>Sign Out</Link>                  </div>  
+                  <Link to="/Dashboard" id="Sign_out" className='signout'>Log Out</Link>                  </div>  
             </DrawerBody>
   
             
