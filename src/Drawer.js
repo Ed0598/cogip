@@ -37,39 +37,38 @@ import {
           className='drawer__body'
         >
           <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton className='drawer__close__button'/>
+          <DrawerContent className='drawer__content'>
             <DrawerHeader className='drawer__header'>
+              <DrawerCloseButton className='drawer__close__button'/>
               <img src={Boy} alt='photo de la personne enregistrée' />
               <h3 className='drawer__title'>Henry George</h3>
-            
+              <hr/>
             </DrawerHeader>
-            <hr/>
+            
             <DrawerBody>
             <div className="drawer__link">
-                    <div>
+                    <div className='link'>
                     <img src={Dashboard} alt="Map location icon" />
                     <Link to="/Dashboard">Dashboard</Link>
-
                     </div>
 
-                    <div>
+                    <div className='link'>
                     <img src={Invoices} alt="Map location icon" />
                     <Link to="/Invoices">Invoices</Link>
-
                     </div>
 
-                   <div>
+                    <div className='link'>
                     <img src={Companies} alt="Map location icon" />
                     <Link to="/Companies">Companies</Link>
                     </div>
 
-                    <div>
+                    <div className='link'>
                     <img src={Contacts} alt="Map location icon" />
                     <Link to="/Contacts">Contacts</Link>
                     </div>
+
                 </div>
-                <hr/>
+               
 
                 <div className='drawer__footer'>
                   <hr/>
