@@ -52,6 +52,11 @@ class Controler
         return (self::errorRequest($this->defaultRequestPrivate." WHERE $this->tablePrivate.id=$id"));
     }
 
+    public function getCompany($id)
+    {
+        return (self::errorRequest($this->defaultRequestPrivate." WHERE company_id=$id"));
+    }
+
     /**
      * Exécute la requête et renvoie un JSON avec le statut et un message
      * @param mixed $request
@@ -110,5 +115,6 @@ class Controler
                 'message' => $error.$recup,
             ]);
         } 
-    }  
+    }
+    
 }

@@ -7,21 +7,52 @@ class Invoices extends Controler
     private function querryInvoices($type,$payload)
     {
         if ($type == 'delete')
+        {
+            if (!preg_match("/^[0-9]$/",$payload,$tmp))
+                throw new \Exception("La référence ne peut contenir que des caractère alphanumériques ", 1);
             return "DELETE FROM invoices where id= $payload";
-        
+        }
+        $errors= array();
+
+        //gestion des références 
         $ref= $payload['ref'];
+        if (!preg_match("/^[a-zA-Z0-9]$/",$ref,$tmp))
+            $errors['ref']= "La référence ne peut contenir que des caractère alphanumériques ";
+
+            //gestion de l'ip de la compagnie
         $id_company=$payload['id_company'];
-        $created_at=$payload['created_at'];
-        $update_at=$payload['update_at'];
+        if (!preg_match("/^[0-9]$/",$id_company,$tmp))
+            $errors = "L'ID ne peut contenir que des nombres";
+
+            //gestion de la date de creation
+        $created_at = $payload['created_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
+            $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+        
+            //gestion de la date de mise a jour
+        $update_at = $payload['update_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
+            $errors['date_update']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
 
         if($type == 'insert')
+        {
+            if(!empty($errors))
+                throw new \Exception(join(", ", $errors), 1);
             return "INSERT into invoices (ref,id_company,created_at,update_at) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."');";
+        }
 
+            //gestion de l'ip de mise a jour
         $id= $payload['id'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
+            $errors['date_update']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+    
+        if(!empty($errors))
+            throw new \Exception(join(", ", $errors), 1);
+
         return "UPDATE invoices SET ref='$ref', id_company='$id_company',  created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }
 
-    private $defaultRequest='SELECT invoices.ref, invoices.id_company, invoices.created_at, invoices.update_at AS name FROM invoices JOIN companies ON companies.id = invoices.id_company ';
+    private $defaultRequest='SELECT invoices.id, invoices.ref, invoices.id_company, invoices.created_at, invoices.update_at, companies.name AS name FROM invoices JOIN companies ON companies.id = invoices.id_company ';
     private $table = 'invoices';
 
     public function __construct()
@@ -31,12 +62,28 @@ class Invoices extends Controler
 
     public function post($payload)
     {
-        return parent::post(self::querryInvoices('insert',$payload));
+        try {
+            $resultRequest = self::querryInvoices('insert', $payload);
+            return parent::post($resultRequest);
+        } catch (\Exception $e) {
+            return json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+        } 
     }
 
     public function patch($payload)
     {
-        return parent::patch(self::querryInvoices('update',$payload));
+        try {
+            $resultRequest = self::querryInvoices('update', $payload);
+            return parent::patch($resultRequest);
+        } catch (\Exception $e) {
+            return json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+        } 
     }
     public function delete($payload)
     {
