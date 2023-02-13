@@ -359,51 +359,64 @@ html h1::after,
   margin-left: 4.5rem;
   margin-top: -1.4rem;
 }
-body main h1,
-html main h1,
-.root main h1 {
+body h1,
+html h1,
+.root h1 {
   text-align: center;
 }
-body main .info,
-html main .info,
-.root main .info {
+body .info,
+html .info,
+.root .info {
   text-align: center;
 }
-body main hr,
-html main hr,
-.root main hr {
+body hr,
+html hr,
+.root hr {
   color: black;
   height: 1px;
   margin: 10%;
 }
-
-.dashboard {
+body .dashboard,
+html .dashboard,
+.root .dashboard {
   background-color: #E7E7E7;
 }
-.dashboard h2 {
+body .dashboard h2,
+html .dashboard h2,
+.root .dashboard h2 {
   padding-top: 2rem;
   padding-left: 2rem;
   font-family: Roboto;
   font-size: 1.5rem;
 }
-.dashboard h4 {
+body .dashboard h4,
+html .dashboard h4,
+.root .dashboard h4 {
   font-family: Inter;
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-.dashboard h5 {
+body .dashboard h5,
+html .dashboard h5,
+.root .dashboard h5 {
   font-family: Inter;
   font-weight: 300;
   color: #737373;
   font-size: 0.6rem;
 }
-.dashboard button {
+body .dashboard button,
+html .dashboard button,
+.root .dashboard button {
   margin-left: 2rem;
 }
-.dashboard .breadcrumb_div {
+body .dashboard .breadcrumb_div,
+html .dashboard .breadcrumb_div,
+.root .dashboard .breadcrumb_div {
   margin-left: 2rem;
 }
-.dashboard .rectangle_mauve {
+body .dashboard .rectangle_mauve,
+html .dashboard .rectangle_mauve,
+.root .dashboard .rectangle_mauve {
   margin-left: 2rem;
   margin-top: 3rem;
   margin-right: 4rem;
@@ -412,43 +425,59 @@ html main hr,
   color: #F5F5F5;
   padding: 2rem;
 }
-.dashboard .rectangle_mauve img {
+body .dashboard .rectangle_mauve img,
+html .dashboard .rectangle_mauve img,
+.root .dashboard .rectangle_mauve img {
   width: 100%;
   margin-top: -7rem;
 }
-.dashboard .rectangle_mauve h3 {
+body .dashboard .rectangle_mauve h3,
+html .dashboard .rectangle_mauve h3,
+.root .dashboard .rectangle_mauve h3 {
   font-family: Roboto;
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-.dashboard .rectangle_mauve p {
+body .dashboard .rectangle_mauve p,
+html .dashboard .rectangle_mauve p,
+.root .dashboard .rectangle_mauve p {
   font-family: Inter;
   font-size: 0.6rem;
 }
-.dashboard .table_cards {
+body .dashboard .table_cards,
+html .dashboard .table_cards,
+.root .dashboard .table_cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.dashboard .table_cards .statistics {
+body .dashboard .table_cards .statistics,
+html .dashboard .table_cards .statistics,
+.root .dashboard .table_cards .statistics {
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
   padding: 1rem;
   width: 15rem;
 }
-.dashboard .table_cards .statistics .circles {
+body .dashboard .table_cards .statistics .circles,
+html .dashboard .table_cards .statistics .circles,
+.root .dashboard .table_cards .statistics .circles {
   display: flex;
   flex-direction: row;
 }
-.dashboard .table_cards .statistics p {
+body .dashboard .table_cards .statistics p,
+html .dashboard .table_cards .statistics p,
+.root .dashboard .table_cards .statistics p {
   font-family: Inter;
   color: white;
   font-size: 0.5rem;
   font-weight: 900;
 }
-.dashboard .table_cards .statistics .blue_circle {
+body .dashboard .table_cards .statistics .blue_circle,
+html .dashboard .table_cards .statistics .blue_circle,
+.root .dashboard .table_cards .statistics .blue_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -456,7 +485,9 @@ html main hr,
   text-align: center;
   background-color: #4D4CAC;
 }
-.dashboard .table_cards .statistics .purple_circle {
+body .dashboard .table_cards .statistics .purple_circle,
+html .dashboard .table_cards .statistics .purple_circle,
+.root .dashboard .table_cards .statistics .purple_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -464,7 +495,9 @@ html main hr,
   text-align: center;
   background-color: #9698D6;
 }
-.dashboard .table_cards .statistics .pink_circle {
+body .dashboard .table_cards .statistics .pink_circle,
+html .dashboard .table_cards .statistics .pink_circle,
+.root .dashboard .table_cards .statistics .pink_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -472,25 +505,33 @@ html main hr,
   text-align: center;
   background-color: #FF808B;
 }
-.dashboard .table_cards .dashboard_table {
+body .dashboard .table_cards .dashboard_table,
+html .dashboard .table_cards .dashboard_table,
+.root .dashboard .table_cards .dashboard_table {
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
   padding: 1rem;
   width: 15rem;
 }
-.dashboard .table_cards .dashboard_table hr {
+body .dashboard .table_cards .dashboard_table hr,
+html .dashboard .table_cards .dashboard_table hr,
+.root .dashboard .table_cards .dashboard_table hr {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   color: #E0E0E0;
 }
-.dashboard .table_cards .dashboard_table .over {
+body .dashboard .table_cards .dashboard_table .over,
+html .dashboard .table_cards .dashboard_table .over,
+.root .dashboard .table_cards .dashboard_table .over {
   overflow-x: auto;
   margin: auto;
   width: 80%;
 }
-.dashboard .table_cards .dashboard_table .over table {
+body .dashboard .table_cards .dashboard_table .over table,
+html .dashboard .table_cards .dashboard_table .over table,
+.root .dashboard .table_cards .dashboard_table .over table {
   margin: auto;
   font-family: Roboto;
   font-weight: 500;
@@ -498,72 +539,100 @@ html main hr,
   border-collapse: collapse;
   border-spacing: 2%;
 }
-.dashboard .table_cards .dashboard_table .over table tbody {
+body .dashboard .table_cards .dashboard_table .over table tbody,
+html .dashboard .table_cards .dashboard_table .over table tbody,
+.root .dashboard .table_cards .dashboard_table .over table tbody {
   padding: 0.5rem;
 }
-.dashboard .table_cards .dashboard_table .over table tr {
+body .dashboard .table_cards .dashboard_table .over table tr,
+html .dashboard .table_cards .dashboard_table .over table tr,
+.root .dashboard .table_cards .dashboard_table .over table tr {
   text-align: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 0.8rem;
 }
-.dashboard .table_cards .dashboard_table .over table tr th {
+body .dashboard .table_cards .dashboard_table .over table tr th,
+html .dashboard .table_cards .dashboard_table .over table tr th,
+.root .dashboard .table_cards .dashboard_table .over table tr th {
   text-align: center;
   background-color: white;
   padding: 0.5rem;
   white-space: nowrap;
 }
-.dashboard .table_cards .dashboard_table .over table tr td {
+body .dashboard .table_cards .dashboard_table .over table tr td,
+html .dashboard .table_cards .dashboard_table .over table tr td,
+.root .dashboard .table_cards .dashboard_table .over table tr td {
   white-space: nowrap;
   width: 4rem;
   text-align: center;
   margin: 2%;
   padding: 0.5rem;
 }
-.dashboard .table_cards .dashboard_table .over table tr ul {
+body .dashboard .table_cards .dashboard_table .over table tr ul,
+html .dashboard .table_cards .dashboard_table .over table tr ul,
+.root .dashboard .table_cards .dashboard_table .over table tr ul {
   margin-top: 3%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
-.dashboard .table_cards .dashboard_table .over table tr ul li {
+body .dashboard .table_cards .dashboard_table .over table tr ul li,
+html .dashboard .table_cards .dashboard_table .over table tr ul li,
+.root .dashboard .table_cards .dashboard_table .over table tr ul li {
   padding: 1%;
   text-align: center;
   margin: 1%;
   border-radius: 4px;
   border: white solid 1px;
 }
-.dashboard .table_cards .dashboard_table .over table tr ul li ::hover {
+body .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
+html .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
+.root .dashboard .table_cards .dashboard_table .over table tr ul li ::hover {
   background-color: #919EAB;
 }
-.dashboard .body_dashboard_invoice {
+body .dashboard .body_dashboard_invoice,
+html .dashboard .body_dashboard_invoice,
+.root .dashboard .body_dashboard_invoice {
   margin: -2rem;
   background-color: #E7E7E7;
   height: 100vh;
 }
-.dashboard .new_invoice {
+body .new_invoice,
+html .new_invoice,
+.root .new_invoice {
   padding-top: 2rem;
   padding-left: 2rem;
   height: 100vh;
 }
-.dashboard .new_invoice button {
+body .new_invoice button,
+html .new_invoice button,
+.root .new_invoice button {
   margin-left: 2rem;
 }
-.dashboard .new_invoice h2 {
+body .new_invoice h2,
+html .new_invoice h2,
+.root .new_invoice h2 {
   font-family: Roboto;
   font-size: 1rem;
   margin-left: 2rem;
 }
-.dashboard .new_invoice .breadcrumb_div {
+body .new_invoice .breadcrumb_div,
+html .new_invoice .breadcrumb_div,
+.root .new_invoice .breadcrumb_div {
   margin-left: 2rem;
 }
-.dashboard .new_invoice h5 {
+body .new_invoice h5,
+html .new_invoice h5,
+.root .new_invoice h5 {
   font-family: Inter;
   font-weight: 300;
   color: #737373;
   font-size: 0.6rem;
 }
-.dashboard .new_invoice .rectangle_mauve {
+body .new_invoice .rectangle_mauve,
+html .new_invoice .rectangle_mauve,
+.root .new_invoice .rectangle_mauve {
   margin: 2rem;
   margin-top: 3rem;
   margin-right: 4rem;
@@ -572,21 +641,29 @@ html main hr,
   color: #F5F5F5;
   padding: 2rem;
 }
-.dashboard .new_invoice .rectangle_mauve img {
+body .new_invoice .rectangle_mauve img,
+html .new_invoice .rectangle_mauve img,
+.root .new_invoice .rectangle_mauve img {
   width: 100%;
   margin-top: -7rem;
 }
-.dashboard .new_invoice .rectangle_mauve h3 {
+body .new_invoice .rectangle_mauve h3,
+html .new_invoice .rectangle_mauve h3,
+.root .new_invoice .rectangle_mauve h3 {
   font-family: Roboto;
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-.dashboard .new_invoice .rectangle_mauve p {
+body .new_invoice .rectangle_mauve p,
+html .new_invoice .rectangle_mauve p,
+.root .new_invoice .rectangle_mauve p {
   font-family: Inter;
   font-size: 0.6rem;
 }
-.dashboard .div_form {
+body .div_form,
+html .div_form,
+.root .div_form {
   background-color: white;
   border-radius: 20px;
   margin: 2rem;
@@ -596,19 +673,25 @@ html main hr,
   font-family: Inter;
   font-size: 1rem;
 }
-.dashboard .div_form label {
+body .div_form label,
+html .div_form label,
+.root .div_form label {
   margin-left: 2rem;
   font-size: 0.8rem;
   padding-bottom: 0.5rem;
   padding-top: 0.8rem;
 }
-.dashboard .div_form select {
+body .div_form select,
+html .div_form select,
+.root .div_form select {
   margin-left: 2rem;
   padding: 0.4rem;
   border: none;
   width: 80%;
 }
-.dashboard .div_form input {
+body .div_form input,
+html .div_form input,
+.root .div_form input {
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 0.5rem;
@@ -617,7 +700,9 @@ html main hr,
   background-color: #E7E7E7;
   border: none;
 }
-.dashboard .div_form button {
+body .div_form button,
+html .div_form button,
+.root .div_form button {
   margin: 2rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
@@ -628,16 +713,22 @@ html main hr,
   font-family: Roboto;
   border: none;
 }
-.dashboard .breadcrumb_div {
+body .breadcrumb_div,
+html .breadcrumb_div,
+.root .breadcrumb_div {
   margin-bottom: 2rem;
 }
-.dashboard .breadCrumbItem {
+body .breadCrumbItem,
+html .breadCrumbItem,
+.root .breadCrumbItem {
   font-family: Inter;
   font-weight: 300;
   color: #737373;
   font-size: 0.6rem;
 }
-.dashboard .drawer__button {
+body .drawer__button,
+html .drawer__button,
+.root .drawer__button {
   padding: 0.4rem;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
@@ -649,13 +740,17 @@ html main hr,
   font-family: Roboto;
   border: none;
 }
-.dashboard .drawer__content {
+body .drawer__content,
+html .drawer__content,
+.root .drawer__content {
   display: flex;
   flex-direction: column;
   height: -moz-max-content;
   height: max-content;
 }
-.dashboard .drawer__content .drawer__close__button {
+body .drawer__content .drawer__close__button,
+html .drawer__content .drawer__close__button,
+.root .drawer__content .drawer__close__button {
   width: 10rem;
   padding: 0.4rem;
   border: none;
@@ -666,59 +761,81 @@ html main hr,
   border-radius: 15px;
   font-family: Roboto;
 }
-.dashboard .drawer__content .drawer__header {
+body .drawer__content .drawer__header,
+html .drawer__content .drawer__header,
+.root .drawer__content .drawer__header {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   width: 12rem;
 }
-.dashboard .drawer__content .drawer__header img {
+body .drawer__content .drawer__header img,
+html .drawer__content .drawer__header img,
+.root .drawer__content .drawer__header img {
   margin-top: 1rem;
   width: 3rem;
   border-radius: 30px;
 }
-.dashboard .drawer__content .drawer__header .drawer__title {
+body .drawer__content .drawer__header .drawer__title,
+html .drawer__content .drawer__header .drawer__title,
+.root .drawer__content .drawer__header .drawer__title {
   padding: 1rem;
   font-family: Roboto;
   margin-bottom: 0.5rem;
 }
-.dashboard .drawer__content .drawer__header hr {
+body .drawer__content .drawer__header hr,
+html .drawer__content .drawer__header hr,
+.root .drawer__content .drawer__header hr {
   width: 100%;
   margin-bottom: 1rem;
   color: #E2E2E2;
 }
-.dashboard .drawer__content .drawer__link {
+body .drawer__content .drawer__link,
+html .drawer__content .drawer__link,
+.root .drawer__content .drawer__link {
   background-color: white;
   width: 12rem;
   padding-bottom: 6rem;
 }
-.dashboard .drawer__content .drawer__link a {
+body .drawer__content .drawer__link a,
+html .drawer__content .drawer__link a,
+.root .drawer__content .drawer__link a {
   font-family: Roboto;
   font-size: 1rem;
   color: black;
   text-decoration: none;
 }
-.dashboard .drawer__content .drawer__link a a:hover {
+body .drawer__content .drawer__link a a:hover,
+html .drawer__content .drawer__link a a:hover,
+.root .drawer__content .drawer__link a a:hover {
   font-weight: bold;
 }
-.dashboard .drawer__content .drawer__link a a:active {
+body .drawer__content .drawer__link a a:active,
+html .drawer__content .drawer__link a a:active,
+.root .drawer__content .drawer__link a a:active {
   font-weight: bold;
 }
-.dashboard .drawer__content .drawer__link img {
+body .drawer__content .drawer__link img,
+html .drawer__content .drawer__link img,
+.root .drawer__content .drawer__link img {
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
 }
-.dashboard .drawer__content .drawer__link .link {
+body .drawer__content .drawer__link .link,
+html .drawer__content .drawer__link .link,
+.root .drawer__content .drawer__link .link {
   margin-bottom: 0.2rem;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
 }
-.dashboard .drawer__content .drawer__footer {
+body .drawer__content .drawer__footer,
+html .drawer__content .drawer__footer,
+.root .drawer__content .drawer__footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: white;
@@ -726,10 +843,14 @@ html main hr,
   font-family: Roboto;
   border-radius: 0 0 20px 0;
 }
-.dashboard .drawer__content .drawer__footer hr {
+body .drawer__content .drawer__footer hr,
+html .drawer__content .drawer__footer hr,
+.root .drawer__content .drawer__footer hr {
   color: #E0E0E0;
 }
-.dashboard .drawer__content .drawer__footer img {
+body .drawer__content .drawer__footer img,
+html .drawer__content .drawer__footer img,
+.root .drawer__content .drawer__footer img {
   margin-top: 2rem;
   margin-left: 2rem;
   margin-right: 1rem;
@@ -737,63 +858,115 @@ html main hr,
   border-radius: 20px;
 }
 @media screen and (min-width: 725px) {
-  .dashboard body,
-  .dashboard html {
+  body body,
+  body html,
+  html body,
+  html html,
+  .root body,
+  .root html {
     background-color: white;
   }
-  .dashboard body header .header__manage,
-  .dashboard html header .header__manage {
+  body body header .header__manage,
+  body html header .header__manage,
+  html body header .header__manage,
+  html html header .header__manage,
+  .root body header .header__manage,
+  .root html header .header__manage {
     display: flex;
     align-items: center;
   }
-  .dashboard body header .header__manage img,
-  .dashboard html header .header__manage img {
+  body body header .header__manage img,
+  body html header .header__manage img,
+  html body header .header__manage img,
+  html html header .header__manage img,
+  .root body header .header__manage img,
+  .root html header .header__manage img {
     width: 50%;
   }
-  .dashboard body header .header__manage h2,
-  .dashboard html header .header__manage h2 {
+  body body header .header__manage h2,
+  body html header .header__manage h2,
+  html body header .header__manage h2,
+  html html header .header__manage h2,
+  .root body header .header__manage h2,
+  .root html header .header__manage h2 {
     width: 50%;
     text-align: center;
   }
-  .dashboard body header nav .nav__link,
-  .dashboard html header nav .nav__link {
+  body body header nav .nav__link,
+  body html header nav .nav__link,
+  html body header nav .nav__link,
+  html html header nav .nav__link,
+  .root body header nav .nav__link,
+  .root html header nav .nav__link {
     display: block;
     width: 50%;
   }
-  .dashboard body header nav .nav__link a,
-  .dashboard html header nav .nav__link a {
+  body body header nav .nav__link a,
+  body html header nav .nav__link a,
+  html body header nav .nav__link a,
+  html html header nav .nav__link a,
+  .root body header nav .nav__link a,
+  .root html header nav .nav__link a {
     margin-right: 7.5%;
   }
-  .dashboard body header nav .chakra-button,
-  .dashboard html header nav .chakra-button {
+  body body header nav .chakra-button,
+  body html header nav .chakra-button,
+  html body header nav .chakra-button,
+  html html header nav .chakra-button,
+  .root body header nav .chakra-button,
+  .root html header nav .chakra-button {
     display: none;
   }
-  .dashboard body .work,
-  .dashboard html .work {
+  body body .work,
+  body html .work,
+  html body .work,
+  html html .work,
+  .root body .work,
+  .root html .work {
     height: 50vh;
     margin: 0;
     padding: 0;
   }
-  .dashboard body .work .title_work,
-  .dashboard html .work .title_work {
+  body body .work .title_work,
+  body html .work .title_work,
+  html body .work .title_work,
+  html html .work .title_work,
+  .root body .work .title_work,
+  .root html .work .title_work {
     width: 50%;
     margin: 0;
   }
-  .dashboard body .work .title_work h2,
-  .dashboard html .work .title_work h2 {
+  body body .work .title_work h2,
+  body html .work .title_work h2,
+  html body .work .title_work h2,
+  html html .work .title_work h2,
+  .root body .work .title_work h2,
+  .root html .work .title_work h2 {
     display: flex;
     align-items: center;
   }
-  .dashboard body .work .illus,
-  .dashboard html .work .illus {
+  body body .work .illus,
+  body html .work .illus,
+  html body .work .illus,
+  html html .work .illus,
+  .root body .work .illus,
+  .root html .work .illus {
     margin: 0;
   }
-  .dashboard body .work .illus img,
-  .dashboard html .work .illus img {
+  body body .work .illus img,
+  body html .work .illus img,
+  html body .work .illus img,
+  html html .work .illus img,
+  .root body .work .illus img,
+  .root html .work .illus img {
     width: 50%;
   }
-  .dashboard body .table_cards,
-  .dashboard html .table_cards {
+  body body .table_cards,
+  body html .table_cards,
+  html body .table_cards,
+  html html .table_cards,
+  .root body .table_cards,
+  .root html .table_cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
