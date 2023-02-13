@@ -319,8 +319,9 @@ body,html, .root{
     
     .dashboard{
         background-color: #E7E7E7;
+        height: 100vh;
        
-        padding-bottom: 2rem;
+        //padding-bottom: 2rem;
         h2{
             padding-top:2rem;
             padding-left:2rem;
@@ -504,35 +505,10 @@ body,html, .root{
 
 
     //drawer
-    .drawer__close__button{
-        width: 10rem;
+    .drawer__button {
         padding: 0.4rem;
-        border: none;
-        margin: 0.4rem;
-        background-color: #9698D6;
-        color: white;
-        border-radius: 15px;
-        font-family: Roboto;
-
-    }
-
-   
-    .drawer__header{
-        background-color: white;
-        width: 20rem;
-
-        img{
-            margin-top: 2rem;
-            margin-left: 2rem;
-            width: 4rem;
-            border-radius: 40px;
-        }
-    }
-
-    .drawer__button{
-        padding: 0.4rem;
-       // margin: 0.5rem;
-        padding-left : 0.6rem;
+        // margin: 0.5rem;
+        padding-left: 0.6rem;
         padding-right: 0.6rem;
         margin-top: -3rem;
         border-radius: 20px;
@@ -542,46 +518,112 @@ body,html, .root{
         font-family: Roboto;
         border: none;
     }
+
+        .drawer__content {
+             display: flex;
+             flex-direction: column;
+             height: max-content;
     
-    .drawer__title {
-        margin-right: 2rem;
-        padding: 2rem;
-        font-family: Roboto;
-        margin-bottom: 1rem;
-        //width: 20rem;
-    }
-    .drawer__link{
-        //padding: 2rem;
-        background-color: white;
-        width: 20rem;
-        padding-bottom: 2rem;
 
-        Link{
-            font-family: Roboto;
-        }        
+            .drawer__close__button {
+                width: 10rem;
+                padding: 0.4rem;
+                border: none;
+                margin: 0.4rem;
+                margin-top: 1rem;
+                background-color: #9698D6;
+                color: white;
+                border-radius: 15px;
+                font-family: Roboto;
+            }
+    
+    
+            .drawer__header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: white;
+                width: 12rem;
+    
+                img {
+                    margin-top: 1rem;
+                    width: 3rem;
+                    border-radius: 30px;
+                }
+    
+                .drawer__title {
+                    padding: 1rem;
+                    font-family: Roboto;
+                    margin-bottom: 0.5rem;
+                }
 
-        img{
-            margin-left: 1rem;
-            margin-right: 1rem;
+                hr{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    color: #E2E2E2;
+                }
+            }
+    
+            
+    
+    
+            .drawer__link {
+                //padding: 2rem;
+                background-color: white;
+                width: 12rem;
+                padding-bottom: 6rem;
+                //margin-bottom: 3rem;
+    
+                a {
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    color: black;
+                    text-decoration: none;
+
+                    a:hover{
+                        font-weight: bold;
+                    }
+                    a:active{
+                        font-weight: bold;
+                    }
+                }
+    
+                img {
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    margin-top: 0.2rem;
+                    margin-bottom: 0.2rem;
+                }
+    
+                .link {
+                    margin-bottom: 0.2rem;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                }
+            }
+    
+            .drawer__footer {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                background-color: white;
+                width: 12rem;
+                font-family: Roboto;
+
+                hr{
+                    color: #E0E0E0;
+                }
+    
+                img {
+                    margin-top: 2rem;
+                    margin-left: 2rem;
+                    margin-right: 1rem;
+                    width: 2rem;
+                    border-radius: 20px;
+                }
+            }
         }
-    }
-
-    .drawer__footer{
-        background-color: white;
-        width: 20rem;
-        font-family: Roboto;
-
-        img{
-            margin-top: 2rem;
-            margin-left: 2rem;
-            width: 2rem;
-            border-radius: 20px;
-        }
-
-
-    }
-
-
                 //VERSION DESKTOP
 
 body,html {

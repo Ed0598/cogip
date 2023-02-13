@@ -238,7 +238,7 @@ body h1::after, html h1::after, .root h1::after {
 
 .dashboard {
   background-color: #E7E7E7;
-  padding-bottom: 2rem;
+  height: 100vh;
 }
 .dashboard h2 {
   padding-top: 2rem;
@@ -386,28 +386,6 @@ body h1::after, html h1::after, .root h1::after {
   font-size: 0.6rem;
 }
 
-.drawer__close__button {
-  width: 10rem;
-  padding: 0.4rem;
-  border: none;
-  margin: 0.4rem;
-  background-color: #9698D6;
-  color: white;
-  border-radius: 15px;
-  font-family: Roboto;
-}
-
-.drawer__header {
-  background-color: white;
-  width: 20rem;
-}
-.drawer__header img {
-  margin-top: 2rem;
-  margin-left: 2rem;
-  width: 4rem;
-  border-radius: 40px;
-}
-
 .drawer__button {
   padding: 0.4rem;
   padding-left: 0.6rem;
@@ -421,34 +399,89 @@ body h1::after, html h1::after, .root h1::after {
   border: none;
 }
 
-.drawer__title {
-  margin-right: 2rem;
-  padding: 2rem;
-  font-family: Roboto;
-  margin-bottom: 1rem;
+.drawer__content {
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
 }
-
-.drawer__link {
+.drawer__content .drawer__close__button {
+  width: 10rem;
+  padding: 0.4rem;
+  border: none;
+  margin: 0.4rem;
+  margin-top: 1rem;
+  background-color: #9698D6;
+  color: white;
+  border-radius: 15px;
+  font-family: Roboto;
+}
+.drawer__content .drawer__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
-  width: 20rem;
-  padding-bottom: 2rem;
+  width: 12rem;
 }
-.drawer__link Link {
+.drawer__content .drawer__header img {
+  margin-top: 1rem;
+  width: 3rem;
+  border-radius: 30px;
+}
+.drawer__content .drawer__header .drawer__title {
+  padding: 1rem;
   font-family: Roboto;
+  margin-bottom: 0.5rem;
 }
-.drawer__link img {
+.drawer__content .drawer__header hr {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #E2E2E2;
+}
+.drawer__content .drawer__link {
+  background-color: white;
+  width: 12rem;
+  padding-bottom: 6rem;
+}
+.drawer__content .drawer__link a {
+  font-family: Roboto;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+}
+.drawer__content .drawer__link a a:hover {
+  font-weight: bold;
+}
+.drawer__content .drawer__link a a:active {
+  font-weight: bold;
+}
+.drawer__content .drawer__link img {
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
 }
-
-.drawer__footer {
+.drawer__content .drawer__link .link {
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.drawer__content .drawer__footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: white;
-  width: 20rem;
+  width: 12rem;
   font-family: Roboto;
 }
-.drawer__footer img {
+.drawer__content .drawer__footer hr {
+  color: #E0E0E0;
+}
+.drawer__content .drawer__footer img {
   margin-top: 2rem;
   margin-left: 2rem;
+  margin-right: 1rem;
   width: 2rem;
   border-radius: 20px;
 }
