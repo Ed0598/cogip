@@ -17,6 +17,7 @@ import {
   import Invoices from './assets/images/Invoices.svg';
   import Companies from './assets/images/Companies.svg';
   import Contacts from './assets/images/Contact.svg';
+  import Boy from './assets/images/Boy.svg';
 
 
   function MenuDrawer() {
@@ -33,16 +34,17 @@ import {
           placement='left'
           onClose={onClose}
           finalFocusRef={btnRef}
+          className='drawer__body'
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerCloseButton />
+            <DrawerCloseButton className='drawer__close__button'/>
             <DrawerHeader className='drawer__header'>
-              <img src='' alt='' />
-              <h3 className='drawer__title'>Name Henry George</h3>
+              <img src={Boy} alt='photo de la personne enregistrée' />
+              <h3 className='drawer__title'>Henry George</h3>
             
             </DrawerHeader>
-  
+            <hr/>
             <DrawerBody>
             <div className="drawer__link">
                     <div>
@@ -67,6 +69,12 @@ import {
                     <Link to="/Contacts">Contacts</Link>
                     </div>
                 </div>
+                <hr/>
+
+                <div className='drawer__footer'>
+                  <hr/>
+                  <img src={Boy} alt='photo de la personne enregistrée' />
+                  <Link to="/Dashboard" id="Sign_out" className='signout'>Sign Out</Link>                  </div>  
             </DrawerBody>
   
             

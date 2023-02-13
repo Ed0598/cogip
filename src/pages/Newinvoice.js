@@ -8,7 +8,7 @@ import {
 import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
-import Form from './Form';
+import FormFunction from './Form';
 
 function NewInvoice() {
     return(
@@ -26,7 +26,7 @@ function NewInvoice() {
             </div>
 
             <div className='div_form'>
-               <Form />
+               <FormFunction />
             </div>
         </div>
         </div>

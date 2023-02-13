@@ -12,11 +12,12 @@ import IlluDashboard from '../assets/images/Illu_dashboard.svg';
 
 function Dashboard() {
     return(
-        <div className='body_dashboard'>
         <div className='dashboard'>
             <h2>Dashboard</h2>
             <BreadcrumbNav />
+            <div className='menu__drawer'>
             <MenuDrawer />
+            </div>
 
             <div className='rectangle_mauve'>
                 <img src={IlluDashboard} class="illuDashboard"></img>
@@ -25,7 +26,6 @@ function Dashboard() {
 
             </div>
 
-        </div>
         </div>
     )
 }

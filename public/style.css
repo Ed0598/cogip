@@ -236,17 +236,15 @@ body h1::after, html h1::after, .root h1::after {
   margin-top: -1.4rem;
 }
 
-.body_dashboard {
-  margin: -2rem;
-  background-color: #E7E7E7;
-}
-
 .dashboard {
-  margin: 2rem;
+  background-color: #E7E7E7;
+  padding-bottom: 2rem;
 }
 .dashboard h2 {
+  padding-top: 2rem;
+  padding-left: 2rem;
   font-family: Roboto;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .dashboard h5 {
   font-family: Inter;
@@ -254,9 +252,16 @@ body h1::after, html h1::after, .root h1::after {
   color: #737373;
   font-size: 0.6rem;
 }
+.dashboard button {
+  margin-left: 2rem;
+}
+.dashboard .breadcrumb_div {
+  margin-left: 2rem;
+}
 .dashboard .rectangle_mauve {
-  margin: 2rem;
+  margin-left: 2rem;
   margin-top: 3rem;
+  margin-right: 4rem;
   border-radius: 20px;
   background-color: #9698D6;
   color: #F5F5F5;
@@ -283,7 +288,8 @@ body h1::after, html h1::after, .root h1::after {
 }
 
 .new_invoice {
-  margin: 2rem;
+  padding-top: 4rem;
+  padding-left: 2rem;
 }
 .new_invoice button {
   margin-left: 2rem;
@@ -294,18 +300,18 @@ body h1::after, html h1::after, .root h1::after {
   margin-left: 2rem;
 }
 .new_invoice .breadcrumb_div {
-  margin: 2rem;
+  margin-left: 2rem;
 }
 .new_invoice h5 {
   font-family: Inter;
   font-weight: 300;
   color: #737373;
   font-size: 0.6rem;
-  margin-left: 2rem;
 }
 .new_invoice .rectangle_mauve {
   margin: 2rem;
   margin-top: 3rem;
+  margin-right: 4rem;
   border-radius: 20px;
   background-color: #9698D6;
   color: #F5F5F5;
@@ -330,17 +336,43 @@ body h1::after, html h1::after, .root h1::after {
   background-color: white;
   border-radius: 20px;
   margin: 2rem;
-  padding: 1rem;
+  margin-right: 4rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
   font-family: Inter;
   font-size: 1rem;
 }
 .div_form label {
+  margin-left: 2rem;
   font-size: 0.8rem;
   padding-bottom: 0.5rem;
   padding-top: 0.8rem;
 }
+.div_form select {
+  margin-left: 2rem;
+  padding: 0.4rem;
+  border: none;
+  width: 80%;
+}
 .div_form input {
-  padding-bottom: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem;
+  width: 80%;
+  background-color: #E7E7E7;
+  border: none;
+}
+.div_form button {
+  margin: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  width: 80%;
+  background-color: #9698D6;
+  font-size: 1rem;
+  color: white;
+  font-family: Roboto;
+  border: none;
 }
 
 .breadcrumb_div {
@@ -354,8 +386,26 @@ body h1::after, html h1::after, .root h1::after {
   font-size: 0.6rem;
 }
 
+.drawer__close__button {
+  width: 10rem;
+  padding: 0.4rem;
+  border: none;
+  margin: 0.4rem;
+  background-color: #9698D6;
+  color: white;
+  border-radius: 15px;
+  font-family: Roboto;
+}
+
 .drawer__header {
   background-color: white;
+  width: 20rem;
+}
+.drawer__header img {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 4rem;
+  border-radius: 40px;
 }
 
 .drawer__button {
@@ -372,17 +422,35 @@ body h1::after, html h1::after, .root h1::after {
 }
 
 .drawer__title {
+  margin-right: 2rem;
+  padding: 2rem;
   font-family: Roboto;
-  margin-left: 1rem;
   margin-bottom: 1rem;
 }
 
 .drawer__link {
-  padding: 2rem;
+  background-color: white;
+  width: 20rem;
+  padding-bottom: 2rem;
 }
-.drawer__link a {
+.drawer__link Link {
   font-family: Roboto;
-  margin-left: 0.5rem;
+}
+.drawer__link img {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.drawer__footer {
+  background-color: white;
+  width: 20rem;
+  font-family: Roboto;
+}
+.drawer__footer img {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: 2rem;
+  border-radius: 20px;
 }
 
 @media screen and (min-width: 725px) {
