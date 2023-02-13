@@ -1,10 +1,39 @@
 <?php
 
-
-use App\Controller;
 require __DIR__ . '/vendor/autoload.php';
 
 $router = new \Bramus\Router\Router();
+
+// Function to generate a JWT for a user
+function generateJWT($userId) {
+$secretKey = "secretKeyForSigningJWT";
+$payload = array(
+    "userId" => $userId,
+    "exp" => time() + 3600 // token expiration time (1 hour)
+  );
+
+  return \Firebase\JWT\JWT::encode($payload, $secretKey, 'HS256');
+}
+// Function to verify a JWT
+function verifyJWT($jwt) {
+$secretKey = "secretKeyForSigningJWT";
+try {
+    $decoded = \Firebase\JWT\JWT::decode($jwt, new \Firebase\JWT\Key($secretKey, 'HS256'));
+    return $decoded;
+  } catch (Exception $e) {
+    return false;
+  }
+}
+// // Route to generate a JWT
+$router->post('/generate-jwt', function () {
+    $request = json_decode(file_get_contents('php://input'), true);
+    $userId = $request['userId'];
+    $jwt = generateJWT($userId);
+    echo json_encode([
+        'success'=>true,
+        'jwt'=>$jwt
+    ]);
+});
 
 $router->mount('/contacts',function() use($router){
     $controller = new App\Controller\Contacts();
@@ -93,10 +122,6 @@ $router->post('/user',function()
 
     try{
         $sqlRequest = createRequest($sqlRequest);
-        // echo json_encode([
-        //     'success'=>$first_name,
-        //     'message'=> $sqlRequest[0]['first_name']
-        // ]);
         if ($email === $sqlRequest[0]['email'])
         {
             echo json_encode([
@@ -134,13 +159,6 @@ $router->post('/password',function()
     try
     {
         $sqlRequest= createRequest($sqlRequest);
-        // echo json_encode([
-        //     'success'=>true,
-        //     'message'=> $password,
-        //     'sdf'=> $sqlRequest[0]['password'],
-        //     'dsf'=> $sqlRequest[0]['first_name'],
-        //     'fds'=> $first_name,
-        // ]);
         if ($password===($sqlRequest[0]['password']) && $email === $sqlRequest[0]['email'])
         {
             echo json_encode([
@@ -169,4 +187,5 @@ $router->post('/adduser', function(){
     $payload = json_decode(file_get_contents('php://input'), true);
     echo $controller->post($payload);
 });
+
 $router->run();
