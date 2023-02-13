@@ -7,7 +7,7 @@ import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
 import NewInvoice from "./pages/Newinvoice";
 import PrivacyPolicy from "./pages/Privacypolicy";
-import ShowContacts from "./pages/ShowContacts";
+import ShowInvoices from "./pages/ShowInvoices";
 
 
 function App() {
@@ -18,10 +18,10 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/NewInvoice" element={<NewInvoice />} />
         <Route path="/Invoices" element={<Invoices />} />
+        <Route path="/Invoices/:id" element={<ShowInvoices />} />
         <Route path="/Contacts" element={<Contacts />} />
         <Route path="/Companies" element={<Companies />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/ShowContacts" element={<ShowContacts />} />
 
       </Routes>
     </div> 

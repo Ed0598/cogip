@@ -9,8 +9,6 @@ function DisplayContact(props){
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
     }, []);
-    console.log(data);
-    
     return (
         <>
             <div className='rectangle_jaune'>
