@@ -28,6 +28,11 @@ body,html, .root{
     header{
         background-color: $yellow;
 
+        img{
+            margin: auto;
+            width: 90vw;
+        }
+
         //nav
         nav{
             background-color: $yellow;
@@ -141,6 +146,30 @@ body,html, .root{
                         //padding: 2%;
                     }
                 }
+            }
+            ul{
+                margin-top: 3%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                li{
+                    padding: 1%;
+                    text-align: center;
+                    margin: 1%;
+                    border-radius: 4px;
+                    border: #DFE3E8 solid 1px;
+                    ::hover{
+                    background-color: #919EAB;
+                }
+                }
+                .next,.previous{
+                    color: #F9DE4E;
+                }
+                .selected{
+                    color: #F9DE4E;
+                    border-color: #F9DE4E;
+                }
+                
             }
         }
         //images
@@ -302,11 +331,22 @@ body,html, .root{
     //tableau
 
 //show_invoices
-
+    main{
+        
+        h1{
+            text-align: center;
+        }
+        .info{
+            text-align: center;
+        }
+        br{
+            color: black;
+            height: 1px;
+        }
     //contact_name
 
     //contact_poeple
-
+    }
 //show_contact
 
 

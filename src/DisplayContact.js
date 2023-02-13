@@ -32,7 +32,6 @@ function DisplayContact(props){
                     <p><b>Type:</b>{elem.type}</p>
                 ))}
             </div>
-            <br />
         </>
     );
     }

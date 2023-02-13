@@ -15,9 +15,10 @@ function ShowContacts() {
                 <img src={Rectangle_blanc} alt="#" />
             </header>
             <main>
-                 <DisplayContact table="compagnies" display="1" 
-                 name="name" tva="tva" country="country" type="type" />
-                 <div className='over'>
+                <DisplayContact table="compagnies" display="1" 
+                name="name" tva="tva" country="country" type="type" />
+                <br />
+                <div className='over'>
                     <Table table='factures' display="five" 
                     id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
                     th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" />

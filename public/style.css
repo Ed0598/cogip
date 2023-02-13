@@ -21,6 +21,10 @@ body, html, .root {
 body header, html header, .root header {
   background-color: rgb(249, 222, 78);
 }
+body header img, html header img, .root header img {
+  margin: auto;
+  width: 90vw;
+}
 body header nav, html header nav, .root header nav {
   background-color: rgb(249, 222, 78);
   display: flex;
@@ -112,6 +116,29 @@ body main .over table tr td, html main .over table tr td, .root main .over table
   text-align: center;
   margin: 2%;
   padding: 1rem;
+}
+body main .over ul, html main .over ul, .root main .over ul {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+body main .over ul li, html main .over ul li, .root main .over ul li {
+  padding: 1%;
+  text-align: center;
+  margin: 1%;
+  border-radius: 4px;
+  border: #DFE3E8 solid 1px;
+}
+body main .over ul li ::hover, html main .over ul li ::hover, .root main .over ul li ::hover {
+  background-color: #919EAB;
+}
+body main .over ul .next, body main .over ul .previous, html main .over ul .next, html main .over ul .previous, .root main .over ul .next, .root main .over ul .previous {
+  color: #F9DE4E;
+}
+body main .over ul .selected, html main .over ul .selected, .root main .over ul .selected {
+  color: #F9DE4E;
+  border-color: #F9DE4E;
 }
 body main .work, html main .work, .root main .work {
   display: flex;
@@ -234,6 +261,16 @@ body h1::after, html h1::after, .root h1::after {
   margin: auto;
   margin-left: 4.5rem;
   margin-top: -1.4rem;
+}
+body main h1, html main h1, .root main h1 {
+  text-align: center;
+}
+body main .info, html main .info, .root main .info {
+  text-align: center;
+}
+body main br, html main br, .root main br {
+  color: black;
+  height: 1px;
 }
 
 .dashboard {
