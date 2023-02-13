@@ -405,7 +405,7 @@ html main br,
 .dashboard .rectangle_mauve {
   margin-left: 2rem;
   margin-top: 3rem;
-  margin-right: 4rem;
+  margin-right: 3rem;
   border-radius: 20px;
   background-color: #9698D6;
   color: #F5F5F5;
@@ -434,6 +434,7 @@ html main br,
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
+  margin-left: 2rem;
   padding: 1rem;
   width: 15rem;
 }
@@ -475,6 +476,7 @@ html main br,
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
+  margin-left: 2rem;
   padding: 1rem;
   width: 15rem;
 }
