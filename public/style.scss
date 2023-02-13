@@ -70,6 +70,7 @@ body,html, .root{
             }    
         }
     }
+
     .header__manage{
         h2{
             font-family: Inter;
@@ -78,6 +79,7 @@ body,html, .root{
             text-align: center;
         }
     }
+
     main{
 
         h2{
@@ -314,17 +316,16 @@ body,html, .root{
 }
 
     //dashboard
-    .body_dashboard{
-        margin: -2rem;
-        background-color: #E7E7E7;
-
-    }
+    
     .dashboard{
-        margin: 2rem;
-
+        background-color: #E7E7E7;
+       
+        padding-bottom: 2rem;
         h2{
+            padding-top:2rem;
+            padding-left:2rem;
             font-family: Roboto;
-            font-size: 1rem;
+            font-size: 1.5rem;
             
         }
         h5{
@@ -333,11 +334,22 @@ body,html, .root{
             color:#737373;
             font-size: 0.6rem;
             
+            
+        }
+
+        button{
+            margin-left: 2rem;
+        }
+
+        .breadcrumb_div{
+            margin-left: 2rem;
         }
 
         .rectangle_mauve{
-            margin: 2rem;
+            margin-left: 2rem;
             margin-top: 3rem;
+            margin-right: 4rem;
+           // margin-bottom: 4rem;
             border-radius: 20px;
             background-color: #9698D6;
             color:#F5F5F5;
@@ -370,8 +382,12 @@ body,html, .root{
 
     }
 
+
+    //page Newinvoice
     .new_invoice{
-        margin: 2rem;
+        padding-top:4rem;
+        padding-left:2rem;
+
 
         button{
             margin-left: 2rem;
@@ -385,19 +401,20 @@ body,html, .root{
         }
         
         .breadcrumb_div{
-            margin: 2rem;
+            margin-left: 2rem;
         }
         h5{
             font-family: Inter;
             font-weight: 300;
             color:#737373;
             font-size: 0.6rem;
-            margin-left: 2rem;            
+            //margin-left: 2rem;            
         }
 
         .rectangle_mauve{
             margin: 2rem;
             margin-top: 3rem;
+            margin-right: 4rem;
             border-radius: 20px;
             background-color: #9698D6;
             color:#F5F5F5;
@@ -429,20 +446,50 @@ body,html, .root{
             background-color: white;
             border-radius: 20px;
             margin: 2rem;
-            padding: 1rem;
+            margin-right: 4rem;
+            padding-top: 1rem;
+            padding-right: 1rem;
+            //margin-bottom: 4rem;
             font-family: Inter;
             font-size: 1rem;
             
             label{
+                margin-left: 2rem;
                 font-size: 0.8rem;
                 padding-bottom: 0.5rem;
                 padding-top: 0.8rem;
                 //margin: 0.5rem;
             }
 
-            input{
-                padding-bottom: 0.5rem;
+            select{
+                margin-left: 2rem;
+                padding: 0.4rem;
+                border: none;
+                width: 80%;
             }
+
+            input{
+                margin-left: 2rem;
+                margin-right: 2rem;
+                margin-bottom: 0.5rem;
+                padding: 0.3rem;
+                width: 80%;
+                background-color: #E7E7E7;
+                border:none;
+                
+            }
+
+            button {
+                margin: 2rem;
+                padding-top: 0.4rem;
+                padding-bottom: 0.4rem;
+                width: 80%;
+                background-color: #9698D6;
+                font-size: 1rem;
+                color: white;
+                font-family: Roboto;
+                border: none;
+                    }
         }
         .breadcrumb_div{
             margin-bottom: 2rem;
@@ -454,9 +501,32 @@ body,html, .root{
             color: #737373;
             font-size: 0.6rem;
         }
+
+
     //drawer
+    .drawer__close__button{
+        width: 10rem;
+        padding: 0.4rem;
+        border: none;
+        margin: 0.4rem;
+        background-color: #9698D6;
+        color: white;
+        border-radius: 15px;
+        font-family: Roboto;
+
+    }
+
+   
     .drawer__header{
         background-color: white;
+        width: 20rem;
+
+        img{
+            margin-top: 2rem;
+            margin-left: 2rem;
+            width: 4rem;
+            border-radius: 40px;
+        }
     }
 
     .drawer__button{
@@ -472,20 +542,45 @@ body,html, .root{
         font-family: Roboto;
         border: none;
     }
+    
     .drawer__title {
+        margin-right: 2rem;
+        padding: 2rem;
         font-family: Roboto;
-        margin-left: 1rem;
         margin-bottom: 1rem;
+        //width: 20rem;
     }
     .drawer__link{
-        padding: 2rem;
-        a{
+        //padding: 2rem;
+        background-color: white;
+        width: 20rem;
+        padding-bottom: 2rem;
+
+        Link{
             font-family: Roboto;
-            margin-left:0.5rem;
+        }        
+
+        img{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+
+    .drawer__footer{
+        background-color: white;
+        width: 20rem;
+        font-family: Roboto;
+
+        img{
+            margin-top: 2rem;
+            margin-left: 2rem;
+            width: 2rem;
+            border-radius: 20px;
         }
 
-        
+
     }
+
 
                 //VERSION DESKTOP
 
