@@ -19,7 +19,7 @@ function ShowInvoices() {
                 <DisplayContact table="compagnies" display="1" 
                 name="name" tva="tva" country="country" type="type" />
                 <hr />
-                <ContactPeople />
+                <ContactPeople table="contacts" display="company" />
                 <div className='over'>
                     <Table table='factures' display="five" 
                     id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 

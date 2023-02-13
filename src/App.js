@@ -18,10 +18,10 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/NewInvoice" element={<NewInvoice />} />
         <Route path="/Invoices" element={<Invoices />} />
+        <Route path="/Invoices/:id" element={<ShowInvoices />} />
         <Route path="/Contacts" element={<Contacts />} />
         <Route path="/Companies" element={<Companies />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/ShowInvoices" element={<ShowInvoices />} />
 
       </Routes>
     </div> 
