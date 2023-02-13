@@ -15,79 +15,111 @@
   font-family: "Inter";
   src: url("./assets/font/Inter/static/Inter-Black.ttf");
 }
-body, html, .root {
+body,
+html,
+.root {
   background-color: white;
 }
-body header, html header, .root header {
+body header,
+html header,
+.root header {
   background-color: rgb(249, 222, 78);
 }
-body header img, html header img, .root header img {
+body header img,
+html header img,
+.root header img {
   margin: auto;
   width: 90vw;
 }
-body header nav, html header nav, .root header nav {
+body header nav,
+html header nav,
+.root header nav {
   background-color: rgb(249, 222, 78);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 15vh;
 }
-body header nav h2, html header nav h2, .root header nav h2 {
+body header nav h2,
+html header nav h2,
+.root header nav h2 {
   font-family: Roboto;
   font-weight: 900;
   font-size: 2rem;
   background-color: rgb(249, 222, 78);
   color: black;
 }
-body header nav .nav__link, html header nav .nav__link, .root header nav .nav__link {
+body header nav .nav__link,
+html header nav .nav__link,
+.root header nav .nav__link {
   font-family: Roboto;
   font-weight: 600;
   font-size: 1rem;
   display: none;
 }
-body header nav .nav__log, html header nav .nav__log, .root header nav .nav__log {
+body header nav .nav__log,
+html header nav .nav__log,
+.root header nav .nav__log {
   font-family: Roboto;
   font-weight: 600;
 }
-body header nav .nav__log Link, html header nav .nav__log Link, .root header nav .nav__log Link {
+body header nav .nav__log Link,
+html header nav .nav__log Link,
+.root header nav .nav__log Link {
   margin-right: 2rem;
   padding-right: 2rem;
   font-size: 0.8rem;
 }
-body header nav .nav__log #Sign_up, html header nav .nav__log #Sign_up, .root header nav .nav__log #Sign_up {
+body header nav .nav__log #Sign_up,
+html header nav .nav__log #Sign_up,
+.root header nav .nav__log #Sign_up {
   background-color: white;
   padding: 0.5rem;
   border-radius: 10px;
 }
-body header nav .nav__log .login, html header nav .nav__log .login, .root header nav .nav__log .login {
+body header nav .nav__log .login,
+html header nav .nav__log .login,
+.root header nav .nav__log .login {
   padding: 0.5rem;
   margin-left: 2.5rem;
 }
-body .header__manage h2, html .header__manage h2, .root .header__manage h2 {
+body .header__manage h2,
+html .header__manage h2,
+.root .header__manage h2 {
   font-family: Inter;
   font-weight: 900;
   font-size: 2rem;
   text-align: center;
 }
-body main h2, html main h2, .root main h2 {
+body main h2,
+html main h2,
+.root main h2 {
   font-family: Roboto;
   font-weight: 900;
   font-size: 2rem;
   color: black;
   margin: 2rem;
 }
-body main .img_main, html main .img_main, .root main .img_main {
+body main .img_main,
+html main .img_main,
+.root main .img_main {
   display: flex;
 }
-body main .img_main #main, html main .img_main #main, .root main .img_main #main {
+body main .img_main #main,
+html main .img_main #main,
+.root main .img_main #main {
   margin-left: auto;
 }
-body main .over, html main .over, .root main .over {
+body main .over,
+html main .over,
+.root main .over {
   overflow-x: auto;
   margin: auto;
   width: 80%;
 }
-body main .over table, html main .over table, .root main .over table {
+body main .over table,
+html main .over table,
+.root main .over table {
   margin: auto;
   font-family: Roboto;
   font-weight: 500;
@@ -95,90 +127,129 @@ body main .over table, html main .over table, .root main .over table {
   border-collapse: collapse;
   border-spacing: 2%;
 }
-body main .over table tbody, html main .over table tbody, .root main .over table tbody {
+body main .over table tbody,
+html main .over table tbody,
+.root main .over table tbody {
   padding: 1rem;
 }
-body main .over table tr, html main .over table tr, .root main .over table tr {
+body main .over table tr,
+html main .over table tr,
+.root main .over table tr {
   text-align: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 1rem;
 }
-body main .over table tr th, html main .over table tr th, .root main .over table tr th {
+body main .over table tr th,
+html main .over table tr th,
+.root main .over table tr th {
   text-align: center;
   background-color: rgb(249, 222, 78);
   padding: 1rem;
   white-space: nowrap;
 }
-body main .over table tr td, html main .over table tr td, .root main .over table tr td {
+body main .over table tr td,
+html main .over table tr td,
+.root main .over table tr td {
   white-space: nowrap;
   width: 4rem;
   text-align: center;
   margin: 2%;
   padding: 1rem;
 }
-body main .over ul, html main .over ul, .root main .over ul {
+body main .over ul,
+html main .over ul,
+.root main .over ul {
   margin-top: 3%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
-body main .over ul li, html main .over ul li, .root main .over ul li {
+body main .over ul li,
+html main .over ul li,
+.root main .over ul li {
   padding: 1%;
   text-align: center;
   margin: 1%;
   border-radius: 4px;
   border: #DFE3E8 solid 1px;
 }
-body main .over ul li ::hover, html main .over ul li ::hover, .root main .over ul li ::hover {
+body main .over ul li ::hover,
+html main .over ul li ::hover,
+.root main .over ul li ::hover {
   background-color: #919EAB;
 }
-body main .over ul .next, body main .over ul .previous, html main .over ul .next, html main .over ul .previous, .root main .over ul .next, .root main .over ul .previous {
+body main .over ul .next,
+body main .over ul .previous,
+html main .over ul .next,
+html main .over ul .previous,
+.root main .over ul .next,
+.root main .over ul .previous {
   color: #F9DE4E;
 }
-body main .over ul .selected, html main .over ul .selected, .root main .over ul .selected {
+body main .over ul .selected,
+html main .over ul .selected,
+.root main .over ul .selected {
   color: #F9DE4E;
   border-color: #F9DE4E;
 }
-body main .work, html main .work, .root main .work {
+body main .work,
+html main .work,
+.root main .work {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin-left: 2rem;
   margin-right: 2rem;
 }
-body main .work .title_work, html main .work .title_work, .root main .work .title_work {
+body main .work .title_work,
+html main .work .title_work,
+.root main .work .title_work {
   display: flex;
   flex-flow: row wrap;
   max-width: 50vw;
 }
-body main .work h2, html main .work h2, .root main .work h2 {
+body main .work h2,
+html main .work h2,
+.root main .work h2 {
   font-family: Inter;
   font-weight: 900;
   font-size: 1.7rem;
   text-align: center;
   margin: 1rem;
 }
-body main .work .illus, html main .work .illus, .root main .work .illus {
+body main .work .illus,
+html main .work .illus,
+.root main .work .illus {
   display: flex;
   align-items: center;
   max-width: 100%;
 }
-body footer, html footer, .root footer {
+body footer,
+html footer,
+.root footer {
   color: #737373;
   margin-top: 2rem;
 }
-body footer a, html footer a, .root footer a {
+body footer a,
+html footer a,
+.root footer a {
   padding: 1rem;
 }
-body footer img, html footer img, .root footer img {
+body footer img,
+html footer img,
+.root footer img {
   margin: 0.8rem;
 }
-body footer .block-footer, html footer .block-footer, .root footer .block-footer {
+body footer .block-footer,
+html footer .block-footer,
+.root footer .block-footer {
   display: flex;
   flex-direction: column;
 }
-body footer .block-footer .footer__title, html footer .block-footer .footer__title, .root footer .block-footer .footer__title {
+body footer .block-footer .footer__title,
+html footer .block-footer .footer__title,
+.root footer .block-footer .footer__title {
   font-family: "Roboto";
   font-weight: 900;
   font-size: 2rem;
@@ -190,69 +261,95 @@ body footer .block-footer .footer__title, html footer .block-footer .footer__tit
   padding-right: 0.5rem;
   width: 8rem;
 }
-body footer .block-footer .infos, html footer .block-footer .infos, .root footer .block-footer .infos {
+body footer .block-footer .infos,
+html footer .block-footer .infos,
+.root footer .block-footer .infos {
   display: flex;
   flex-direction: column;
   margin-left: 2rem;
 }
-body footer .block-footer .infos .map, html footer .block-footer .infos .map, .root footer .block-footer .infos .map {
+body footer .block-footer .infos .map,
+html footer .block-footer .infos .map,
+.root footer .block-footer .infos .map {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
   margin-top: 2rem;
 }
-body footer .block-footer .infos .phone-fax, html footer .block-footer .infos .phone-fax, .root footer .block-footer .infos .phone-fax {
+body footer .block-footer .infos .phone-fax,
+html footer .block-footer .infos .phone-fax,
+.root footer .block-footer .infos .phone-fax {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
 }
-body footer .block-footer .infos .phone-fax .phone, html footer .block-footer .infos .phone-fax .phone, .root footer .block-footer .infos .phone-fax .phone {
+body footer .block-footer .infos .phone-fax .phone,
+html footer .block-footer .infos .phone-fax .phone,
+.root footer .block-footer .infos .phone-fax .phone {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
 }
-body footer .block-footer .infos .phone-fax .fax, html footer .block-footer .infos .phone-fax .fax, .root footer .block-footer .infos .phone-fax .fax {
+body footer .block-footer .infos .phone-fax .fax,
+html footer .block-footer .infos .phone-fax .fax,
+.root footer .block-footer .infos .phone-fax .fax {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
 }
-body footer .block-footer .infos .social-media, html footer .block-footer .infos .social-media, .root footer .block-footer .infos .social-media {
+body footer .block-footer .infos .social-media,
+html footer .block-footer .infos .social-media,
+.root footer .block-footer .infos .social-media {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
   margin-top: 0.5rem;
 }
-body footer .hr-yellow, html footer .hr-yellow, .root footer .hr-yellow {
+body footer .hr-yellow,
+html footer .hr-yellow,
+.root footer .hr-yellow {
   border: 1px solid #F9DE4E;
   margin-bottom: 2rem;
   margin-left: 2rem;
   margin-right: 2rem;
 }
-body .footer__nav, html .footer__nav, .root .footer__nav {
+body .footer__nav,
+html .footer__nav,
+.root .footer__nav {
   display: flex;
   flex-wrap: wrap;
   color: #737373;
   padding: 2rem;
 }
-body .footer__nav .hr_grey, html .footer__nav .hr_grey, .root .footer__nav .hr_grey {
+body .footer__nav .hr_grey,
+html .footer__nav .hr_grey,
+.root .footer__nav .hr_grey {
   border: 1px solid #737373;
   width: 100%;
 }
-body .footer__nav .nav__link, html .footer__nav .nav__link, .root .footer__nav .nav__link {
+body .footer__nav .nav__link,
+html .footer__nav .nav__link,
+.root .footer__nav .nav__link {
   display: flex;
   flex-wrap: wrap;
 }
-body .footer__nav p, html .footer__nav p, .root .footer__nav p {
+body .footer__nav p,
+html .footer__nav p,
+.root .footer__nav p {
   margin: 1rem;
 }
-body h1, html h1, .root h1 {
+body h1,
+html h1,
+.root h1 {
   font-family: Roboto;
   font-weight: 900;
   font-size: 2rem;
   color: black;
   margin: 2rem;
 }
-body h1::after, html h1::after, .root h1::after {
+body h1::after,
+html h1::after,
+.root h1::after {
   display: flex;
   content: "";
   width: 11rem;
@@ -262,13 +359,19 @@ body h1::after, html h1::after, .root h1::after {
   margin-left: 4.5rem;
   margin-top: -1.4rem;
 }
-body main h1, html main h1, .root main h1 {
+body main h1,
+html main h1,
+.root main h1 {
   text-align: center;
 }
-body main .info, html main .info, .root main .info {
+body main .info,
+html main .info,
+.root main .info {
   text-align: center;
 }
-body main hr, html main hr, .root main hr {
+body main hr,
+html main hr,
+.root main hr {
   color: black;
   height: 1px;
   margin: 10%;
@@ -276,13 +379,17 @@ body main hr, html main hr, .root main hr {
 
 .dashboard {
   background-color: #E7E7E7;
-  height: 100vh;
 }
 .dashboard h2 {
   padding-top: 2rem;
   padding-left: 2rem;
   font-family: Roboto;
   font-size: 1.5rem;
+}
+.dashboard h4 {
+  font-family: Inter;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 .dashboard h5 {
   font-family: Inter;
@@ -319,34 +426,144 @@ body main hr, html main hr, .root main hr {
   font-family: Inter;
   font-size: 0.6rem;
 }
-
-.body_dashboard_invoice {
+.dashboard .table_cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.dashboard .table_cards .statistics {
+  background-color: white;
+  border-radius: 20px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 15rem;
+}
+.dashboard .table_cards .statistics .circles {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard .table_cards .statistics p {
+  font-family: Inter;
+  color: white;
+  font-size: 0.5rem;
+  font-weight: 900;
+}
+.dashboard .table_cards .statistics .blue_circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 30px;
+  margin: 1rem;
+  text-align: center;
+  background-color: #4D4CAC;
+}
+.dashboard .table_cards .statistics .purple_circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 30px;
+  margin: 1rem;
+  text-align: center;
+  background-color: #9698D6;
+}
+.dashboard .table_cards .statistics .pink_circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 30px;
+  margin: 1rem;
+  text-align: center;
+  background-color: #FF808B;
+}
+.dashboard .table_cards .dashboard_table {
+  background-color: white;
+  border-radius: 20px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 15rem;
+}
+.dashboard .table_cards .dashboard_table hr {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #E0E0E0;
+}
+.dashboard .table_cards .dashboard_table .over {
+  overflow-x: auto;
+  margin: auto;
+  width: 80%;
+}
+.dashboard .table_cards .dashboard_table .over table {
+  margin: auto;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+  border-spacing: 2%;
+}
+.dashboard .table_cards .dashboard_table .over table tbody {
+  padding: 0.5rem;
+}
+.dashboard .table_cards .dashboard_table .over table tr {
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+.dashboard .table_cards .dashboard_table .over table tr th {
+  text-align: center;
+  background-color: white;
+  padding: 0.5rem;
+  white-space: nowrap;
+}
+.dashboard .table_cards .dashboard_table .over table tr td {
+  white-space: nowrap;
+  width: 4rem;
+  text-align: center;
+  margin: 2%;
+  padding: 0.5rem;
+}
+.dashboard .table_cards .dashboard_table .over table tr ul {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.dashboard .table_cards .dashboard_table .over table tr ul li {
+  padding: 1%;
+  text-align: center;
+  margin: 1%;
+  border-radius: 4px;
+  border: white solid 1px;
+}
+.dashboard .table_cards .dashboard_table .over table tr ul li ::hover {
+  background-color: #919EAB;
+}
+.dashboard .body_dashboard_invoice {
   margin: -2rem;
   background-color: #E7E7E7;
+  height: 100vh;
 }
-
-.new_invoice {
-  padding-top: 4rem;
+.dashboard .new_invoice {
+  padding-top: 2rem;
   padding-left: 2rem;
+  height: 100vh;
 }
-.new_invoice button {
+.dashboard .new_invoice button {
   margin-left: 2rem;
 }
-.new_invoice h2 {
+.dashboard .new_invoice h2 {
   font-family: Roboto;
   font-size: 1rem;
   margin-left: 2rem;
 }
-.new_invoice .breadcrumb_div {
+.dashboard .new_invoice .breadcrumb_div {
   margin-left: 2rem;
 }
-.new_invoice h5 {
+.dashboard .new_invoice h5 {
   font-family: Inter;
   font-weight: 300;
   color: #737373;
   font-size: 0.6rem;
 }
-.new_invoice .rectangle_mauve {
+.dashboard .new_invoice .rectangle_mauve {
   margin: 2rem;
   margin-top: 3rem;
   margin-right: 4rem;
@@ -355,22 +572,21 @@ body main hr, html main hr, .root main hr {
   color: #F5F5F5;
   padding: 2rem;
 }
-.new_invoice .rectangle_mauve img {
+.dashboard .new_invoice .rectangle_mauve img {
   width: 100%;
   margin-top: -7rem;
 }
-.new_invoice .rectangle_mauve h3 {
+.dashboard .new_invoice .rectangle_mauve h3 {
   font-family: Roboto;
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-.new_invoice .rectangle_mauve p {
+.dashboard .new_invoice .rectangle_mauve p {
   font-family: Inter;
   font-size: 0.6rem;
 }
-
-.div_form {
+.dashboard .div_form {
   background-color: white;
   border-radius: 20px;
   margin: 2rem;
@@ -380,19 +596,19 @@ body main hr, html main hr, .root main hr {
   font-family: Inter;
   font-size: 1rem;
 }
-.div_form label {
+.dashboard .div_form label {
   margin-left: 2rem;
   font-size: 0.8rem;
   padding-bottom: 0.5rem;
   padding-top: 0.8rem;
 }
-.div_form select {
+.dashboard .div_form select {
   margin-left: 2rem;
   padding: 0.4rem;
   border: none;
   width: 80%;
 }
-.div_form input {
+.dashboard .div_form input {
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 0.5rem;
@@ -401,7 +617,7 @@ body main hr, html main hr, .root main hr {
   background-color: #E7E7E7;
   border: none;
 }
-.div_form button {
+.dashboard .div_form button {
   margin: 2rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
@@ -412,19 +628,16 @@ body main hr, html main hr, .root main hr {
   font-family: Roboto;
   border: none;
 }
-
-.breadcrumb_div {
+.dashboard .breadcrumb_div {
   margin-bottom: 2rem;
 }
-
-.breadCrumbItem {
+.dashboard .breadCrumbItem {
   font-family: Inter;
   font-weight: 300;
   color: #737373;
   font-size: 0.6rem;
 }
-
-.drawer__button {
+.dashboard .drawer__button {
   padding: 0.4rem;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
@@ -436,14 +649,13 @@ body main hr, html main hr, .root main hr {
   font-family: Roboto;
   border: none;
 }
-
-.drawer__content {
+.dashboard .drawer__content {
   display: flex;
   flex-direction: column;
   height: -moz-max-content;
   height: max-content;
 }
-.drawer__content .drawer__close__button {
+.dashboard .drawer__content .drawer__close__button {
   width: 10rem;
   padding: 0.4rem;
   border: none;
@@ -454,118 +666,136 @@ body main hr, html main hr, .root main hr {
   border-radius: 15px;
   font-family: Roboto;
 }
-.drawer__content .drawer__header {
+.dashboard .drawer__content .drawer__header {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   width: 12rem;
 }
-.drawer__content .drawer__header img {
+.dashboard .drawer__content .drawer__header img {
   margin-top: 1rem;
   width: 3rem;
   border-radius: 30px;
 }
-.drawer__content .drawer__header .drawer__title {
+.dashboard .drawer__content .drawer__header .drawer__title {
   padding: 1rem;
   font-family: Roboto;
   margin-bottom: 0.5rem;
 }
-.drawer__content .drawer__header hr {
+.dashboard .drawer__content .drawer__header hr {
   width: 100%;
   margin-bottom: 1rem;
   color: #E2E2E2;
 }
-.drawer__content .drawer__link {
+.dashboard .drawer__content .drawer__link {
   background-color: white;
   width: 12rem;
   padding-bottom: 6rem;
 }
-.drawer__content .drawer__link a {
+.dashboard .drawer__content .drawer__link a {
   font-family: Roboto;
   font-size: 1rem;
   color: black;
   text-decoration: none;
 }
-.drawer__content .drawer__link a a:hover {
+.dashboard .drawer__content .drawer__link a a:hover {
   font-weight: bold;
 }
-.drawer__content .drawer__link a a:active {
+.dashboard .drawer__content .drawer__link a a:active {
   font-weight: bold;
 }
-.drawer__content .drawer__link img {
+.dashboard .drawer__content .drawer__link img {
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
 }
-.drawer__content .drawer__link .link {
+.dashboard .drawer__content .drawer__link .link {
   margin-bottom: 0.2rem;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
 }
-.drawer__content .drawer__footer {
+.dashboard .drawer__content .drawer__footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: white;
   width: 12rem;
   font-family: Roboto;
+  border-radius: 0 0 20px 0;
 }
-.drawer__content .drawer__footer hr {
+.dashboard .drawer__content .drawer__footer hr {
   color: #E0E0E0;
 }
-.drawer__content .drawer__footer img {
+.dashboard .drawer__content .drawer__footer img {
   margin-top: 2rem;
   margin-left: 2rem;
   margin-right: 1rem;
   width: 2rem;
   border-radius: 20px;
 }
-
 @media screen and (min-width: 725px) {
-  body, html {
+  .dashboard body,
+  .dashboard html {
     background-color: white;
   }
-  body header .header__manage, html header .header__manage {
+  .dashboard body header .header__manage,
+  .dashboard html header .header__manage {
     display: flex;
     align-items: center;
   }
-  body header .header__manage img, html header .header__manage img {
+  .dashboard body header .header__manage img,
+  .dashboard html header .header__manage img {
     width: 50%;
   }
-  body header .header__manage h2, html header .header__manage h2 {
+  .dashboard body header .header__manage h2,
+  .dashboard html header .header__manage h2 {
     width: 50%;
     text-align: center;
   }
-  body header nav .nav__link, html header nav .nav__link {
+  .dashboard body header nav .nav__link,
+  .dashboard html header nav .nav__link {
     display: block;
     width: 50%;
   }
-  body header nav .nav__link a, html header nav .nav__link a {
+  .dashboard body header nav .nav__link a,
+  .dashboard html header nav .nav__link a {
     margin-right: 7.5%;
   }
-  body header nav .chakra-button, html header nav .chakra-button {
+  .dashboard body header nav .chakra-button,
+  .dashboard html header nav .chakra-button {
     display: none;
   }
-  body .work, html .work {
+  .dashboard body .work,
+  .dashboard html .work {
     height: 50vh;
     margin: 0;
     padding: 0;
   }
-  body .work .title_work, html .work .title_work {
+  .dashboard body .work .title_work,
+  .dashboard html .work .title_work {
     width: 50%;
     margin: 0;
   }
-  body .work .title_work h2, html .work .title_work h2 {
+  .dashboard body .work .title_work h2,
+  .dashboard html .work .title_work h2 {
     display: flex;
     align-items: center;
   }
-  body .work .illus, html .work .illus {
+  .dashboard body .work .illus,
+  .dashboard html .work .illus {
     margin: 0;
   }
-  body .work .illus img, html .work .illus img {
+  .dashboard body .work .illus img,
+  .dashboard html .work .illus img {
     width: 50%;
+  }
+  .dashboard body .table_cards,
+  .dashboard html .table_cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }/*# sourceMappingURL=style.css.map */
