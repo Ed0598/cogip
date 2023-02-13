@@ -24,7 +24,7 @@ try {
     return false;
   }
 }
-// // Route to generate a JWT
+// Route to generate a JWT
 $router->post('/generate-jwt', function () {
     $request = json_decode(file_get_contents('php://input'), true);
     $userId = $request['userId'];
@@ -33,9 +33,34 @@ $router->post('/generate-jwt', function () {
         'success'=>true,
         'jwt'=>$jwt
     ]);
+    return;
+});
+$router->mount('/*', function () {
+    $headers = getallheaders();
+    if (isset($headers['key']))
+    {
+        $headerData = $headers['key'];
+        if (!verifyJWT($headerData) && $headerData != 'gen')
+        {
+            echo json_encode([
+                    'success'=>false,
+                    'jwt'=>'u lose'
+                ]);
+            exit();
+        }
+    }
+    else
+    {
+        echo json_encode([
+            'success'=>false,
+            'jwt'=>'u lose'
+        ]);
+        exit();
+    }
 });
 
 $router->mount('/contacts',function() use($router){
+    
     $controller = new App\Controller\Contacts();
     $router->get('/five', function () use ($controller) {
         echo $controller->getFive();

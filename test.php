@@ -17,16 +17,17 @@
     let test= 'http://localhost:8001/generate-jwt'
     fetch(test,{
         method:"POST",
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' , key:'gen'},
         body: JSON.stringify({ userId : "test"})})
         .then((response) => { return response.json(); })
         .then((data) => {
             console.log("ajoute un contact");
             console.log(data);
             key = data.jwt;
-            let contacts = 'http://localhost:8001/contacts/all'
-            // fetch(contacts,{method:"GET", headers: {'key':key}}) 
-            fetch(contacts,{method:"GET"}) 
+            console.log(key);
+            let contacts = 'http://localhost:8001/contacts/2'
+            fetch(contacts,{method:"GET", headers: {key:key}}) 
+            // fetch(contacts,{method:"GET"}) 
                 .then((response) => { return response.json(); })
                 .then((data) => { console.log("tous les contacts"); console.log(data) })
         })
