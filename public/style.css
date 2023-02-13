@@ -268,9 +268,10 @@ body main h1, html main h1, .root main h1 {
 body main .info, html main .info, .root main .info {
   text-align: center;
 }
-body main br, html main br, .root main br {
+body main hr, html main hr, .root main hr {
   color: black;
   height: 1px;
+  margin: 10%;
 }
 
 .dashboard {

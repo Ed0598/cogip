@@ -5,9 +5,10 @@ import Table from '../Table';
 
 import { ChakraProvider } from '@chakra-ui/react';
 import DisplayContact from '../DisplayContact.js';
+import ContactPeople from '../Contact_people';
 
 
-function ShowContacts() {
+function ShowInvoices() {
     return (
         <ChakraProvider>    
             <header>
@@ -17,7 +18,8 @@ function ShowContacts() {
             <main>
                 <DisplayContact table="compagnies" display="1" 
                 name="name" tva="tva" country="country" type="type" />
-                <br />
+                <hr />
+                <ContactPeople />
                 <div className='over'>
                     <Table table='factures' display="five" 
                     id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
@@ -29,4 +31,4 @@ function ShowContacts() {
 )
     };
 
-    export default ShowContacts;
+    export default ShowInvoices;

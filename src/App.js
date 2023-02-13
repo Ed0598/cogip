@@ -7,7 +7,7 @@ import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
 import NewInvoice from "./pages/Newinvoice";
 import PrivacyPolicy from "./pages/Privacypolicy";
-import ShowContacts from "./pages/ShowContacts";
+import ShowInvoices from "./pages/ShowInvoices";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/Contacts" element={<Contacts />} />
         <Route path="/Companies" element={<Companies />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/ShowContacts" element={<ShowContacts />} />
+        <Route path="/ShowInvoices" element={<ShowInvoices />} />
 
       </Routes>
     </div> 
