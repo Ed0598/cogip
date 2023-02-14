@@ -51,34 +51,66 @@ Class Companies extends Controler
         $errors= array();
         
             //gestion du nom
-        $name= $payload['name'];
-        if (!preg_match("/^[a-zA-Z\s-]$/",$name,$tmp))
-            $errors['name']= 'Le nom ne peut contenir que des lettres';
+            if (isset($payload))
+            {
+                $name= $payload['name'];
+                if (!preg_match("/^[a-zA-Z\s-]$/",$name,$tmp))
+                    $errors['name']= 'Le nom ne peut contenir que des lettres';
+
+            }
+            else
+                $errors['name']= 'Le nom n\'existe pas';
 
             //gestion du type_id
-        $type_id=$payload['type_id'];
-        if(!preg_match("/^[0-9]$/", $type_id,$tmp))
-            $errors['tva']='Le identifiant du type ne peut contenir que des chiffres';
+            if (isset($payload)){
+                $type_id=$payload['type_id'];
+                if(!preg_match("/^[0-9]$/", $type_id,$tmp));
+                $errors['tva']='Le identifiant du type ne peut contenir que des chiffres';
+
+            }
+            else
+            $errors['tva']='Identifiant inconnu';
 
             //gestion du pays
-        $country=$payload['country'];
-        if (!preg_match("/^[a-zA-Z\s-]$/",$country,$tmp))
-            $errors['country']= 'Le pays ne peut contenir que des lettres';
+            if (isset($payload)){
+                $country=$payload['country'];
+                if (!preg_match("/^[a-zA-Z\s-]$/",$country,$tmp));
+                $errors['country']= 'Le pays ne peut contenir que des lettres';
+
+            }
+            else
+            $errors['country']= 'Pays incorrect';
 
             //gestion TVA
-        $tva=$payload["tva"];
-        if(!preg_match("/^[0-9]$/", $tva,$tmp))
-            $errors['tva']='Le numéro de tva ne peut contenir que des chiffres';
+            if (isset($payload)){
+            $tva=$payload["tva"];
+                if(!preg_match("/^[0-9]$/", $tva,$tmp))
+                $errors['tva']='Le numéro de tva ne peut contenir que des chiffres';
+
+            }
+            else
+            $errors['tva']='Numéro de TVA incorrect';
 
             //gestion de la date de creation
-        $created_at = $payload['created_at'];
-        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
-            $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+            if (isset($payload)){
+            $created_at = $payload['created_at'];
+                if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
+                $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+            }
+            else
+            $errors['date_create']= 'Date saisie incorrecte';
+
         
             //gestion de la date de mise a jour
-        $update_at = $payload['update_at'];
-        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
-            $errors['date_update']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+            if (isset($payload)){
+                $update_at = $payload['update_at'];
+                if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
+                    $errors['date_update']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+            }
+            else
+            $errors['date_update']= 'Date saisie incorrecte';
+
+
     
         if ($type=='insert')
         {
