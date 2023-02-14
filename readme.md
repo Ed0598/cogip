@@ -20,12 +20,23 @@ Start the API
 | GET | /[compagnies - factures - contacts]/[id] | | Return the element with the id [id]|
 | GET | /contacts/company/[id] | | Return every contact in the company with the id [id]|
 | POST | /compagnies/ | `{ name : <string>, type_id: <int>,  country:<string>, tva:<string>,  phone:<string>,  created_at: <date>, update_at: <date>}` | Add compagny |
+| POST | /generate-jwt | `{ userId : <string> }` | Generate a toekn to interact with the API |
 | POST | /contacts/ | `{ name : <string>,  company_id: <int>, email:<string>, phone:<string>, created_at: <date>, update_at: <date>}` | Add contact |
 | POST | /factures/ | `{ ref : <string>, id_company: <int>, created_at: <date>, update_at: <date>}` | Add facture |
+| POST | /login/user | `{ email : <string> }` | check if email exist |
+| POST | /login/password | `{ email : <string>, password: <string> }` | check if email exist and password exist |
+| POST | /login/adduser | `{ username : <string>, email : <string>, password : <string>}` | Create user |
 | PATCH | /compagnies/ | `{ id:<id>, name : <string>, type_id: <int>,  country:<string>, tva:<string>,  phone:<string>,  created_at: <date>, update_at: <date>}` | Update compagny |
 | PATCH | /contacts/ | `{ id:<id>, name : <string>,  company_id: <int>, email:<string>, phone:<string>, created_at: <date>, update_at: <date>}` | Update contact |
 | PATCH | /factures/ | `{ id:<id>, ref : <string>, id_company: <int>, created_at: <date>, update_at: <date>}` | Update facture |
 | DELETE | /[compagnies - factures - contacts]/[id] | | Remove the element with the id [id] |
+
+### Token:
+
+To use the DB you must include the token in the header of each request
+```
+headers: { key:'token'}
+```
 
 #### Return values:
 
