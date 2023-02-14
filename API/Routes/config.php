@@ -29,10 +29,26 @@ $router->post('/generate-jwt', function () {
     $request = json_decode(file_get_contents('php://input'), true);
     $userId = $request['userId'];
     $jwt = generateJWT($userId);
-    echo json_encode([
-        'success'=>true,
-        'jwt'=>$jwt
-    ]);
+    $addToken= "INSERT INTO tokens (token) VALUES ('$jwt')";
+    $verifyToken= "SELECT token FROM tokens where token ='$jwt'";
+    
+    
+    try{
+        if (createRequest($verifyToken)!= $jwt)
+        {
+            createRequest($addToken);
+            echo json_encode([
+                'success'=>true,
+                'jwt'=>$jwt,
+            ]);
+        }
+    }
+    catch (\Exception $e) {
+        echo json_encode([
+            'success'=>false,
+            'message'=> $e->getMessage(),
+        ]);
+    }
     return;
 });
 $router->mount('/*', function () {
