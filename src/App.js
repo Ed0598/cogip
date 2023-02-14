@@ -10,6 +10,7 @@ import Companies from "./pages/Companies";
 import NewInvoice from "./pages/Newinvoice";
 import PrivacyPolicy from "./pages/Privacypolicy";
 import ShowCompanies from "./pages/ShowCompanies";
+import ShowContacts from "./pages/showcontact";
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/PrivacyPolicy",
     element: <PrivacyPolicy />,
+  },
+  {
+    path: "/Contacts/:id",
+    element: <ShowContacts />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
