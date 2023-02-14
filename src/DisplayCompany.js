@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-function DisplayContact(props){
+function DisplayCompany(props){
     const [data, setData] = useState([]);
+    let { id } = useParams();
+
 
     useEffect(() => {
-        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display;
+        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + id;
         fetch(url, { method: 'GET' })
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
@@ -33,4 +36,4 @@ function DisplayContact(props){
         </>
     );
     }
-export default DisplayContact;
+export default DisplayCompany;
