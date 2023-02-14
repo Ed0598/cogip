@@ -346,7 +346,9 @@ html h1,
   font-weight: 900;
   font-size: 2rem;
   color: black;
-  margin: 2rem;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 6vh;
 }
 body h1::after,
 html h1::after,
@@ -357,7 +359,7 @@ html h1::after,
   height: 1rem;
   background: #F9DE4E;
   margin: auto;
-  margin-left: 4.5rem;
+  margin-left: 43%;
   margin-top: -1.4rem;
 }
 body h1,
