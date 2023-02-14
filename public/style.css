@@ -349,8 +349,6 @@ html h1,
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 6vh;
-  margin: 2rem;
-  margin-left: 2rem;
 }
 body h1::after,
 html h1::after,
@@ -380,6 +378,31 @@ html hr,
   color: black;
   height: 1px;
   margin: 10%;
+}
+body .contact_people,
+html .contact_people,
+.root .contact_people {
+  display: flex;
+}
+body .contact_people h3,
+html .contact_people h3,
+.root .contact_people h3 {
+  margin: 2rem;
+}
+body .contact_people img,
+html .contact_people img,
+.root .contact_people img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 40px;
+  margin: 2rem;
+}
+body #cp_main,
+html #cp_main,
+.root #cp_main {
+  display: flex;
+  margin-left: auto;
+  width: 4rem;
 }
 body .dashboard,
 html .dashboard,
