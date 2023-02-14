@@ -8,7 +8,6 @@ import {
 import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
-import TablePagination from '../Pagination';
 import Table from '../Table';
 
 
