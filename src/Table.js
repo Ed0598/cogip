@@ -5,7 +5,7 @@ function Table(props) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display;
+        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display  ;
         fetch(url, { method: 'GET' })
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
