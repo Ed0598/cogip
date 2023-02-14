@@ -1,11 +1,11 @@
 {
     "name": "becode/base",
-  "autoload": {
+    "autoload": {
     "psr-4": {
       "App\\": "./"
     },
     "classmap": [
-      "src/"
+      "./"
     ]
   },
     "require": {
