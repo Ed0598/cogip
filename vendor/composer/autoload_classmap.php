@@ -10,7 +10,7 @@ return array(
     'App\\Controller\\Contacts' => $baseDir . '/API/Controllers/Contact.class.php',
     'App\\Controller\\Controler' => $baseDir . '/API/Controllers/Controler.class.php',
     'App\\Controller\\Invoices' => $baseDir . '/API/Controllers/Invoices.class.php',
-    'App\\Controller\\User' => $baseDir . '/API/Controllers/Createlogin.class.php',
+    'App\\Controller\\Login' => $baseDir . '/API/Controllers/Login.class.php',
     'Bramus\\Router\\Router' => $baseDir . '/API/Routes/vendor/bramus/router/src/Bramus/Router/Router.php',
     'ComposerAutoloaderInit3ea7036d18dcb62a9ff9126f4e88de40' => $baseDir . '/API/Routes/vendor/composer/autoload_real.php',
     'ComposerAutoloaderInit7a494e1a99011e27c25f6be2fb5c0c5b' => $vendorDir . '/composer/autoload_real.php',
@@ -1396,4 +1396,5 @@ return array(
     'TheSeer\\Tokenizer\\TokenCollectionException' => $vendorDir . '/theseer/tokenizer/src/TokenCollectionException.php',
     'TheSeer\\Tokenizer\\Tokenizer' => $vendorDir . '/theseer/tokenizer/src/Tokenizer.php',
     'TheSeer\\Tokenizer\\XMLSerializer' => $vendorDir . '/theseer/tokenizer/src/XMLSerializer.php',
+    'token' => $baseDir . '/API/Controllers/Token.class.php',
 );

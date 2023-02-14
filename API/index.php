@@ -10,4 +10,5 @@ require('./Controllers/Companies.class.php');
 require('./Controllers/Invoices.class.php');
 
 require('./Routes/config.php');
+require('./test/ContactTest.php');
 ?>

@@ -64,7 +64,7 @@ class ComposerStaticInit7a494e1a99011e27c25f6be2fb5c0c5b
         'App\\Controller\\Contacts' => __DIR__ . '/../..' . '/API/Controllers/Contact.class.php',
         'App\\Controller\\Controler' => __DIR__ . '/../..' . '/API/Controllers/Controler.class.php',
         'App\\Controller\\Invoices' => __DIR__ . '/../..' . '/API/Controllers/Invoices.class.php',
-        'App\\Controller\\User' => __DIR__ . '/../..' . '/API/Controllers/Createlogin.class.php',
+        'App\\Controller\\Login' => __DIR__ . '/../..' . '/API/Controllers/Login.class.php',
         'Bramus\\Router\\Router' => __DIR__ . '/../..' . '/API/Routes/vendor/bramus/router/src/Bramus/Router/Router.php',
         'ComposerAutoloaderInit3ea7036d18dcb62a9ff9126f4e88de40' => __DIR__ . '/../..' . '/API/Routes/vendor/composer/autoload_real.php',
         'ComposerAutoloaderInit7a494e1a99011e27c25f6be2fb5c0c5b' => __DIR__ . '/..' . '/composer/autoload_real.php',
@@ -1450,6 +1450,7 @@ class ComposerStaticInit7a494e1a99011e27c25f6be2fb5c0c5b
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'token' => __DIR__ . '/../..' . '/API/Controllers/Token.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
