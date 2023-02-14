@@ -1,5 +1,7 @@
-import {Routes, Route} from "react-router-dom";
-//import Index from "./index.js";
+
+import * as React from 'react';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import * as ReactDOM from "react-dom";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Invoices from "./pages/Invoices";
@@ -10,23 +12,41 @@ import PrivacyPolicy from "./pages/Privacypolicy";
 import ShowInvoices from "./pages/ShowInvoices";
 
 
-function App() {
-  return (
-    <div className="App" >
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/NewInvoice" element={<NewInvoice />} />
-        <Route path="/Invoices" element={<Invoices />} />
-        <Route path="/Invoices/:id" element={<ShowInvoices />} />
-        <Route path="/Contacts" element={<Contacts />} />
-        <Route path="/Companies" element={<Companies />} />
-        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/NewInvoice",
+    element: <NewInvoice />,
+  },
+  {
+    path: "/Invoices",
+    element: <Invoices />,
+  },
+  {
+    path: "/ShowInvoices",
+    element: <ShowInvoices />,
+  },
+  {
+    path: "/Contacts",
+    element: <Contacts />,
+  },
+  {
+    path: "/Companies",
+    element: <Companies />,
+  },
+  {
+    path: "/PrivacyPolicy",
+    element: <PrivacyPolicy />,
+  },
+]);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
 
-      </Routes>
-    </div> 
-  );
-}
-
-
-export default App;

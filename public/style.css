@@ -164,6 +164,7 @@ html main .over ul,
   display: flex;
   justify-content: center;
   text-align: center;
+  list-style-type: none;
 }
 body main .over ul li,
 html main .over ul li,
