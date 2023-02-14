@@ -11,6 +11,7 @@ import NewInvoice from "./pages/Newinvoice";
 import PrivacyPolicy from "./pages/Privacypolicy";
 import ShowCompanies from "./pages/ShowCompanies";
 import ShowContacts from "./pages/showcontact";
+import ShowInvoices from "./pages/ShowInvoices";
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/Contacts/:id",
     element: <ShowContacts />,
+  },
+  {
+    path: "/Invoices/:id",
+    element: <ShowInvoices />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
