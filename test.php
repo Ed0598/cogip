@@ -25,7 +25,7 @@
             console.log(data);
             key = data.jwt;
             console.log(key);
-            let contacts = 'http://localhost:8001/contacts/2'
+            let contacts = 'http://localhost:8001/contacts/all'
             fetch(contacts,{method:"GET", headers: {key:key}}) 
             // fetch(contacts,{method:"GET"}) 
                 .then((response) => { return response.json(); })

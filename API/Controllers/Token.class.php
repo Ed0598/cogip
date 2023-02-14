@@ -4,10 +4,24 @@ class token {
     public function post($request)
     {
         $jwt = self::generateJWT($request['userId']);
-        echo json_encode([
-            'success'=>true,
-            'jwt'=>$jwt
-        ]);
+        $addToken= "INSERT INTO tokens (token) VALUES ('$jwt')";
+        $verifyToken= "SELECT token FROM tokens where token ='$jwt'";
+        try{
+            if (createRequest($verifyToken)!= $jwt)
+            {
+                createRequest($addToken);
+                echo json_encode([
+                    'success'=>true,
+                    'jwt'=>$jwt,
+                ]);
+            }
+        }
+        catch (\Exception $e) {
+            echo json_encode([
+                'success'=>false,
+                'message'=> $e->getMessage(),
+            ]);
+        }
     }
 
     public function check($headers)

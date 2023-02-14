@@ -1,1 +1,1 @@
-{"version":1,"defects":{"ContactTest::testContactAll":7,"ContactTest::testPostMethod":8},"times":{"ContactTest::testContactAll":0.006,"ContactTest::testPostMethod":0.06}}
+{"version":1,"defects":{"ContactTest::testContactAll":7,"ContactTest::testPostMethod":8},"times":{"ContactTest::testContactAll":0.006,"ContactTest::testPostMethod":0.079}}
