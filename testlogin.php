@@ -8,35 +8,41 @@
 </head>
 <body>
     <script>
-            async function verifyAndGetPassword()
+    
+            async function verifyAndGetPassword(test)
             {
-                userUrl= 'https://api.hugoorickx.tech/user'
+                userUrl= 'http://localhost:8001/login/user'
                 userResponse= await fetch(userUrl,{
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json', key:test },
                         body: JSON.stringify ({ email:"<?= $_POST['username']?>"})
 
                 })
                 let userData= await userResponse.json()
-                console.log("Verification de l'utilisateur")
-                console.log(userData)
-                console.log(userData.success)
                 if (userData.success){
-                    passwordUrl= 'https://api.hugoorickx.tech/password'
+                    passwordUrl= 'http://localhost:8001/login/password'
                     passwordResponse= await fetch (passwordUrl,{
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json', key:test },
                         body: JSON.stringify ({ email:"<?= $_POST['username']?>",
                                                 password:"<?= sha1($_POST['password'])?>"})
                     })
-                    console.log("<?= $_POST['username']?>");
                     let passwordData= await passwordResponse.json()
-                    console.log("Connexion réussie")
-                    console.log(passwordData)
-                }
-            }
-            verifyAndGetPassword()
+                    if (passwordData.success)
+                        console.log("Connexion réussie")
+                    console.log("Connexion ratee")
+                } else
+                    console.log("Connexion ratee");
 
+            }
+            
+            let test= 'http://localhost:8001/generate-jwt'
+            fetch(test,{
+                method:"POST",
+                headers: { 'Content-Type': 'application/json' , key:'gen'},
+                body: JSON.stringify({ userId : "test"})})
+                .then((response) => { return response.json(); })
+                .then((data) => { verifyAndGetPassword(key = data.jwt)})
     </script>        
 </body>
 </html>
