@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import { Link } from 'react-router-dom';
 
 function TablePagination(props) {
   const [data, setData] = useState([]);
@@ -45,7 +46,7 @@ function TablePagination(props) {
                   </tr>
                   {Array.isArray(currentData) ? currentData.map((elem,i) => (
                       <tr key={elem[props.id]} style={i% 2 === 1 ? { backgroundColor: '#F5F5F5' } : {}}>
-                          <td>{elem[props.td1]}</td>
+                          <td><Link to={`/${props.lien}/${elem[props.id]}`}>{elem[props.td1]}</Link></td>
                           <td>{elem[props.td2]}</td>
                           <td>{elem[props.td3]}</td>
                           <td>{elem[props.td4]}</td>

@@ -4,11 +4,11 @@ import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 import Table from '../Table';
 
 import { ChakraProvider } from '@chakra-ui/react';
-import DisplayContact from '../DisplayContact.js';
+import DisplayCompany from '../DisplayCompany.js';
 import ContactPeople from '../Contact_people';
 
 
-function ShowInvoices() {
+function ShowCompanies() {
     return (
         <ChakraProvider>    
             <header>
@@ -16,8 +16,7 @@ function ShowInvoices() {
                 <img src={Rectangle_blanc} alt="#" />
             </header>
             <main>
-                <DisplayContact table="compagnies" display="1" 
-                name="name" tva="tva" country="country" type="type" />
+                <DisplayCompany table="compagnies" />
                 <hr />
                 <ContactPeople table="contacts" display="company" />
                 <div className='over'>
@@ -31,4 +30,4 @@ function ShowInvoices() {
 )
     };
 
-    export default ShowInvoices;
+    export default ShowCompanies;
