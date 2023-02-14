@@ -82,7 +82,7 @@ class Contacts extends Controler
         $errors=array();
 
             //gestion du nom
-            if (isset($payload)){
+            if (isset($payload['name'])){
                 $name= $payload['name'];
                 if (!preg_match("/^[a-zA-Z\s-]$/", $name, $tmp))
                     $errors['name']= 'Le nom ne peut contenir que des lettres';
@@ -92,7 +92,7 @@ class Contacts extends Controler
 
         
             //gestion de l'id de la compagnie
-            if (isset($payload)){
+            if (isset($payload['company_id'])){
                 $company_id = $payload['company_id'];
                 if (!preg_match("/^[0-9]$/", $company_id, $tmp))
                     $errors['company_id']= 'Le numéro de compagnie ne peut contenir que des nombres';
@@ -103,7 +103,7 @@ class Contacts extends Controler
 
         
             //gestion de l'email
-            if (isset($payload)){
+            if (isset($payload['email'])){
                 $email = $payload['email'];
                 if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email, $tmp))
                 $errors['email']="L'adresse email n'est pas valide ";
@@ -114,7 +114,7 @@ class Contacts extends Controler
 
         
             //gestion numéro de téléphone
-            if (isset($payload)){
+            if (isset($payload['phone'])){
                 $phone = $payload['phone'];
                 if (!preg_match("/^[0-9]$/", $phone, $tmp))
                     $errors['phone']= 'Le numéro de téléphone ne peut contenir que des nombres';
@@ -123,22 +123,21 @@ class Contacts extends Controler
 
 
             //gestion de la date de creation
-            if (isset($payload)){
+            if (isset($payload['created_at'])){
                 $created_at = $payload['created_at'];
                     if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
-                        $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+                        $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
             }
-            $errors['date_create']= 'Date saisie incorrecte ';
-
+            $errors['created_at']= 'Date saisie incorrecte ';
         
             //gestion de la date de mise a jour
-            if (isset($payload)){
+            if (isset($payload['update_at'])){
                 $update_at = $payload['update_at'];
                     if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
-                        $errors['date_update']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+                        $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
             }
             else 
-            $errors['date_update']= 'Date saisie incorrecte';
+            $errors['update_at']= 'Date saisie incorrecte';
 
             
 

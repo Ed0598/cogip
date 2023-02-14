@@ -51,7 +51,7 @@ Class Companies extends Controler
         $errors= array();
         
             //gestion du nom
-            if (isset($payload))
+            if (isset($payload['name']))
             {
                 $name= $payload['name'];
                 if (!preg_match("/^[a-zA-Z\s-]$/",$name,$tmp))
@@ -62,17 +62,17 @@ Class Companies extends Controler
                 $errors['name']= 'Le nom n\'existe pas';
 
             //gestion du type_id
-            if (isset($payload)){
+            if (isset($payload['type_id'])){
                 $type_id=$payload['type_id'];
                 if(!preg_match("/^[0-9]$/", $type_id,$tmp));
-                $errors['tva']='Le identifiant du type ne peut contenir que des chiffres';
+                $errors['type_id']='Le identifiant du type ne peut contenir que des chiffres';
 
             }
             else
-            $errors['tva']='Identifiant inconnu';
+            $errors['type_id']='Identifiant inconnu';
 
             //gestion du pays
-            if (isset($payload)){
+            if (isset($payload['country'])){
                 $country=$payload['country'];
                 if (!preg_match("/^[a-zA-Z\s-]$/",$country,$tmp));
                 $errors['country']= 'Le pays ne peut contenir que des lettres';
@@ -92,23 +92,23 @@ Class Companies extends Controler
             $errors['tva']='Numéro de TVA incorrect';
 
             //gestion de la date de creation
-            if (isset($payload)){
+            if (isset($payload['created_at'])){
             $created_at = $payload['created_at'];
                 if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
-                $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+                $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
             }
             else
-            $errors['date_create']= 'Date saisie incorrecte';
+            $errors['created_at']= 'Date saisie incorrecte';
 
         
             //gestion de la date de mise a jour
-            if (isset($payload)){
+            if (isset($payload['update_at'])){
                 $update_at = $payload['update_at'];
                 if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
-                    $errors['date_update']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+                    $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
             }
             else
-            $errors['date_update']= 'Date saisie incorrecte';
+            $errors['update_at']= 'Date saisie incorrecte';
 
 
     
@@ -122,7 +122,7 @@ Class Companies extends Controler
             //gestion id a modifier
         $id= $payload['id'];
         if(!preg_match("/^[0-9]$/", $id,$tmp))
-            $errors['tva']='Le numéro d\'id ne peut contenir que des chiffres';
+            $errors['id']='Le numéro d\'id ne peut contenir que des chiffres';
 
         if(!empty($errors))
             throw new \Exception(join(", ", $errors), 1);
