@@ -349,6 +349,8 @@ html h1,
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 6vh;
+  margin: 2rem;
+  margin-left: 2rem;
 }
 body h1::after,
 html h1::after,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function DisplayCompany(props){
+function DisplayContact(props){
     const [data, setData] = useState([]);
     let { id } = useParams();
 
@@ -12,6 +12,7 @@ function DisplayCompany(props){
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
     }, []);
+    console.log(data);
     return (
         <>
             <div className='rectangle_jaune'>
@@ -23,17 +24,17 @@ function DisplayCompany(props){
                 {data.map((elem) => (
                     <p><b>Name: </b>{elem.name}</p>
                 ))}
-                {data.map((elem) => (
-                    <p><b>TVA: </b>{elem.tva}</p>
+                 {data.map((elem) => (
+                    <p><b>Phone: </b>{elem.phone}</p>
                 ))}
                 {data.map((elem) => (
-                    <p><b>Country: </b>{elem.country}</p>
+                    <p><b>Mail: </b>{elem.email}</p>
                 ))}
                 {data.map((elem) => (
-                    <p><b>Type: </b>{elem.type}</p>
+                    <p><b>Company: </b>{elem.name_compagnie}</p>
                 ))}
             </div>
         </>
     );
     }
-export default DisplayCompany;
+export default DisplayContact;
