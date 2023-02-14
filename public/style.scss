@@ -364,13 +364,34 @@ html,
             color: black;
             height: 1px;
             margin: 10%;
-        
+        }
 
-        //contact_name
+    //contact_name
 
-        //contact_poeple
+    //contact_people
+
+    .contact_people{
+        display: flex;
+
+        h3{
+            margin:2rem;
+        }
+
+        img{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 40px;
+            margin: 2rem;
+        }
+
     }
 
+    #cp_main{
+        display: flex;
+        margin-left: auto;
+        width: 4rem;
+        
+    }
     //show_contact
 
 

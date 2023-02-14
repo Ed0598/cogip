@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Boy from '../src/assets/images/Boy.svg';
+import Main from '../src/assets/images/Main.svg';
 
 function ContactPeople(props){
     const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ function ContactPeople(props){
             <h2>
                 Contact people
             </h2>
-            <div className='contacts'>
+            <div className='contact_people'>
                 {Array.isArray(data) ? data.map((elem) => (
                     <div className='contact'>
                         <h3>
@@ -28,6 +29,7 @@ function ContactPeople(props){
                      </div>
                  )) : null}
             </div>
+            <img src={Main} alt="#" id="cp_main"/>
             <hr />
         </>
     )
