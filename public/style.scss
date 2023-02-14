@@ -372,24 +372,38 @@ html,
 
     .contact_people{
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
 
-        h3{
-            margin:2rem;
+        .contact{
+            border-radius: 20px;
+            background-color: #F5F5F5;
+            box-shadow: 0px 0px 60px -29px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: row;
+            margin: 1rem;
+
+            h3{
+                margin:2rem;
+                margin-left: 1rem;
+                font-family: Roboto;
+                font-weight: 900;
+                font-size: 1.3rem;
+            }
+
+            img{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 40px;
+                margin: 1rem;
+            }
         }
-
-        img{
-            width: 4rem;
-            height: 4rem;
-            border-radius: 40px;
-            margin: 2rem;
-        }
-
     }
 
     #cp_main{
         display: flex;
         margin-left: auto;
-        width: 4rem;
+        width: 8rem;
         
     }
     //show_contact

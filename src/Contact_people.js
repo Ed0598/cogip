@@ -22,10 +22,10 @@ function ContactPeople(props){
             <div className='contact_people'>
                 {Array.isArray(data) ? data.map((elem) => (
                     <div className='contact'>
+                        <img src={Boy} alt="#" />
                         <h3>
                             {elem.name}
                         </h3>
-                        <img src={Boy} alt="#" />
                      </div>
                  )) : null}
             </div>
