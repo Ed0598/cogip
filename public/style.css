@@ -347,6 +347,7 @@ html h1,
   font-size: 2rem;
   color: black;
   margin: 2rem;
+  margin-left: 2rem;
 }
 body h1::after,
 html h1::after,
