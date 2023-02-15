@@ -8,29 +8,29 @@ import {
 import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
-import FormInvoice from '../FormInvoice';
+import FormCompany from '../FormCompany';
 
-function NewInvoice() {
+function NewCompany() {
     return(
         <div className='body_dashboard_invoice'>
-        <div className='new_invoice'>
-            <h2>New Invoice</h2>
+            <div className='new_invoice'>
+            <h2>New Company</h2>
             <BreadcrumbNav />
             <MenuDrawer />
 
             <div className='rectangle_mauve'>
                 <img src={IlluDashboard} class="illuDashboard" alt="#"></img>
                 <h3>Welcome back ### !</h3>
-                <p>You can here add an invoice.</p>
+                <p>You can here add a company.</p>
 
             </div>
 
             <div className='div_form'>
-               <FormInvoice />
+               <FormCompany />
             </div>
         </div>
         </div>
     )
 }
 
-export default NewInvoice;
+export default NewCompany;

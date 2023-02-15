@@ -13,6 +13,7 @@ import ShowCompanies from "./pages/ShowCompanies";
 import ShowContacts from "./pages/showcontact";
 import ShowInvoices from "./pages/ShowInvoices";
 import NewContact from "./pages/NewContact";
+import NewCompany from './pages/Newcompany';
 
 
 const router = createBrowserRouter([
@@ -29,8 +30,8 @@ const router = createBrowserRouter([
     element: <NewInvoice />,
   },
   {
-    path: "/NewContact",
-    element: <NewContact />,
+    path: "/Newcompany",
+    element: <NewCompany />,
   },
   {
     path: "/Invoices",

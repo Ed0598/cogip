@@ -12,12 +12,12 @@ import { useParams } from 'react-router-dom';
 
     
      
-function FormInvoice(props) {
+function FormCompany(props) {
     const [data, setData] = useState([]);
     let { id } = useParams();
 
     useEffect(() => {
-        let url = 'https://api.hugoorickx.tech/' + props.factures;
+        let url = 'https://api.hugoorickx.tech/' + props.compagnies;
         fetch(url, { method: 'POST' })
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
@@ -27,19 +27,21 @@ function FormInvoice(props) {
         
             <FormControl isRequired>
                 <div className='form_label'>
-                    <FormLabel>Invoice Number: </FormLabel>
-                    <Input placeholder='Invoice Number' />
-                    <FormLabel>Dates due: </FormLabel>
-                    <Input placeholder='Dates due' />
-                    <FormLabel>Company: </FormLabel>
-                    <Select placeholder='Select company'>
-                        <option>Lego</option>
-                        <option>Apple</option>
-                        <option>Logitech</option>
-                        <option>Ikea</option>
-                        <option>Facebook</option>
-                        <option>Macdou</option>
+                    <FormLabel>Name: </FormLabel>
+                    <Input placeholder='Company name' />
+                    <FormLabel>TVA: </FormLabel>
+                    <Input placeholder='TVA' />
+                    <FormLabel>Country: </FormLabel>
+                    <Select placeholder='Select country'>
+                        <option>Belgium</option>
+                        <option>France</option>
+                        <option>Netherlands</option>
+                        <option>Germany</option>
+                        <option>Spain</option>
+                        <option>Italy</option>
                     </Select>
+                    <FormLabel>Type:</FormLabel>
+                    <Input placeholder='Type' />
                     <FormLabel>Created at:</FormLabel>
                     <Input placeholder='Date of creation' />
                 </div>
@@ -50,4 +52,4 @@ function FormInvoice(props) {
     )
 }
 
-export default FormInvoice;
+export default FormCompany;
