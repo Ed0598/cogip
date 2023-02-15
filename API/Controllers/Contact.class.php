@@ -27,7 +27,7 @@ class Contacts extends Controler
     public function post($payload)
     {
         try { return parent::post(self::buildSQLQuery("insert", $payload)); }
-        catch (Exception $e) { return json_gen(false, $e->getMessage()); } 
+        catch (Exception $e) { return json_gen(false, "Code Erreur :".$e->getCode()." ".$e->getMessage()); } 
     }
 
     /**
@@ -38,7 +38,7 @@ class Contacts extends Controler
     public function patch($payload)
     {
         try { return parent::patch(self::buildSQLQuery("update", $payload)); }
-        catch (Exception $e) { return json_gen(false, $e->getMessage()); } 
+        catch (Exception $e) { return json_gen(false, "Code Erreur :".$e->getCode()." ".$e->getMessage()); } 
     }
 
     /**
@@ -62,9 +62,9 @@ class Contacts extends Controler
         if ($type == "delete")
         {
             if (isset($payload) && !preg_match("/^[0-9]$/", $payload, $tmp))
-                throw new Exception("Le id ne peut contenir que des nombres", 1);
+                throw new Exception("Le id ne peut contenir que des nombres", 406);
             else if (!isset($payload))
-                throw new Exception("Le id ne peut pas etre vide", 1);
+                throw new Exception("Le id ne peut pas etre vide", 406);
             return "DELETE FROM contacts where id=$payload";
         }
 
@@ -75,7 +75,7 @@ class Contacts extends Controler
                 $errors[$field] = "Le champ '$field' n'existe pas.";
 
         if(!empty($errors))
-            throw new Exception(join(", ", $errors), 1);
+            throw new Exception(join(", ", $errors), 406);
 
         //gestion du nom
         $name= $payload['name'];
@@ -111,7 +111,7 @@ class Contacts extends Controler
         {
             //retourne une execption
             if(!empty($errors))
-                throw new Exception(join(", ", $errors), 1);
+                throw new Exception(join(", ", $errors), 406);
             return "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$name',$company_id,'$email','$phone','$created_at','$update_at')";
         }
 
@@ -127,7 +127,7 @@ class Contacts extends Controler
 
         //retourne une execption
         if(!empty($errors))
-            throw new Exception(join(", ", $errors), 1);
+            throw new Exception(join(", ", $errors), 406);
 
         return "UPDATE contacts SET name='$name', company_id=$company_id, email='$email', phone='$phone', created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }

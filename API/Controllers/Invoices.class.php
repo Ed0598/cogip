@@ -9,9 +9,9 @@ class Invoices extends Controler
         if ($type == 'delete')
         {
             if (isset($payload) && !preg_match("/^[0-9]$/",$payload,$tmp))
-                    throw new \Exception("La référence ne peut contenir que des caractère alphanumériques ", 1);
+                    throw new \Exception("La référence ne peut contenir que des caractère alphanumériques ", 406);
             else if (!isset($payload))
-                throw new \Exception("La référence ne peut pas etre vide ", 1);            
+                throw new \Exception("La référence ne peut pas etre vide ", 406);            
             return "DELETE FROM invoices where id= $payload";
         }
         $errors= array();
@@ -22,7 +22,7 @@ class Invoices extends Controler
                 $errors[$field] = "Le champ '$field' n'existe pas.";
  
         if(!empty($errors))
-            throw new \Exception(join(", ", $errors), 1);
+            throw new \Exception(join(", ", $errors), 406);
 
         //gestion des références 
         $ref= $payload['ref'];
@@ -47,7 +47,7 @@ class Invoices extends Controler
         if($type == 'insert')
         {
             if(!empty($errors))
-                throw new \Exception(join(", ", $errors), 1);
+                throw new \Exception(join(", ", $errors), 406);
             return "INSERT into invoices (ref,id_company,created_at,update_at) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."');";
         }
 
@@ -62,7 +62,7 @@ class Invoices extends Controler
             $errors['id']= 'L\'id ne peut pas etre vide ';
 
         if(!empty($errors))
-            throw new \Exception(join(", ", $errors), 1);
+            throw new \Exception(join(", ", $errors), 406);
 
         return "UPDATE invoices SET ref='$ref', id_company='$id_company',  created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }
@@ -78,13 +78,13 @@ class Invoices extends Controler
     public function post($payload)
     {
         try { return parent::post(self::querryInvoices('insert', $payload)); }
-        catch (\Exception $e) { return json_gen(false, $e->getMessage());  } 
+        catch (\Exception $e) { return json_gen(false, "Code Erreur : ". $e->getCode() ." ".$e->getMessage());  } 
     }
 
     public function patch($payload)
     {
         try { return parent::patch(self::querryInvoices('update', $payload)); }
-        catch (\Exception $e) { return json_gen(false, $e->getMessage()); } 
+        catch (\Exception $e) { return json_gen(false, "Code Erreur : ". $e->getCode() ." ".$e->getMessage()); } 
     }
     public function delete($payload)
     {
