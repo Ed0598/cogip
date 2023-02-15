@@ -87,34 +87,14 @@ class Controler
         $error = "La requête n'a pas fonctionné car ";
         try {
             createRequest($request);
-            return json_encode([
-                'success' => true,
-                'message' => $success,
-            ]); 
-        } catch (\Exception $e) {
-            $recup = $e->getMessage();
-            return json_encode([
-                'success' => false,
-                'message' => $error . $recup,
-            ]);
-        } 
+            return json_gen(true, $success);
+        } catch (\Exception $e) { return json_gen(false, $error . $e->getMessage()); } 
     }
     private function errorRequest($request)
     {
         $error = "La requête n'a pas fonctionné car ";
-        try {
-            $success = createRequest($request);
-            return json_encode([
-                'success' => true,
-                'message' => $success,
-            ]); 
-        } catch (\Exception $e) {
-            $recup = $e->getMessage();
-            return json_encode([
-                'success' => false,
-                'message' => $error.$recup,
-            ]);
-        } 
+        try { return json_gen(true, createRequest($request)); }
+        catch (\Exception $e) { return json_gen(false, $error . $e->getMessage()); } 
     }
     
 }

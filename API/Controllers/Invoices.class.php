@@ -16,49 +16,33 @@ class Invoices extends Controler
         }
         $errors= array();
 
+        $requiredKeys = ['name', 'type_id', 'country', 'tva', 'created_at', 'update_at'];
+        foreach ($requiredKeys as $field)
+            if (!isset($payload[$field]))
+                $errors[$field] = "Le champ '$field' n'existe pas.";
+ 
+        if(!empty($errors))
+            throw new \Exception(join(", ", $errors), 1);
+
         //gestion des références 
-        if (isset($payload['ref']))
-        {
-            $ref= $payload['ref'];
-            if (!preg_match("/^[a-zA-Z0-9]$/",$ref,$tmp))
-                $errors['ref'] = "La référence ne peut contenir que des caractère alphanumériques ";
-        }
-        else
-            $errors['ref'] = "La référence ne peut pas etre vide ";
-        
+        $ref= $payload['ref'];
+        if (!preg_match("/^[a-zA-Z0-9]$/",$ref,$tmp))
+            $errors['ref'] = "La référence ne peut contenir que des caractère alphanumériques ";
 
-            //gestion de l'ip de la compagnie
-        if (isset($payload['id_company']))
-        {
-            $id_company=$payload['id_company'];
-            if (!preg_match("/^[0-9]$/",$id_company,$tmp))
-                $errors['id_company'] = "L'ID ne peut contenir que des nombres";
-        }
-        else
-            $errors['id_company'] = "L'ID ne peut pas etre vide ";
+        //gestion de l'ip de la compagnie
+        $id_company=$payload['id_company'];
+        if (!preg_match("/^[0-9]$/",$id_company,$tmp))
+            $errors['id_company'] = "L'ID ne peut contenir que des nombres";
 
+        //gestion de la date de creation
+        $created_at = $payload['created_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
+            $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
 
-            //gestion de la date de creation
-        if (isset($payload['created_at']))
-        {
-            $created_at = $payload['created_at'];
-            if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
-                $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
-        }
-        else
-            $errors['date_create']= 'La date de creation ne peut pas etre vide ';
-
-        
-            //gestion de la date de mise a jour
-        if (isset($payload['update_at']))
-        {
-            $update_at = $payload['update_at'];
-            if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
-                $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
-        }
-        else
-            $errors['update_at']= 'La date de mise a jour ne peut pas etre vide ';
-
+        //gestion de la date de mise a jour
+        $update_at = $payload['update_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
+            $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
 
         if($type == 'insert')
         {
@@ -67,7 +51,7 @@ class Invoices extends Controler
             return "INSERT into invoices (ref,id_company,created_at,update_at) VALUES ('".$ref."','".$id_company."','".$created_at."','".$update_at."');";
         }
 
-            //gestion de l'ip de mise a jour
+        //gestion de l'ip de mise a jour
         if (isset($payload['id']))
         {
             $id= $payload['id'];
@@ -93,28 +77,14 @@ class Invoices extends Controler
 
     public function post($payload)
     {
-        try {
-            $resultRequest = self::querryInvoices('insert', $payload);
-            return parent::post($resultRequest);
-        } catch (\Exception $e) {
-            return json_encode([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        } 
+        try { return parent::post(self::querryInvoices('insert', $payload)); }
+        catch (\Exception $e) { return json_gen(false, $e->getMessage());  } 
     }
 
     public function patch($payload)
     {
-        try {
-            $resultRequest = self::querryInvoices('update', $payload);
-            return parent::patch($resultRequest);
-        } catch (\Exception $e) {
-            return json_encode([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        } 
+        try { return parent::patch(self::querryInvoices('update', $payload)); }
+        catch (\Exception $e) { return json_gen(false, $e->getMessage()); } 
     }
     public function delete($payload)
     {

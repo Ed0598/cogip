@@ -10,18 +10,10 @@ class token {
             if (createRequest($verifyToken)!= $jwt)
             {
                 createRequest($addToken);
-                echo json_encode([
-                    'success'=>true,
-                    'jwt'=>$jwt,
-                ]);
+                echo json_gen(true, $jwt);
             }
         }
-        catch (\Exception $e) {
-            echo json_encode([
-                'success'=>false,
-                'message'=> $e->getMessage(),
-            ]);
-        }
+        catch (\Exception $e) { echo json_gen(false, $e->getMessage()); }
     }
 
     public function check($headers)
@@ -31,19 +23,13 @@ class token {
             $headerData = $headers['key'];
             if (!self::verifyJWT($headerData) && $headerData != 'gen')
             {
-                echo json_encode([
-                        'success'=>false,
-                        'jwt'=>'u lose'
-                    ]);
+                echo json_gen(false, 'Le token n\'est pas valide');
                 exit();
             }
         }
         else
         {
-            echo json_encode([
-                'success'=>false,
-                'jwt'=>'u lose'
-            ]);
+            echo json_gen(false, 'Le token n\'a pas ete donne');
             exit();
         }
     }
@@ -54,17 +40,13 @@ class token {
             "userId" => $userId,
             "exp" => time() + 3600 // token expiration time (1 hour)
         );
-    
         return \Firebase\JWT\JWT::encode($payload, $secretKey, 'HS256');
     }
+
     // Function to verify a JWT
     private function verifyJWT($jwt) {
         $secretKey = "secretKeyForSigningJWT";
-        try {
-            $decoded = \Firebase\JWT\JWT::decode($jwt, new \Firebase\JWT\Key($secretKey, 'HS256'));
-            return $decoded;
-        } catch (Exception $e) {
-            return false;
-        }
+        try { return \Firebase\JWT\JWT::decode($jwt, new \Firebase\JWT\Key($secretKey, 'HS256')); }
+        catch (Exception $e) { return false; }
     }
 }

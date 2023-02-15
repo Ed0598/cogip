@@ -13,27 +13,13 @@ Class Companies extends Controler
     }
 
     public function post($payload){
-        try {
-            $recupRequest = self::querryCompanies("insert", $payload);
-            return parent::post($recupRequest);  
-        } catch (\Exception $e) {
-            return json_encode([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        } 
+        try { return parent::post(self::querryCompanies("insert", $payload)); }
+        catch (\Exception $e) { return json_gen(false, $e->getMessage()); } 
     }
 
     public function patch($payload){
-        try {
-            $recupRequest = self::querryCompanies("update011111111", $payload);
-            return parent::patch($recupRequest);  
-        } catch (\Exception $e) {
-            return json_encode([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        } 
+        try { return parent::patch(self::querryCompanies("update", $payload)); }
+        catch (\Exception $e) { return json_gen(false, $e->getMessage()); } 
     }
 
     public function delete($payload){
@@ -43,74 +29,52 @@ Class Companies extends Controler
     private function querryCompanies($type,$payload){
         if ($type == 'delete')
         {
-            if (!preg_match("/^[0-9]$/",$payload,$tmp))
-                throw new \Exception("La référence ne peut contenir que des caractère alphanumériques ", 1);
+            if (isset($payload) && !preg_match("/^[0-9]$/", $payload, $tmp))
+                throw new \Exception("Le id ne peut contenir que des nombres", 1);
+            else if (!isset($payload))
+                throw new \Exception("Le id ne peut pas etre vide", 1);
             return "DELETE FROM companies where id=$payload";
         }
             
         $errors= array();
         
-            //gestion du nom
-            if (isset($payload['name']))
-            {
-                $name= $payload['name'];
-                if (!preg_match("/^[a-zA-Z\s-]$/",$name,$tmp))
-                    $errors['name']= 'Le nom ne peut contenir que des lettres';
+        $required_fields = ['name', 'type_id', 'country', 'tva', 'created_at', 'update_at'];
+        foreach ($required_fields as $field)
+            if (!isset($payload[$field]))
+                $errors[$field] = "Le champ '$field' n'existe pas.";
 
-            }
-            else
-                $errors['name']= 'Le nom n\'existe pas';
+        if(!empty($errors))
+            throw new \Exception(join(", ", $errors), 1);
 
-            //gestion du type_id
-            if (isset($payload['type_id'])){
-                $type_id=$payload['type_id'];
-                if(!preg_match("/^[0-9]$/", $type_id,$tmp));
-                $errors['type_id']='Le identifiant du type ne peut contenir que des chiffres';
+        //gestion du nom
+        $name= $payload['name'];
+        if (!preg_match("/^[a-zA-Z\s-]$/",$name,$tmp))
+            $errors['name']= 'Le nom ne peut contenir que des lettres';
 
-            }
-            else
-            $errors['type_id']='Identifiant inconnu';
+        //gestion du type_id
+        $type_id=$payload['type_id'];
+        if(!preg_match("/^[0-9]$/", $type_id,$tmp));
+            $errors['type_id']='Le identifiant du type ne peut contenir que des chiffres';
 
-            //gestion du pays
-            if (isset($payload['country'])){
-                $country=$payload['country'];
-                if (!preg_match("/^[a-zA-Z\s-]$/",$country,$tmp));
-                $errors['country']= 'Le pays ne peut contenir que des lettres';
+        //gestion du pays
+        $country=$payload['country'];
+        if (!preg_match("/^[a-zA-Z\s-]$/",$country,$tmp));
+            $errors['country']= 'Le pays ne peut contenir que des lettres';
 
-            }
-            else
-            $errors['country']= 'Pays incorrect';
+        //gestion TVA
+        $tva=$payload["tva"];
+        if(!preg_match("/^[0-9]$/", $tva,$tmp))
+            $errors['tva']='Le numéro de tva ne peut contenir que des chiffres';
 
-            //gestion TVA
-            if (isset($payload)){
-            $tva=$payload["tva"];
-                if(!preg_match("/^[0-9]$/", $tva,$tmp))
-                $errors['tva']='Le numéro de tva ne peut contenir que des chiffres';
-
-            }
-            else
-            $errors['tva']='Numéro de TVA incorrect';
-
-            //gestion de la date de creation
-            if (isset($payload['created_at'])){
-            $created_at = $payload['created_at'];
-                if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
-                $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
-            }
-            else
-            $errors['created_at']= 'Date saisie incorrecte';
-
-        
-            //gestion de la date de mise a jour
-            if (isset($payload['update_at'])){
-                $update_at = $payload['update_at'];
-                if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
-                    $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
-            }
-            else
-            $errors['update_at']= 'Date saisie incorrecte';
-
-
+        //gestion de la date de creation
+        $created_at = $payload['created_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
+            $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+    
+        //gestion de la date de mise a jour
+        $update_at = $payload['update_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
+            $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
     
         if ($type=='insert')
         {
@@ -119,10 +83,15 @@ Class Companies extends Controler
             return "INSERT into companies (name,type_id,country,tva,created_at,update_at) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at');";
         }
 
-            //gestion id a modifier
-        $id= $payload['id'];
-        if(!preg_match("/^[0-9]$/", $id,$tmp))
-            $errors['id']='Le numéro d\'id ne peut contenir que des chiffres';
+        //gestion id a modifier
+        if (isset($payload['id']))
+        {
+            $id= $payload['id'];
+            if (!preg_match("/^[0-9]$/", $id, $tmp))
+                $errors['id']= 'Le numéro d\'identifiant ne peut contenir que des nombres';
+        }
+        else
+            $errors['id']= 'Le numéro d\'identifiant ne peut pas etre vide';
 
         if(!empty($errors))
             throw new \Exception(join(", ", $errors), 1);

@@ -2,6 +2,7 @@
 require("./Assets/setHeader.php");
 
 require('./Assets/request.php');
+require('./Assets/json_gen.php');
 require('./Controllers/Controler.class.php');
 require('./Controllers/Token.class.php');
 require('./Controllers/Login.class.php');

@@ -26,15 +26,8 @@ class Contacts extends Controler
      */
     public function post($payload)
     {
-        try {
-            $recupRequest = self::buildSQLQuery("insert", $payload);
-            return parent::post($recupRequest);  
-        } catch (Exception $e) {
-            return json_encode([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        } 
+        try { return parent::post(self::buildSQLQuery("insert", $payload)); }
+        catch (Exception $e) { return json_gen(false, $e->getMessage()); } 
     }
 
     /**
@@ -44,15 +37,8 @@ class Contacts extends Controler
      */
     public function patch($payload)
     {
-        try {
-            $recupRequest = self::buildSQLQuery("update", $payload);
-            return parent::patch($recupRequest);  
-        } catch (Exception $e) {
-            return json_encode([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ]);
-        } 
+        try { return parent::patch(self::buildSQLQuery("update", $payload)); }
+        catch (Exception $e) { return json_gen(false, $e->getMessage()); } 
     }
 
     /**
@@ -75,90 +61,74 @@ class Contacts extends Controler
     {
         if ($type == "delete")
         {
-            if (!preg_match("/^[0-9]$/", $payload, $tmp))
+            if (isset($payload) && !preg_match("/^[0-9]$/", $payload, $tmp))
                 throw new Exception("Le id ne peut contenir que des nombres", 1);
+            else if (!isset($payload))
+                throw new Exception("Le id ne peut pas etre vide", 1);
             return "DELETE FROM contacts where id=$payload";
         }
+
         $errors=array();
 
-            //gestion du nom
-            if (isset($payload['name'])){
-                $name= $payload['name'];
-                if (!preg_match("/^[a-zA-Z\s-]$/", $name, $tmp))
-                    $errors['name']= 'Le nom ne peut contenir que des lettres';
-            }
-            else
-            $errors['name']= 'Le nom n\'existe pas';
+        foreach (['name', 'company_id', 'email', 'phone', 'created_at', 'updated_at'] as $field)
+            if (!isset($payload[$field]))
+                $errors[$field] = "Le champ '$field' n'existe pas.";
 
-        
-            //gestion de l'id de la compagnie
-            if (isset($payload['company_id'])){
-                $company_id = $payload['company_id'];
-                if (!preg_match("/^[0-9]$/", $company_id, $tmp))
-                    $errors['company_id']= 'Le numéro de compagnie ne peut contenir que des nombres';
-            }
-            else
-            $errors['company_id']= 'Le numéro de compagnie n\'existe pas';
+        if(!empty($errors))
+            throw new Exception(join(", ", $errors), 1);
 
+        //gestion du nom
+        $name= $payload['name'];
+        if (!preg_match("/^[a-zA-Z\s-]$/", $name, $tmp))
+            $errors['name']= 'Le nom ne peut contenir que des lettres';
 
-        
-            //gestion de l'email
-            if (isset($payload['email'])){
-                $email = $payload['email'];
-                if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email, $tmp))
-                $errors['email']="L'adresse email n'est pas valide ";
-            }
-            else
-                $errors['email']="L'adresse email n'existe pas ";
+        //gestion de l'id de la compagnie
+        $company_id = $payload['company_id'];
+        if (!preg_match("/^[0-9]$/", $company_id, $tmp))
+            $errors['company_id']= 'Le numéro de compagnie ne peut contenir que des nombres';
 
+        //gestion de l'email
+        $email = $payload['email'];
+        if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email, $tmp))
+            $errors['email']="L'adresse email n'est pas valide ";
 
-        
-            //gestion numéro de téléphone
-            if (isset($payload['phone'])){
-                $phone = $payload['phone'];
-                if (!preg_match("/^[0-9]$/", $phone, $tmp))
-                    $errors['phone']= 'Le numéro de téléphone ne peut contenir que des nombres';
-            }
-            $errors['phone']= 'Le numéro de téléphone n\'existe pas';
+        //gestion numéro de téléphone
+        $phone = $payload['phone'];
+        if (!preg_match("/^[0-9]$/", $phone, $tmp))
+            $errors['phone']= 'Le numéro de téléphone ne peut contenir que des nombres';
 
-
-            //gestion de la date de creation
-            if (isset($payload['created_at'])){
-                $created_at = $payload['created_at'];
-                    if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
-                        $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
-            }
-            $errors['created_at']= 'Date saisie incorrecte ';
-        
-            //gestion de la date de mise a jour
-            if (isset($payload['update_at'])){
-                $update_at = $payload['update_at'];
-                    if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
-                        $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
-            }
-            else 
-            $errors['update_at']= 'Date saisie incorrecte';
-
-            
+        //gestion de la date de creation
+        $created_at = $payload['created_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
+            $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
+    
+        //gestion de la date de mise a jour
+        $update_at = $payload['update_at'];
+        if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $update_at))
+            $errors['update_at']= 'La date de mise a jour ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
 
         if ($type == "insert")
         {
-                //retourne une execption
+            //retourne une execption
             if(!empty($errors))
                 throw new Exception(join(", ", $errors), 1);
             return "INSERT INTO `contacts`(`name`, `company_id`, `email`, `phone`, `created_at`, `update_at`) VALUES ('$name',$company_id,'$email','$phone','$created_at','$update_at')";
         }
 
-            //gestion de l'id
-        $id= $payload['id'];
-        if (!preg_match("/^[0-9]$/", $id, $tmp))
-            $errors['id']= 'Le numéro d\'identifiant ne peut contenir que des nombres';
+        //gestion de l'id
+        if (isset($payload['id']))
+        {
+            $id= $payload['id'];
+            if (!preg_match("/^[0-9]$/", $id, $tmp))
+                $errors['id']= 'Le numéro d\'identifiant ne peut contenir que des nombres';
+        }
+        else
+            $errors['id']= 'Le numéro d\'identifiant ne peut pas etre vide';
 
-            //retourne une execption
+        //retourne une execption
         if(!empty($errors))
             throw new Exception(join(", ", $errors), 1);
 
         return "UPDATE contacts SET name='$name', company_id=$company_id, email='$email', phone='$phone', created_at='$created_at', update_at='$update_at' WHERE id=$id";
-
     }
 }
