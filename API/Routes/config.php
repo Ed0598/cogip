@@ -40,7 +40,7 @@ $router->mount('/contacts',function() use($router){
         echo $controller->delete($id);
     });
     $router->get('/company/(\d+)', function ($id) use ($controller) {
-        echo $controller->getCompany($id);
+        echo $controller->getCompany($id,"company_id");
     });
 });
 
@@ -63,7 +63,11 @@ $router->mount('/factures', function () use ($router) {
     });
     $router->delete('/delete/{id}', function ($id) use ($controller) {
         echo $controller->delete($id);
+    });    
+    $router->get('/company/(\d+)', function ($id) use ($controller) {
+        echo $controller->getCompany($id,"id_company");
     });
+    
 });
 
 $router->mount('/compagnies', function () use ($router) {

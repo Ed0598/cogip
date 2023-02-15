@@ -52,9 +52,9 @@ class Controler
         return (self::errorRequest($this->defaultRequestPrivate." WHERE $this->tablePrivate.id=$id"));
     }
 
-    public function getCompany($id)
+    public function getCompany($id,$colonne)
     {
-        return (self::errorRequest($this->defaultRequestPrivate." WHERE company_id=$id"));
+        return (self::errorRequest($this->defaultRequestPrivate." WHERE $colonne=$id"));
     }
 
     /**
