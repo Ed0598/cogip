@@ -971,7 +971,9 @@ html .drawer__content .drawer__footer img,
   .root html .work {
     height: 50vh;
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   body body .work .title_work,
   body html .work .title_work,
@@ -979,8 +981,8 @@ html .drawer__content .drawer__footer img,
   html html .work .title_work,
   .root body .work .title_work,
   .root html .work .title_work {
-    width: 50%;
     margin: 0;
+    max-width: 50%;
   }
   body body .work .title_work h2,
   body html .work .title_work h2,
@@ -1005,7 +1007,7 @@ html .drawer__content .drawer__footer img,
   html html .work .illus img,
   .root body .work .illus img,
   .root html .work .illus img {
-    width: 50%;
+    max-width: 50%;
   }
   body body .table_cards,
   body html .table_cards,

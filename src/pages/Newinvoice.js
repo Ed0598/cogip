@@ -8,7 +8,7 @@ import {
 import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
-import FormFunction from './Form';
+import FormFunction from '../FormInvoice';
 
 function NewInvoice() {
     return(
