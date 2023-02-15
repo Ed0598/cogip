@@ -12,6 +12,7 @@ import PrivacyPolicy from "./pages/Privacypolicy";
 import ShowCompanies from "./pages/ShowCompanies";
 import ShowContacts from "./pages/showcontact";
 import ShowInvoices from "./pages/ShowInvoices";
+import NewCompany from './pages/Newcompany';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/NewInvoice",
     element: <NewInvoice />,
+  },
+  {
+    path: "/Newcompany",
+    element: <NewCompany />,
   },
   {
     path: "/Invoices",

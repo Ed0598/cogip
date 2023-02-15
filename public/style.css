@@ -637,9 +637,9 @@ html .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
 .root .dashboard .table_cards .dashboard_table .over table tr ul li ::hover {
   background-color: #919EAB;
 }
-body .dashboard .body_dashboard_invoice,
-html .dashboard .body_dashboard_invoice,
-.root .dashboard .body_dashboard_invoice {
+body .body_dashboard_invoice,
+html .body_dashboard_invoice,
+.root .body_dashboard_invoice {
   margin: -2rem;
   background-color: #E7E7E7;
   height: 100vh;
