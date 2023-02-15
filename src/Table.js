@@ -7,7 +7,7 @@ function Table(props) {
     let { id } = useParams();
 
     useEffect(() => {
-        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display + props.idLien ;
+        let url = 'https://api.hugoorickx.tech/' + props.table + '/' + props.display ;
         fetch(url, { method: 'GET' })
             .then((response) => response.json())
             .then((responseData) => setData(responseData.message || []));
