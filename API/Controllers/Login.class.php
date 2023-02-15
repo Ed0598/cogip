@@ -6,7 +6,8 @@ class Login extends Controler{
     {
         $errors=array();
 
-        if (isset($payload['username'])){
+        if (isset($payload['username']))
+        {
             $username= $payload['username'];
             if (!preg_match("/^[a-zA-Z\s-]$/", $username, $tmp))
                 $errors['username']= 'Le username ne peut contenir que des lettres';
@@ -14,7 +15,8 @@ class Login extends Controler{
         else
             $errors['username']= 'Le username n\'existe pas';
 
-        if (isset($payload['email'])){
+        if (isset($payload['email']))
+        {
             $email = $payload['email'];
             if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email, $tmp))
                 $errors['email']="L'adresse email n'est pas valide ";
@@ -25,13 +27,13 @@ class Login extends Controler{
         (isset($payload['password'])) ? $password = $payload['password'] : $errors['password']="Le password n'existe pas ";
 
         if(!empty($errors))
-            throw new \Exception(join(", ", $errors), 1);
+            throw new \Exception(join(", ", $errors), 406);
         return "INSERT INTO users (first_name,email,password,created_at,updated_at) VALUES ('$username','$email','$password',now(),now())";
     }
     public function post($payload)
     {
         try { return parent::post(self::createUser($payload)); }
-        catch (\Exception $e) { return json_gen(false, $e->getMessage()); }
+        catch (\Exception $e) { return json_gen(false, $e->getCode() . " " . $e->getMessage()); }
     }
 
     public function user($user)
@@ -50,7 +52,7 @@ class Login extends Controler{
             $sqlRequest = createRequest($sqlRequest);
             echo ($email === $sqlRequest[0]['email']) ? json_gen(true, 'username ok'): json_gen(false, 'username no');
         }
-        catch (\Exception $e) { echo json_gen(false, $error . $e->getMessage()); }
+        catch (\Exception $e) { echo json_gen(false, $error . $e->getCode() . " " . $e->getMessage()); }
     }
 
     public function pwd($user)
@@ -79,7 +81,7 @@ class Login extends Controler{
             $sqlRequest= createRequest($sqlRequest);
             echo ($password===($sqlRequest[0]['password']) && $email === $sqlRequest[0]['email']) ? json_gen(true, 'password ok'): json_gen(false, 'password no');
         }
-        catch (\Exception $e){ echo json_gen(false, $error. $e->getMessage()); }
+        catch (\Exception $e){ echo json_gen(false, $error . $e->getCode() . " " . $e->getMessage()); }
     }
 
 }

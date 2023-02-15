@@ -14,12 +14,12 @@ Class Companies extends Controler
 
     public function post($payload){
         try { return parent::post(self::querryCompanies("insert", $payload)); }
-        catch (\Exception $e) { return json_gen(false, $e->getMessage()); } 
+        catch (\Exception $e) { return json_gen(false, "Code Erreur: ".$e->getCode()." ".$e->getMessage()); } 
     }
 
     public function patch($payload){
         try { return parent::patch(self::querryCompanies("update", $payload)); }
-        catch (\Exception $e) { return json_gen(false, $e->getMessage()); } 
+        catch (\Exception $e) { return json_gen(false, "Code Erreur: ".$e->getCode()." ".$e->getMessage()); } 
     }
 
     public function delete($payload){
@@ -44,7 +44,7 @@ Class Companies extends Controler
                 $errors[$field] = "Le champ '$field' n'existe pas.";
 
         if(!empty($errors))
-            throw new \Exception(join(", ", $errors), 1);
+            throw new \Exception(join(", ", $errors), 406);
 
         //gestion du nom
         $name= $payload['name'];
@@ -79,7 +79,7 @@ Class Companies extends Controler
         if ($type=='insert')
         {
             if(!empty($errors))
-                throw new \Exception(join(", ", $errors), 1);
+                throw new \Exception(join(", ", $errors), 406);
             return "INSERT into companies (name,type_id,country,tva,created_at,update_at) VALUES ('$name','$type_id','$country','$tva','$created_at','$update_at');";
         }
 
@@ -94,7 +94,7 @@ Class Companies extends Controler
             $errors['id']= 'Le numéro d\'identifiant ne peut pas etre vide';
 
         if(!empty($errors))
-            throw new \Exception(join(", ", $errors), 1);
+            throw new \Exception(join(", ", $errors), 406);
 
         return "UPDATE companies SET name='$name', type_id='$type_id', country='$country', tva='$tva', created_at='$created_at', update_at='$update_at' WHERE id=$id";
     }

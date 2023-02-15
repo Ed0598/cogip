@@ -84,17 +84,17 @@ class Controler
     private function executeRequest($request)
     {
         $success = 'La requête a été exécutée avec succès';
-        $error = "La requête n'a pas fonctionné car ";
+        $error = "La requête n'a pas fonctionné car : Code Erreur ";
         try {
             createRequest($request);
             return json_gen(true, $success);
-        } catch (\Exception $e) { return json_gen(false, $error . $e->getMessage()); } 
+        } catch (\Exception $e) { return json_gen(false, $error . $e->getCode() . $e->getMessage()); } 
     }
     private function errorRequest($request)
     {
-        $error = "La requête n'a pas fonctionné car ";
+        $error = "La requête n'a pas fonctionné car : Code Erreur ";
         try { return json_gen(true, createRequest($request)); }
-        catch (\Exception $e) { return json_gen(false, $error . $e->getMessage()); } 
+        catch (\Exception $e) { return json_gen(false, $error . $e->getCode() . $e->getMessage()); } 
     }
     
 }

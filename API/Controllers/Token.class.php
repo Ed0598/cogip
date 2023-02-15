@@ -13,7 +13,7 @@ class token {
                 echo json_gen(true, $jwt);
             }
         }
-        catch (\Exception $e) { echo json_gen(false, $e->getMessage()); }
+        catch (\Exception $e) { echo json_gen(false, $e->getCode() . " " . $e->getMessage()); }
     }
 
     public function check($headers)
