@@ -8,13 +8,13 @@ $router = new \Bramus\Router\Router();
 
 // Route to generate a JWT
 $router->post('/generate-jwt', function () {
-    $token = new token();
+    $token = new App\Controller\token();
     echo $token->post(json_decode(file_get_contents('php://input'), true));
     return;
 });
 $router->mount('/*', function () {
     $headers = getallheaders();
-    $token = new token();
+    $token = new App\Controller\token();
     echo $token->check($headers);
 });
 
