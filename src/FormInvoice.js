@@ -13,20 +13,16 @@ function FormInvoice(){
             <FormControl isRequired action="" methode="POST">
                 <div className='form_label'>
                     <FormLabel>Invoice Number: </FormLabel>
-                    <Input placeholder='Invoice Number' />
+                    <Input placeholder='Invoice Number' name="invoiceNumber" />
+                    
                     <FormLabel>Dates due: </FormLabel>
-                    <Input placeholder='Dates due' />
+                    <Input placeholder="Select Date and Time" size="md" type="date" name='dateDue' />
+                    
                     <FormLabel>Company: </FormLabel>
-                    <Select placeholder='Select company'>
-                        <option>Lego</option>
-                        <option>Apple</option>
-                        <option>Logitech</option>
-                        <option>Ikea</option>
-                        <option>Facebook</option>
-                        <option>Macdou</option>
-                    </Select>
+                    <Input placeholder='Company name' name="company" />
+                    
                     <FormLabel>Created at:</FormLabel>
-                    <Input placeholder='Date of creation' />
+                    <Input placeholder="Select Date and Time" size="md" type="date" name='createdAt' />
                 </div>
                 <button type="button">Save</button> 
             </FormControl>

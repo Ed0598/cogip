@@ -13,22 +13,19 @@ function FormCompany() {
             <FormControl isRequired action="" methode="POST">
                 <div className='form_label'>
                     <FormLabel>Name: </FormLabel>
-                    <Input placeholder='Company name' />
+                    <Input placeholder='Company name' name='companyName' />
+                    
                     <FormLabel>TVA: </FormLabel>
-                    <Input placeholder='TVA' />
+                    <Input placeholder='TVA' name='TVA' />
+                    
                     <FormLabel>Country: </FormLabel>
-                    <Select placeholder='Select country'>
-                        <option>Belgium</option>
-                        <option>France</option>
-                        <option>Netherlands</option>
-                        <option>Germany</option>
-                        <option>Spain</option>
-                        <option>Italy</option>
-                    </Select>
-                    <FormLabel>Type:</FormLabel>
-                    <Input placeholder='Type' />
+                    <Input placeholder='Country' name="country" />
+                    
+                    <FormLabel>Type: </FormLabel>
+                    <Input placeholder='Type' name="type" />
+                    
                     <FormLabel>Created at:</FormLabel>
-                    <Input placeholder='Date of creation' />
+                    <Input placeholder="Select Date and Time" size="md" type="date" name='createdAt' />
                 </div>
                 <button type="button">Save</button> 
             </FormControl>
