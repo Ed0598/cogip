@@ -82,13 +82,13 @@
     //     .then((response) => { return response.json(); })
     //     .then((data) => { console.log("1 facture"); console.log(data) })
 
-    // factures= 'https://api.hugoorickx.tech/factures/add'
-    // fetch(factures,{
-    //     method:"POST",
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ ref : "INV0!@#$%^&&*()00X", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
-    //   .then((response) => { return response.json(); })
-    //   .then((data) => { console.log("ajoute une facture"); console.log(data) })
+    factures= 'https://api.hugoorickx.tech/factures/add'
+    fetch(factures,{
+        method:"POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref : "INV0!@#$%^&&*()00X", id_company: 1, created_at: "2023-02-02", update_at: "2023-02-02"})})
+      .then((response) => { return response.json(); })
+      .then((data) => { console.log("ajoute une facture"); console.log(data) })
 
     // factures= 'https://api.hugoorickx.tech/factures/update'
     // fetch(factures,{
@@ -121,13 +121,13 @@
     //     .then((response) => { return response.json(); })
     //     .then((data) => { console.log("1 compagnie"); console.log(data) })
 
-    // compagnies= 'https://api.hugoorickx.tech/compagnies/add'
-    // fetch(compagnies,{
-    //     method:"POST",
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ name : "test#$%1", type_id: 1,  country:"belgique", tva:"5555",  created_at: "2023-02-02", update_at: "2023-02-02"})})
-    //   .then((response) => { return response.json(); })
-    //   .then((data) => { console.log("ajoute une compagnie"); console.log(data) })
+    compagnies= 'https://api.hugoorickx.tech/compagnies/add'
+    fetch(compagnies,{
+        method:"POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name : "test#$%1", type_id: 1,  country:"belgique", tva:"5555",  created_at: "2023-02-02", update_at: "2023-02-02"})})
+      .then((response) => { return response.json(); })
+      .then((data) => { console.log("ajoute une compagnie"); console.log(data) })
 
     // compagnies= 'https://api.hugoorickx.tech/compagnies/update'
     // fetch(compagnies,{
