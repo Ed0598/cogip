@@ -9,6 +9,7 @@ import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
 import Table from '../Table';
+import TableCards from '../TableCards';
 
 
 function Dashboard() {
@@ -26,7 +27,8 @@ function Dashboard() {
                 <p>You can here add an invoice, a company and some contacts.</p>
             </div>
 
-            <div className='table_cards'>
+            <TableCards />
+            {/* <div className='table_cards'>
                 <div className='statistics'>
                     <h4>Statistics</h4>
                     <div className='circles'>
@@ -70,8 +72,8 @@ function Dashboard() {
                             id="id" td1="name" td2="tva" td3="country"
                             th1="Name" th2="TVA" th3="Country" />
                     </div>
-                </div>
-            </div>
+                </div> 
+            </div> */}
         </div>
     )
 }
