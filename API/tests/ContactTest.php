@@ -2,6 +2,7 @@
 
 // use PHPUnit\Framework\TestCase;
 use App\Controller\Contacts;
+use App\Controller;
 
 use PHPUnit\Framework\TestCase;
 function createRequest($request)
@@ -13,11 +14,17 @@ function createRequest($request)
         $ps->execute();
         return $ps->fetchAll(\PDO::FETCH_ASSOC);
     }
-    catch(Exception $e) 
-    { 
-        throw new Exception('Erreur : '.$e->getMessage());
-    }
+    catch(Exception $e) { throw new Exception('Erreur : '.$e->getMessage()); }
 }
+
+function json_gen($success, $message)
+{
+    return json_encode([
+        'success'=> $success,
+        'message'=> $message
+    ]);
+}
+
 class ContactTest extends TestCase {
   public function testPostMethod() {
     $contact = new Contacts();
@@ -25,9 +32,5 @@ class ContactTest extends TestCase {
     // Test with valid data
     $result = $contact->getAll();
     $this->assertEquals($result, true);
-    
-    // Test with invalid data
-    // $result = $contact->getAll();
-    // $this->assertEquals($result, false);
   }
 }

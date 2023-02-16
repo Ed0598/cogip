@@ -1,4 +1,5 @@
 <?php
+namespace App\Controller ;
 
 function json_gen($success, $message)
 {

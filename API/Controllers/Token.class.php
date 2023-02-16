@@ -1,4 +1,5 @@
 <?php
+namespace App\Controller ;
 
 class token {
     public function post($request)
@@ -47,6 +48,6 @@ class token {
     private function verifyJWT($jwt) {
         $secretKey = "secretKeyForSigningJWT";
         try { return \Firebase\JWT\JWT::decode($jwt, new \Firebase\JWT\Key($secretKey, 'HS256')); }
-        catch (Exception $e) { return false; }
+        catch (\Exception $e) { return false; }
     }
 }
