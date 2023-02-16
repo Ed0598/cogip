@@ -11,8 +11,7 @@ import React, { useState, useEffect } from 'react';
 
 
 function FormContact(props) {
-
-         
+  const [data, setData] = useState([]);
 
         useEffect(() => {
             let url = "https://api.hugoorickx.tech/contacts";
