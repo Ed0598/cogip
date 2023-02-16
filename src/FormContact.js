@@ -1,43 +1,30 @@
 import {
-    Button,
-    Select,
     Input,
     FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-} from '@chakra-ui/react'
-import React, { useState, useEffect } from 'react';
+    FormLabel
+} from '@chakra-ui/react';
 
 
-function FormContact(props) {
-  const [data, setData] = useState([]);
-
-        useEffect(() => {
-            let url = "https://api.hugoorickx.tech/contacts";
-            fetch(url, { method: 'POST' })
-              .then((response) => response.json())
-              .then((responseData) => setData(responseData.data || [] ));
-          }, []);
+function FormContact() {
     return (
         
-            <FormControl isRequired>
+            <FormControl isRequired action="" methode="POST">
                 <div className='form_label'>
 
                     <FormLabel>Name</FormLabel>
                     <Input placeholder='Name' name='name' />
 
                     <FormLabel>Phone</FormLabel>
-                    <Input placeholder='Phone' name='phone' />
+                    <Input placeholder='Phone' name='phone'/>
 
                     <FormLabel>Mail</FormLabel>
-                    <Input placeholder="Mail" size="md" type="email" name='mail' />
+                    <Input placeholder="Mail" size="md" type="email" name='mail'/>
 
                     <FormLabel>Company</FormLabel>
-                    <Input placeholder='company' name='company' />
+                    <Input placeholder='Name of the company' name='company'/>
 
                     <FormLabel>Created at</FormLabel>
-                    <Input placeholder="Select Date and Time" size="md" type="date" name='createdAt' />
+                    <Input placeholder="Select Date and Time" size="md" type="date" name='createAt' />
 
                 </div>
                 <button type="button">Save</button> 
