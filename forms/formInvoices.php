@@ -10,7 +10,7 @@
     <?php
     $errors= array();
 
-    $requiredKeys = ['name', 'type_id', 'country', 'tva', 'created_at', 'update_at'];
+    $requiredKeys = ['invoiceNumber','company','dateDue'];
     foreach ($requiredKeys as $field)
         if (!isset($payload[$field]))
             $errors[$field] = "Le champ '$field' n'existe pas.";
@@ -23,17 +23,17 @@
         return;
        }
     //gestion des références 
-    $ref= $payload['ref'];
+    $ref= $payload['invoiceNumber'];
     if (!preg_match("/^[a-zA-Z0-9]$/",$ref,$tmp))
         $errors['ref'] = "La référence ne peut contenir que des caractère alphanumériques ";
 
     //gestion de l'ip de la compagnie
-    $id_company=$payload['id_company'];
-    if (!preg_match("/^[0-9]$/",$id_company,$tmp))
-        $errors['id_company'] = "L'ID ne peut contenir que des nombres";
+    $id_company=$payload['company'];
+    if (!preg_match("/^[a-zA-Z\s-]$/",$id_company,$tmp))
+        $errors['company'] = "Le nom de la compagnie ne peut contenir que des nombres";
 
     //gestion de la date de creation
-    $created_at = $payload['created_at'];
+    $created_at = $payload['dateDue'];
     if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
         $errors['date_create']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
 

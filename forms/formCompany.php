@@ -11,7 +11,7 @@
 <?php
 $errors= array();
         
-        $required_fields = ['name', 'type_id', 'country', 'tva', 'created_at', 'update_at'];
+        $required_fields = ['companyName', 'type', 'country', 'TVA', 'createdAt'];
         foreach ($required_fields as $field)
             if (!isset($_POST[$field]))
                 $errors[$field] = "Le champ '$field' n'existe pas.";
@@ -25,12 +25,12 @@ $errors= array();
         }
 
         //gestion du nom
-        $name= $_POST['name'];
+        $name= $_POST['companyName'];
         if (!preg_match("/^[a-zA-Z\s-]$/",$name,$tmp))
             $errors['name']= 'Le nom ne peut contenir que des lettres';
 
         //gestion du type_id
-        $type_id=$_POST['type_id'];
+        $type_id=$_POST['type'];
         if(!preg_match("/^[0-9]$/", $type_id,$tmp));
             $errors['type_id']='Le identifiant du type ne peut contenir que des chiffres';
 
@@ -40,12 +40,12 @@ $errors= array();
             $errors['country']= 'Le pays ne peut contenir que des lettres';
 
         //gestion TVA
-        $tva=$_POST["tva"];
+        $tva=$_POST["TVA"];
         if(!preg_match("/^[0-9]$/", $tva,$tmp))
             $errors['tva']='Le numéro de tva ne peut contenir que des chiffres';
 
         //gestion de la date de creation
-        $created_at = $_POST['created_at'];
+        $created_at = $_POST['createdAt'];
         if (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $created_at))
             $errors['created_at']= 'La date de creation ne peut contenir que des nombres et doit etre sous la forme YYYY-MM-DD';
     
