@@ -64,7 +64,7 @@ import {
 
                     <div className='link'>
                     <img src={Contacts} alt="Map location icon" />
-                    <Link to="NewContact">Contacts</Link>
+                    <Link to="/NewContact">Contacts</Link>
                     </div>
 
                 </div>

@@ -21,11 +21,11 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/Dashboard",
+    path: "Dashboard",
     element: <Dashboard />,
   },
   {
-    path: "/NewInvoice",
+    path: "NewInvoice",
     element: <NewInvoice />,
   },
   {

@@ -3,8 +3,7 @@ import {
     FormControl,
     FormLabel,
 } from '@chakra-ui/react'
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
 
 function FormContact(props) {
 
@@ -18,37 +17,29 @@ function FormContact(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const formData = {
-            name: name,
-            email: email,
-            phone: phone,
-            created_at: createdAt,
-          };
-          fetch("https://api.hugoorickx.tech/contacts", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-            .then((response) => response.json())
-            .then((responseData) => {
-              setData(responseData.data || []);
-              setName("");
-              setPhone("");
-              setEmail("");
-              setCompanyId("");
-              setCreatedAt("");
-            });
-        };
-        useEffect(() => {
-            let url = "https://api.hugoorickx.tech/companies/all";
-            fetch(url, { method: 'GET' })
-              .then((response) => response.json())
-              .then((responseData) => setData(responseData.data || [] ));
-          }, []);
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('created_at', createdAt);
+
+        fetch('https://api.hugoorickx.tech/contacts', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(responseData => {
+            setData(responseData.data || []);
+            setName("");
+            setPhone("");
+            setEmail("");
+            setCompanyId("");
+            setCreatedAt("");
+        });
+    };
+
     return (
-        <FormControl isRequired>
+        <FormControl onSubmit={handleSubmit}>
             <div className='form_label'>
 
                 <FormLabel>Name</FormLabel>
@@ -72,7 +63,7 @@ function FormContact(props) {
                 onChange={(event) => setCreatedAt(event.target.value)}/>
 
             </div>
-            <button type="button">Save</button> 
+            <button type="submit">Save</button> 
         </FormControl>
     )
 }

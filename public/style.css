@@ -110,6 +110,12 @@ html main .img_main #main,
 .root main .img_main #main {
   margin-left: auto;
 }
+body main .search,
+html main .search,
+.root main .search {
+  width: 20vw;
+  margin: 2%;
+}
 body main .over,
 html main .over,
 .root main .over {

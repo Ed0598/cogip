@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
+import { Input } from '@chakra-ui/react'
 
 function TablePagination(props) {
   const [data, setData] = useState([]);
@@ -25,6 +26,7 @@ function TablePagination(props) {
 
   return (
       <>
+        <Input placeholder='Search' size='sm' className='search'/>
           <table>
               <tbody>
                   <tr>
