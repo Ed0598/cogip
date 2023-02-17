@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Table from 'git./Table';
+import Table from './Table';
 
 
 function TableCards(props) {
