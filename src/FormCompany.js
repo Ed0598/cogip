@@ -10,7 +10,7 @@ import {
 function FormCompany() {
     return (
         
-            <FormControl isRequired action="" methode="POST">
+            <FormControl isRequired action="../forms/formCompany.php" methode="POST">
                 <div className='form_label'>
                     <FormLabel>Name: </FormLabel>
                     <Input placeholder='Company name' name='companyName' />

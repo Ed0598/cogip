@@ -8,7 +8,7 @@ import {
 function FormContact() {
     return (
         
-            <FormControl isRequired action="" methode="POST">
+            <FormControl isRequired action="../forms/formContacts.php" methode="POST">
                 <div className='form_label'>
 
                     <FormLabel>Name</FormLabel>

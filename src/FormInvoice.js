@@ -10,7 +10,7 @@ import {
 function FormInvoice(){
     return (
         <div className='enfant'>
-            <FormControl isRequired action="" methode="POST">
+            <FormControl isRequired action="../forms/formInvoices.php" methode="POST">
                 <div className='form_label'>
                     <FormLabel>Invoice Number: </FormLabel>
                     <Input placeholder='Invoice Number' name="invoiceNumber" />
