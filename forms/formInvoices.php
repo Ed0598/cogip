@@ -31,6 +31,8 @@
     $id_company=$payload['company'];
     if (!preg_match("/^[a-zA-Z\s-]$/",$id_company,$tmp))
         $errors['company'] = "Le nom de la compagnie ne peut contenir que des nombres";
+        $requestId= 'SELECT id FROM companies WHERE name = $id_company';
+        $id_company= createRequest($requestId);
 
     //gestion de la date de creation
     $created_at = $payload['dateDue'];
