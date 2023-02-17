@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
-import { Input } from '@chakra-ui/react'
+import { Input } from '@chakra-ui/react';
 
 function TablePagination(props) {
   const [data, setData] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
   const itemsPerPage = props.itemsPerPage;
 
   useEffect(() => {
@@ -16,17 +17,32 @@ function TablePagination(props) {
   }, []);
 
   const endOffset = itemOffset + itemsPerPage;
-  const currentData = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const currentData = data
+    .filter((elem) =>
+      elem[props.td1].toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(currentData.length / itemsPerPage);
 
   const handlePageClick = (event) => {
-      const newOffset = (event.selected * itemsPerPage) % data.length;
+      const newOffset = (event.selected * itemsPerPage) % currentData.length;
       setItemOffset(newOffset);
+  };
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    setItemOffset(0);
   };
 
   return (
       <>
-        <Input placeholder='Search' size='sm' className='search'/>
+        <Input
+          placeholder='Search'
+          size='sm'
+          className='search'
+          value={searchTerm}
+          onChange={handleSearch}
+        />
           <table>
               <tbody>
                   <tr>
