@@ -37,7 +37,7 @@ function TablePagination(props) {
   return (
       <>
         <Input
-          placeholder='Search'
+          placeholder={props.input}
           size='sm'
           className='search'
           value={searchTerm}

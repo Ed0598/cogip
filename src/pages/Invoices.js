@@ -23,7 +23,8 @@ function Invoices() {
             <div className='over'>
                     <TablePagination table='factures' display="all" itemsPerPage={10}
                     id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
-                    th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" lien="Invoices" />
+                    th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" lien="Invoices"
+                    input="Number" />
             </div>
             </main>
             <Footer />
