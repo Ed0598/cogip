@@ -9,14 +9,19 @@ import MenuDrawer from '../Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
 import FormCompany from '../FormCompany';
+import DashboardHeader from '../DashboardHeader';
+
 
 function NewCompany() {
     return(
-        <div className='body_dashboard_invoice'>
-            <div className='div_form'>
-               <FormCompany />
+        <>
+            <DashboardHeader />
+            <div className='body_dashboard_invoice'>
+                <div className='div_form'>
+                    <FormCompany />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

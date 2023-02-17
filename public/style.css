@@ -430,6 +430,7 @@ body .dashboard,
 html .dashboard,
 .root .dashboard {
   background-color: #E7E7E7;
+  padding-bottom: 2rem;
 }
 body .dashboard h2,
 html .dashboard h2,
@@ -470,8 +471,11 @@ html .dashboard .rectangle_mauve,
   margin-left: 2rem;
   margin-top: 3rem;
   margin-right: 3rem;
+  display: flex;
+  flex-direction: row;
   border-radius: 20px;
   background-color: #9698D6;
+  max-height: 8rem;
   color: #F5F5F5;
   padding: 2rem;
 }
@@ -481,30 +485,36 @@ html .dashboard .rectangle_mauve img,
   width: 100%;
   margin-top: -7rem;
 }
-body .dashboard .rectangle_mauve h3,
-html .dashboard .rectangle_mauve h3,
-.root .dashboard .rectangle_mauve h3 {
+body .dashboard .rectangle_mauve .texte,
+html .dashboard .rectangle_mauve .texte,
+.root .dashboard .rectangle_mauve .texte {
+  flex-direction: column;
+}
+body .dashboard .rectangle_mauve .texte h3,
+html .dashboard .rectangle_mauve .texte h3,
+.root .dashboard .rectangle_mauve .texte h3 {
   font-family: Roboto;
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-body .dashboard .rectangle_mauve p,
-html .dashboard .rectangle_mauve p,
-.root .dashboard .rectangle_mauve p {
+body .dashboard .rectangle_mauve .texte p,
+html .dashboard .rectangle_mauve .texte p,
+.root .dashboard .rectangle_mauve .texte p {
   font-family: Inter;
   font-size: 0.6rem;
 }
-body .dashboard .table_cards,
-html .dashboard .table_cards,
-.root .dashboard .table_cards {
+body .table_cards,
+html .table_cards,
+.root .table_cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: #E7E7E7;
 }
-body .dashboard .table_cards .statistics,
-html .dashboard .table_cards .statistics,
-.root .dashboard .table_cards .statistics {
+body .table_cards .statistics,
+html .table_cards .statistics,
+.root .table_cards .statistics {
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
@@ -512,23 +522,23 @@ html .dashboard .table_cards .statistics,
   padding: 1rem;
   width: 15rem;
 }
-body .dashboard .table_cards .statistics .circles,
-html .dashboard .table_cards .statistics .circles,
-.root .dashboard .table_cards .statistics .circles {
+body .table_cards .statistics .circles,
+html .table_cards .statistics .circles,
+.root .table_cards .statistics .circles {
   display: flex;
   flex-direction: row;
 }
-body .dashboard .table_cards .statistics p,
-html .dashboard .table_cards .statistics p,
-.root .dashboard .table_cards .statistics p {
+body .table_cards .statistics p,
+html .table_cards .statistics p,
+.root .table_cards .statistics p {
   font-family: Inter;
   color: white;
   font-size: 0.5rem;
   font-weight: 900;
 }
-body .dashboard .table_cards .statistics .blue_circle,
-html .dashboard .table_cards .statistics .blue_circle,
-.root .dashboard .table_cards .statistics .blue_circle {
+body .table_cards .statistics .blue_circle,
+html .table_cards .statistics .blue_circle,
+.root .table_cards .statistics .blue_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -536,9 +546,9 @@ html .dashboard .table_cards .statistics .blue_circle,
   text-align: center;
   background-color: #4D4CAC;
 }
-body .dashboard .table_cards .statistics .purple_circle,
-html .dashboard .table_cards .statistics .purple_circle,
-.root .dashboard .table_cards .statistics .purple_circle {
+body .table_cards .statistics .purple_circle,
+html .table_cards .statistics .purple_circle,
+.root .table_cards .statistics .purple_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -546,9 +556,9 @@ html .dashboard .table_cards .statistics .purple_circle,
   text-align: center;
   background-color: #9698D6;
 }
-body .dashboard .table_cards .statistics .pink_circle,
-html .dashboard .table_cards .statistics .pink_circle,
-.root .dashboard .table_cards .statistics .pink_circle {
+body .table_cards .statistics .pink_circle,
+html .table_cards .statistics .pink_circle,
+.root .table_cards .statistics .pink_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -556,9 +566,9 @@ html .dashboard .table_cards .statistics .pink_circle,
   text-align: center;
   background-color: #FF808B;
 }
-body .dashboard .table_cards .dashboard_table,
-html .dashboard .table_cards .dashboard_table,
-.root .dashboard .table_cards .dashboard_table {
+body .table_cards .dashboard_table,
+html .table_cards .dashboard_table,
+.root .table_cards .dashboard_table {
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
@@ -566,24 +576,24 @@ html .dashboard .table_cards .dashboard_table,
   padding: 1rem;
   width: 15rem;
 }
-body .dashboard .table_cards .dashboard_table hr,
-html .dashboard .table_cards .dashboard_table hr,
-.root .dashboard .table_cards .dashboard_table hr {
+body .table_cards .dashboard_table hr,
+html .table_cards .dashboard_table hr,
+.root .table_cards .dashboard_table hr {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   color: #E0E0E0;
 }
-body .dashboard .table_cards .dashboard_table .over,
-html .dashboard .table_cards .dashboard_table .over,
-.root .dashboard .table_cards .dashboard_table .over {
+body .table_cards .dashboard_table .over,
+html .table_cards .dashboard_table .over,
+.root .table_cards .dashboard_table .over {
   overflow-x: auto;
   margin: auto;
   width: 80%;
 }
-body .dashboard .table_cards .dashboard_table .over table,
-html .dashboard .table_cards .dashboard_table .over table,
-.root .dashboard .table_cards .dashboard_table .over table {
+body .table_cards .dashboard_table .over table,
+html .table_cards .dashboard_table .over table,
+.root .table_cards .dashboard_table .over table {
   margin: auto;
   font-family: Roboto;
   font-weight: 500;
@@ -591,69 +601,69 @@ html .dashboard .table_cards .dashboard_table .over table,
   border-collapse: collapse;
   border-spacing: 2%;
 }
-body .dashboard .table_cards .dashboard_table .over table tbody,
-html .dashboard .table_cards .dashboard_table .over table tbody,
-.root .dashboard .table_cards .dashboard_table .over table tbody {
+body .table_cards .dashboard_table .over table tbody,
+html .table_cards .dashboard_table .over table tbody,
+.root .table_cards .dashboard_table .over table tbody {
   padding: 0.5rem;
 }
-body .dashboard .table_cards .dashboard_table .over table tr,
-html .dashboard .table_cards .dashboard_table .over table tr,
-.root .dashboard .table_cards .dashboard_table .over table tr {
+body .table_cards .dashboard_table .over table tr,
+html .table_cards .dashboard_table .over table tr,
+.root .table_cards .dashboard_table .over table tr {
   text-align: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 0.8rem;
 }
-body .dashboard .table_cards .dashboard_table .over table tr th,
-html .dashboard .table_cards .dashboard_table .over table tr th,
-.root .dashboard .table_cards .dashboard_table .over table tr th {
+body .table_cards .dashboard_table .over table tr th,
+html .table_cards .dashboard_table .over table tr th,
+.root .table_cards .dashboard_table .over table tr th {
   text-align: center;
   background-color: white;
   padding: 0.5rem;
   white-space: nowrap;
 }
-body .dashboard .table_cards .dashboard_table .over table tr td,
-html .dashboard .table_cards .dashboard_table .over table tr td,
-.root .dashboard .table_cards .dashboard_table .over table tr td {
+body .table_cards .dashboard_table .over table tr td,
+html .table_cards .dashboard_table .over table tr td,
+.root .table_cards .dashboard_table .over table tr td {
   white-space: nowrap;
   width: 4rem;
   text-align: center;
   margin: 2%;
   padding: 0.5rem;
 }
-body .dashboard .table_cards .dashboard_table .over table tr ul,
-html .dashboard .table_cards .dashboard_table .over table tr ul,
-.root .dashboard .table_cards .dashboard_table .over table tr ul {
+body .table_cards .dashboard_table .over table tr ul,
+html .table_cards .dashboard_table .over table tr ul,
+.root .table_cards .dashboard_table .over table tr ul {
   margin-top: 3%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
-body .dashboard .table_cards .dashboard_table .over table tr ul li,
-html .dashboard .table_cards .dashboard_table .over table tr ul li,
-.root .dashboard .table_cards .dashboard_table .over table tr ul li {
+body .table_cards .dashboard_table .over table tr ul li,
+html .table_cards .dashboard_table .over table tr ul li,
+.root .table_cards .dashboard_table .over table tr ul li {
   padding: 1%;
   text-align: center;
   margin: 1%;
   border-radius: 4px;
   border: white solid 1px;
 }
-body .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
-html .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
-.root .dashboard .table_cards .dashboard_table .over table tr ul li ::hover {
+body .table_cards .dashboard_table .over table tr ul li ::hover,
+html .table_cards .dashboard_table .over table tr ul li ::hover,
+.root .table_cards .dashboard_table .over table tr ul li ::hover {
   background-color: #919EAB;
 }
 body .body_dashboard_invoice,
 html .body_dashboard_invoice,
 .root .body_dashboard_invoice {
   padding: 2rem;
+  padding-top: 0.5rem;
   background-color: #E7E7E7;
   height: 100%;
 }
 body .new_invoice,
 html .new_invoice,
 .root .new_invoice {
-  padding-top: 2rem;
   padding-left: 2rem;
   height: 100vh;
 }
@@ -719,6 +729,7 @@ html .div_form,
   background-color: white;
   border-radius: 20px;
   margin: 2rem;
+  margin-top: 2rem;
   margin-right: 4rem;
   padding-top: 1rem;
   padding-right: 1rem;
