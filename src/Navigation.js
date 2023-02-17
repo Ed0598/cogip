@@ -9,7 +9,7 @@ function Navigation() {
                     COGIP
                 </h2>
                 <div className="nav__link">
-                <Link to="/">HOME</Link>
+                <Link to="/">Home</Link>
 
                 <Link to="/Invoices">Invoices</Link>
 
@@ -19,8 +19,8 @@ function Navigation() {
 
                 </div>
                 <div className="nav__log">
-                <Link to="/Dashboard" id="Sign_up">Sign Up</Link>
-                <Link to="/Dashboard">Log In</Link>
+                <Link to="/Dashboard" id="Sign_up" className='signup'>Sign Up</Link>
+                <Link to="/Dashboard" className='login'>Log In</Link>
 
                 </div>
                 <Menuburg />
