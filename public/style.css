@@ -206,6 +206,7 @@ html main .work,
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  padding-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -986,11 +987,9 @@ html .drawer__content .drawer__footer img,
   html html .work,
   .root body .work,
   .root html .work {
-    height: 50vh;
-    margin: 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
   }
   body body .work .title_work,
   body html .work .title_work,
@@ -998,17 +997,7 @@ html .drawer__content .drawer__footer img,
   html html .work .title_work,
   .root body .work .title_work,
   .root html .work .title_work {
-    margin: 0;
     max-width: 50%;
-  }
-  body body .work .title_work h2,
-  body html .work .title_work h2,
-  html body .work .title_work h2,
-  html html .work .title_work h2,
-  .root body .work .title_work h2,
-  .root html .work .title_work h2 {
-    display: flex;
-    align-items: center;
   }
   body body .work .illus,
   body html .work .illus,
@@ -1016,14 +1005,6 @@ html .drawer__content .drawer__footer img,
   html html .work .illus,
   .root body .work .illus,
   .root html .work .illus {
-    margin: 0;
-  }
-  body body .work .illus img,
-  body html .work .illus img,
-  html body .work .illus img,
-  html html .work .illus img,
-  .root body .work .illus img,
-  .root html .work .illus img {
     max-width: 50%;
   }
   body body .table_cards,
