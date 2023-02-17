@@ -49,22 +49,22 @@ import {
             <div className="drawer__link">
                     <div className='link'>
                     <img src={Dashboard} alt="Map location icon" />
-                    <Link to="/Dashboard">Dashboard</Link>
+                    <Link to="Dashboard">Dashboard</Link>
                     </div>
 
                     <div className='link'>
                     <img src={Invoices} alt="Map location icon" />
-                    <Link to="/Invoices">Invoices</Link>
+                    <Link to="/NewInvoice">Invoices</Link>
                     </div>
 
                     <div className='link'>
                     <img src={Companies} alt="Map location icon" />
-                    <Link to="/Companies">Companies</Link>
+                    <Link to="/NewCompany">Companies</Link>
                     </div>
 
                     <div className='link'>
                     <img src={Contacts} alt="Map location icon" />
-                    <Link to="/Contacts">Contacts</Link>
+                    <Link to="NewContact">Contacts</Link>
                     </div>
 
                 </div>

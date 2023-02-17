@@ -3,7 +3,7 @@ import Rectangle_blanc from './assets/images/Rectangle_blanc.svg';
 function Manage(){
     return(
         <>
-        <div class="header__manage">
+        <div className="header__manage">
             <h2>
                 MANAGE YOUR CUSTOMERS AND INVOICES EASLY
             </h2>

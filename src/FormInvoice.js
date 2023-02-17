@@ -9,7 +9,7 @@ import {
      
 function FormInvoice(){
     return (
-        
+        <div className='enfant'>
             <FormControl isRequired action="" methode="POST">
                 <div className='form_label'>
                     <FormLabel>Invoice Number: </FormLabel>
@@ -26,6 +26,7 @@ function FormInvoice(){
                 </div>
                 <button type="button">Save</button> 
             </FormControl>
+        </div>
     )
 }
 

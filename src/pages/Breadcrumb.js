@@ -11,7 +11,7 @@ import {
 
 function BreadcrumbNav (){
     return (
-<Breadcrumb class='breadcrumb_div'>
+<Breadcrumb className='breadcrumb_div'>
   <BreadcrumbItem className='breadCrumbItem'>
     <BreadcrumbLink as={Link} to='/Dashboard'>
       Dashboard

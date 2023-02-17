@@ -608,9 +608,10 @@ html,
     }
        
     .body_dashboard_invoice {
-        margin: -2rem;
+        padding: 2rem;
+        //margin-bottom:-2rem;
         background-color: #E7E7E7;
-        height: 100vh;
+        height: 100%;
     }
 
     //page Newinvoice

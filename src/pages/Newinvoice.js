@@ -14,16 +14,6 @@ function NewInvoice() {
     return(
         <div className='body_dashboard_invoice'>
         <div className='new_invoice'>
-            <h2>New Invoice</h2>
-            <BreadcrumbNav />
-            <MenuDrawer />
-
-            <div className='rectangle_mauve'>
-                <img src={IlluDashboard} class="illuDashboard" alt="#"></img>
-                <h3>Welcome back ### !</h3>
-                <p>You can here add an invoice.</p>
-
-            </div>
 
             <div className='div_form'>
                <FormInvoice />
