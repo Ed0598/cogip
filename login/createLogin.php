@@ -14,7 +14,7 @@
                 method:'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    username:"<?= $_POST['username']?>",
+                    username:"<?= $_POST['usernamee']?>",
                     email:'<?=$_POST['email']?>',
                     password:'<?=sha1($_POST['password'])?>'
                 })})
