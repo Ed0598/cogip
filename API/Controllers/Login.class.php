@@ -6,15 +6,14 @@ class Login extends Controler{
     {
         $errors=array();
 
-        if (isset($payload['usernamee']))
+        if (isset($payload['username']))
         {
-            $username= $payload['usernamee'];
-            if 
-             (!preg_match("/^[a-zA-Z\s-]+$/", $username, $tmp))
+            $username= $payload['username'];
+            if (!preg_match("/^[a-zA-Z\s-]+$/", $username, $tmp))
                 $errors['username']= 'Le username ne peut contenir que des lettres';
         }
         else
-            $errors['usernamee']= 'Le username n\'existe pas';
+            $errors['username']= 'Le username n\'existe pas';
 
         if (isset($payload['email']))
         {

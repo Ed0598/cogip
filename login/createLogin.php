@@ -8,13 +8,13 @@
 </head>
 <body>
     <script>
-            let addUserUrl= 'https://api.hugoorickx.tech/login/adduser'
+            let addUserUrl= 'http://localhost:8001/login/adduser'
             fetch(addUserUrl,
             {
                 method:'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    username:"<?= $_POST['usernamee']?>",
+                    username:"<?= $_POST['username']?>",
                     email:'<?=$_POST['email']?>',
                     password:'<?=sha1($_POST['password'])?>'
                 })})
