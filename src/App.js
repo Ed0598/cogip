@@ -14,12 +14,18 @@ import ShowContacts from "./pages/showcontact";
 import ShowInvoices from "./pages/ShowInvoices";
 import NewContact from "./pages/NewContact";
 import NewCompany from './pages/Newcompany';
+import PageLogIn from './pages/LogIn';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
   },
+  {
+    path: "PageLogIn",
+    element: <PageLogIn />,
+  }, 
   {
     path: "Dashboard",
     element: <Dashboard />,
