@@ -1,7 +1,7 @@
 import React from 'react'
 import MenuDrawer from './Drawer';
-import BreadcrumbNav from '../src/pages/Breadcrumb';
-import IlluDashboard from './assets/images/Illu_dashboard.svg';
+import BreadcrumbNav from '../pages/Breadcrumb';
+import IlluDashboard from '../assets/images/Illu_dashboard.svg';
 
 
 function DashboardHeader() {

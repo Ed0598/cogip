@@ -1,9 +1,9 @@
 import React from 'react'
-import MenuDrawer from '../Drawer';
+import MenuDrawer from '../Dashboard/Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
-import TableCards from '../TableCards';
-import DashboardHeader from '../DashboardHeader';
+import TableCards from '../Tables/TableCards';
+import DashboardHeader from '../Dashboard/DashboardHeader';
 
 function Dashboard() {
     return (

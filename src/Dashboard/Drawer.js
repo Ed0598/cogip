@@ -13,11 +13,11 @@ import {
   import React from 'react';
   import {Link} from 'react-router-dom';
 
-  import Dashboard from './assets/images/Dashboard.svg';
-  import Invoices from './assets/images/Invoices.svg';
-  import Companies from './assets/images/Companies.svg';
-  import Contacts from './assets/images/Contact.svg';
-  import Boy from './assets/images/Boy.svg';
+  import Dashboard from '../assets/images/Dashboard.svg';
+  import Invoices from '../assets/images/Invoices.svg';
+  import Companies from '../assets/images/Companies.svg';
+  import Contacts from '../assets/images/Contact.svg';
+  import Boy from '../assets/images/Boy.svg';
 
 
   function MenuDrawer() {

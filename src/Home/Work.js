@@ -1,4 +1,4 @@
-import Group_work from './assets/images/Group_work.svg';
+import Group_work from '../assets/images/Group_work.svg';
 
 function Work(){
     return(

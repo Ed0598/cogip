@@ -5,11 +5,11 @@ import {
     BreadcrumbLink,
     BreadcrumbSeparator,
   } from '@chakra-ui/react'
-import MenuDrawer from '../Drawer';
+import MenuDrawer from '../Dashboard/Drawer';
 import BreadcrumbNav from './Breadcrumb';
 import IlluDashboard from '../assets/images/Illu_dashboard.svg';
-import FormInvoice from '../FormInvoice';
-import DashboardHeader from '../DashboardHeader';
+import FormInvoice from '../Form/FormInvoice';
+import DashboardHeader from '../Dashboard/DashboardHeader';
 
 
 function NewInvoice() {

@@ -1,9 +1,9 @@
-import Footer from '../Footer';
-import Navigation from '../Navigation';
+import Footer from '../Home/Footer';
+import Navigation from '../Home/Navigation';
 import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 
 import { ChakraProvider } from '@chakra-ui/react'
-import TablePagination from '../Pagination';
+import TablePagination from '../Tables/Pagination';
 
 
 function Contacts() {
