@@ -921,6 +921,70 @@ html .drawer__content .drawer__footer img,
   width: 2rem;
   border-radius: 20px;
 }
+body .main,
+html .main,
+.root .main {
+  background-color: #E7E7E7;
+  padding: 6rem;
+}
+body .container,
+html .container,
+.root .container {
+  background-color: white;
+  border-radius: 20px;
+  margin: 2rem;
+  margin-top: 2rem;
+  margin-right: 4rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  font-family: Inter;
+  font-size: 1rem;
+}
+body .container label,
+html .container label,
+.root .container label {
+  margin-left: 2rem;
+  font-size: 0.8rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.8rem;
+}
+body .container select,
+html .container select,
+.root .container select {
+  margin-left: 2rem;
+  padding: 0.4rem;
+  border: none;
+  width: 80%;
+}
+body .container input,
+html .container input,
+.root .container input {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem;
+  width: 80%;
+  background-color: #E7E7E7;
+  border: none;
+}
+body .container button,
+html .container button,
+.root .container button {
+  margin: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  width: 80%;
+  background-color: #9698D6;
+  font-size: 1rem;
+  color: white;
+  font-family: Roboto;
+  border: none;
+}
+body .container button #signUp,
+html .container button #signUp,
+.root .container button #signUp {
+  background-color: white;
+}
 @media screen and (min-width: 725px) {
   body body,
   body html,
