@@ -54,7 +54,7 @@ class Controler
 
     public function getCompany($id,$colonne)
     {
-        return (self::errorRequest($this->defaultRequestPrivate." WHERE $colonne=$id"));
+        return (self::errorRequest($this->defaultRequestPrivate." WHERE $colonne=$id limit 5"));
     }
 
     /**
