@@ -19,8 +19,8 @@ function Navigation() {
 
                 </div>
                 <div className="nav__log">
-                <Link to="/Dashboard" id="Sign_up" className='signup'>Sign Up</Link>
-                <Link to="/Dashboard" className='login'>Log In</Link>
+                <Link to="/PageLogIn" id="Sign_up" className='signup'>Sign Up</Link>
+                <Link to="/PageLogIn" className='login'>Log In</Link>
 
                 </div>
                 <Menuburg />

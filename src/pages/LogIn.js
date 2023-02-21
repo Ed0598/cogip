@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import LogInApp from "../LogIn/connectLogIn";
 import CreateLogIn from "../LogIn/CreateLogIn";
 
@@ -38,16 +39,20 @@ function PageLogIn() {
               <h1>Sign in</h1>
               <input type="text" placeholder="email" name="username" />
               <input type="password" placeholder="Password" name="password" />
+              <Link to="/Dashboard">
               <button>Sign In</button>
+              </Link>
             </form>
           </div>
           <div className="overlay-container">
             <div className="overlay">
               <div className={`overlay-panel ${isRightPanelActive ? "overlay-right" : ""}`}>
                 <h1 id="title">{isRightPanelActive ? "Welcome back" : "Hello, Friend!"}</h1>
+                <Link to="/Dashboard">
                 <button className="ghost" id="signUp">
                   {isRightPanelActive ? "Sign In" : "Sign Up"}
                 </button>
+                </Link>
               </div>
             </div>
           </div>
