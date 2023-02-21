@@ -1,3 +1,175 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:400,800";
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+}
+body .container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+body .container .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+body .container .sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+body .container .sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+body .container .overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+body .container .overlay-container .overlay {
+  background: #9698D6;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+body .container .overlay-container .overlay .overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+body .container .overlay-container .overlay .overlay-left {
+  transform: translateX(-20%);
+}
+body .container .overlay-container .overlay .overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #9698D6;
+  background-color: #9698D6;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+button:active {
+  transform: scale(0.95);
+}
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+form h1 {
+  font-weight: bold;
+  margin: 0;
+}
+form p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+form input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -110,6 +282,12 @@ html main .img_main #main,
 .root main .img_main #main {
   margin-left: auto;
 }
+body main .search,
+html main .search,
+.root main .search {
+  width: 25vw;
+  margin: 2%;
+}
 body main .over,
 html main .over,
 .root main .over {
@@ -200,6 +378,7 @@ html main .work,
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  padding-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -424,6 +603,7 @@ body .dashboard,
 html .dashboard,
 .root .dashboard {
   background-color: #E7E7E7;
+  padding-bottom: 2rem;
 }
 body .dashboard h2,
 html .dashboard h2,
@@ -464,8 +644,11 @@ html .dashboard .rectangle_mauve,
   margin-left: 2rem;
   margin-top: 3rem;
   margin-right: 3rem;
+  display: flex;
+  flex-direction: row;
   border-radius: 20px;
   background-color: #9698D6;
+  max-height: 8rem;
   color: #F5F5F5;
   padding: 2rem;
 }
@@ -475,30 +658,36 @@ html .dashboard .rectangle_mauve img,
   width: 100%;
   margin-top: -7rem;
 }
-body .dashboard .rectangle_mauve h3,
-html .dashboard .rectangle_mauve h3,
-.root .dashboard .rectangle_mauve h3 {
+body .dashboard .rectangle_mauve .texte,
+html .dashboard .rectangle_mauve .texte,
+.root .dashboard .rectangle_mauve .texte {
+  flex-direction: column;
+}
+body .dashboard .rectangle_mauve .texte h3,
+html .dashboard .rectangle_mauve .texte h3,
+.root .dashboard .rectangle_mauve .texte h3 {
   font-family: Roboto;
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-body .dashboard .rectangle_mauve p,
-html .dashboard .rectangle_mauve p,
-.root .dashboard .rectangle_mauve p {
+body .dashboard .rectangle_mauve .texte p,
+html .dashboard .rectangle_mauve .texte p,
+.root .dashboard .rectangle_mauve .texte p {
   font-family: Inter;
   font-size: 0.6rem;
 }
-body .dashboard .table_cards,
-html .dashboard .table_cards,
-.root .dashboard .table_cards {
+body .table_cards,
+html .table_cards,
+.root .table_cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: #E7E7E7;
 }
-body .dashboard .table_cards .statistics,
-html .dashboard .table_cards .statistics,
-.root .dashboard .table_cards .statistics {
+body .table_cards .statistics,
+html .table_cards .statistics,
+.root .table_cards .statistics {
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
@@ -506,23 +695,23 @@ html .dashboard .table_cards .statistics,
   padding: 1rem;
   width: 15rem;
 }
-body .dashboard .table_cards .statistics .circles,
-html .dashboard .table_cards .statistics .circles,
-.root .dashboard .table_cards .statistics .circles {
+body .table_cards .statistics .circles,
+html .table_cards .statistics .circles,
+.root .table_cards .statistics .circles {
   display: flex;
   flex-direction: row;
 }
-body .dashboard .table_cards .statistics p,
-html .dashboard .table_cards .statistics p,
-.root .dashboard .table_cards .statistics p {
+body .table_cards .statistics p,
+html .table_cards .statistics p,
+.root .table_cards .statistics p {
   font-family: Inter;
   color: white;
   font-size: 0.5rem;
   font-weight: 900;
 }
-body .dashboard .table_cards .statistics .blue_circle,
-html .dashboard .table_cards .statistics .blue_circle,
-.root .dashboard .table_cards .statistics .blue_circle {
+body .table_cards .statistics .blue_circle,
+html .table_cards .statistics .blue_circle,
+.root .table_cards .statistics .blue_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -530,9 +719,9 @@ html .dashboard .table_cards .statistics .blue_circle,
   text-align: center;
   background-color: #4D4CAC;
 }
-body .dashboard .table_cards .statistics .purple_circle,
-html .dashboard .table_cards .statistics .purple_circle,
-.root .dashboard .table_cards .statistics .purple_circle {
+body .table_cards .statistics .purple_circle,
+html .table_cards .statistics .purple_circle,
+.root .table_cards .statistics .purple_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -540,9 +729,9 @@ html .dashboard .table_cards .statistics .purple_circle,
   text-align: center;
   background-color: #9698D6;
 }
-body .dashboard .table_cards .statistics .pink_circle,
-html .dashboard .table_cards .statistics .pink_circle,
-.root .dashboard .table_cards .statistics .pink_circle {
+body .table_cards .statistics .pink_circle,
+html .table_cards .statistics .pink_circle,
+.root .table_cards .statistics .pink_circle {
   width: 3rem;
   height: 3rem;
   border-radius: 30px;
@@ -550,9 +739,9 @@ html .dashboard .table_cards .statistics .pink_circle,
   text-align: center;
   background-color: #FF808B;
 }
-body .dashboard .table_cards .dashboard_table,
-html .dashboard .table_cards .dashboard_table,
-.root .dashboard .table_cards .dashboard_table {
+body .table_cards .dashboard_table,
+html .table_cards .dashboard_table,
+.root .table_cards .dashboard_table {
   background-color: white;
   border-radius: 20px;
   margin: 1rem;
@@ -560,24 +749,24 @@ html .dashboard .table_cards .dashboard_table,
   padding: 1rem;
   width: 15rem;
 }
-body .dashboard .table_cards .dashboard_table hr,
-html .dashboard .table_cards .dashboard_table hr,
-.root .dashboard .table_cards .dashboard_table hr {
+body .table_cards .dashboard_table hr,
+html .table_cards .dashboard_table hr,
+.root .table_cards .dashboard_table hr {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   color: #E0E0E0;
 }
-body .dashboard .table_cards .dashboard_table .over,
-html .dashboard .table_cards .dashboard_table .over,
-.root .dashboard .table_cards .dashboard_table .over {
+body .table_cards .dashboard_table .over,
+html .table_cards .dashboard_table .over,
+.root .table_cards .dashboard_table .over {
   overflow-x: auto;
   margin: auto;
   width: 80%;
 }
-body .dashboard .table_cards .dashboard_table .over table,
-html .dashboard .table_cards .dashboard_table .over table,
-.root .dashboard .table_cards .dashboard_table .over table {
+body .table_cards .dashboard_table .over table,
+html .table_cards .dashboard_table .over table,
+.root .table_cards .dashboard_table .over table {
   margin: auto;
   font-family: Roboto;
   font-weight: 500;
@@ -585,69 +774,69 @@ html .dashboard .table_cards .dashboard_table .over table,
   border-collapse: collapse;
   border-spacing: 2%;
 }
-body .dashboard .table_cards .dashboard_table .over table tbody,
-html .dashboard .table_cards .dashboard_table .over table tbody,
-.root .dashboard .table_cards .dashboard_table .over table tbody {
+body .table_cards .dashboard_table .over table tbody,
+html .table_cards .dashboard_table .over table tbody,
+.root .table_cards .dashboard_table .over table tbody {
   padding: 0.5rem;
 }
-body .dashboard .table_cards .dashboard_table .over table tr,
-html .dashboard .table_cards .dashboard_table .over table tr,
-.root .dashboard .table_cards .dashboard_table .over table tr {
+body .table_cards .dashboard_table .over table tr,
+html .table_cards .dashboard_table .over table tr,
+.root .table_cards .dashboard_table .over table tr {
   text-align: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 0.8rem;
 }
-body .dashboard .table_cards .dashboard_table .over table tr th,
-html .dashboard .table_cards .dashboard_table .over table tr th,
-.root .dashboard .table_cards .dashboard_table .over table tr th {
+body .table_cards .dashboard_table .over table tr th,
+html .table_cards .dashboard_table .over table tr th,
+.root .table_cards .dashboard_table .over table tr th {
   text-align: center;
   background-color: white;
   padding: 0.5rem;
   white-space: nowrap;
 }
-body .dashboard .table_cards .dashboard_table .over table tr td,
-html .dashboard .table_cards .dashboard_table .over table tr td,
-.root .dashboard .table_cards .dashboard_table .over table tr td {
+body .table_cards .dashboard_table .over table tr td,
+html .table_cards .dashboard_table .over table tr td,
+.root .table_cards .dashboard_table .over table tr td {
   white-space: nowrap;
   width: 4rem;
   text-align: center;
   margin: 2%;
   padding: 0.5rem;
 }
-body .dashboard .table_cards .dashboard_table .over table tr ul,
-html .dashboard .table_cards .dashboard_table .over table tr ul,
-.root .dashboard .table_cards .dashboard_table .over table tr ul {
+body .table_cards .dashboard_table .over table tr ul,
+html .table_cards .dashboard_table .over table tr ul,
+.root .table_cards .dashboard_table .over table tr ul {
   margin-top: 3%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
-body .dashboard .table_cards .dashboard_table .over table tr ul li,
-html .dashboard .table_cards .dashboard_table .over table tr ul li,
-.root .dashboard .table_cards .dashboard_table .over table tr ul li {
+body .table_cards .dashboard_table .over table tr ul li,
+html .table_cards .dashboard_table .over table tr ul li,
+.root .table_cards .dashboard_table .over table tr ul li {
   padding: 1%;
   text-align: center;
   margin: 1%;
   border-radius: 4px;
   border: white solid 1px;
 }
-body .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
-html .dashboard .table_cards .dashboard_table .over table tr ul li ::hover,
-.root .dashboard .table_cards .dashboard_table .over table tr ul li ::hover {
+body .table_cards .dashboard_table .over table tr ul li ::hover,
+html .table_cards .dashboard_table .over table tr ul li ::hover,
+.root .table_cards .dashboard_table .over table tr ul li ::hover {
   background-color: #919EAB;
 }
 body .body_dashboard_invoice,
 html .body_dashboard_invoice,
 .root .body_dashboard_invoice {
   padding: 2rem;
+  padding-top: 0.5rem;
   background-color: #E7E7E7;
   height: 100%;
 }
 body .new_invoice,
 html .new_invoice,
 .root .new_invoice {
-  padding-top: 2rem;
   padding-left: 2rem;
   height: 100vh;
 }
@@ -713,6 +902,7 @@ html .div_form,
   background-color: white;
   border-radius: 20px;
   margin: 2rem;
+  margin-top: 2rem;
   margin-right: 4rem;
   padding-top: 1rem;
   padding-right: 1rem;
@@ -969,11 +1159,9 @@ html .drawer__content .drawer__footer img,
   html html .work,
   .root body .work,
   .root html .work {
-    height: 50vh;
-    margin: 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
   }
   body body .work .title_work,
   body html .work .title_work,
@@ -981,17 +1169,7 @@ html .drawer__content .drawer__footer img,
   html html .work .title_work,
   .root body .work .title_work,
   .root html .work .title_work {
-    margin: 0;
     max-width: 50%;
-  }
-  body body .work .title_work h2,
-  body html .work .title_work h2,
-  html body .work .title_work h2,
-  html html .work .title_work h2,
-  .root body .work .title_work h2,
-  .root html .work .title_work h2 {
-    display: flex;
-    align-items: center;
   }
   body body .work .illus,
   body html .work .illus,
@@ -999,14 +1177,6 @@ html .drawer__content .drawer__footer img,
   html html .work .illus,
   .root body .work .illus,
   .root html .work .illus {
-    margin: 0;
-  }
-  body body .work .illus img,
-  body html .work .illus img,
-  html body .work .illus img,
-  html html .work .illus img,
-  .root body .work .illus img,
-  .root html .work .illus img {
     max-width: 50%;
   }
   body body .table_cards,

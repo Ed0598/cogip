@@ -1,10 +1,10 @@
-import Footer from '../Footer';
-import Navigation from '../Navigation';
+import Footer from '../Home/Footer';
+import Navigation from '../Home/Navigation';
 import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
-import Table from '../Table';
+import Table from '../Tables/Table';
 
 import { ChakraProvider } from '@chakra-ui/react';
-import DisplayContact from '../DisplayContact';
+import DisplayContact from '../Display/DisplayContact';
 
 
 function ShowContacts() {

@@ -1,16 +1,16 @@
 import { Box, Divider, Flex, Spacer, Stack, VStack, HStack } from '@chakra-ui/react';
 import Navbar from './Navbar';
-import Map from './assets/images/Map.svg';
-import Phone from './assets/images/Tel.svg';
-import Fax from './assets/images/Fax.svg';
-import Facebook from './assets/images/Facebook.svg';
-import Twitter from './assets/images/Twitter.svg';
-import LinkedIn from './assets/images/LinkedIn.svg';
-import Youtube from './assets/images/Youtube.svg';
-import Instagram from './assets/images/Instagram.svg';
-import GooglePlus from './assets/images/GooglePlus.svg';
-import Pinterest from './assets/images/Pinterest.svg';
-import RSS from './assets/images/RSS.svg';
+import Map from '../assets/images/Map.svg';
+import Phone from '../assets/images/Tel.svg';
+import Fax from '../assets/images/Fax.svg';
+import Facebook from '../assets/images/Facebook.svg';
+import Twitter from '../assets/images/Twitter.svg';
+import LinkedIn from '../assets/images/LinkedIn.svg';
+import Youtube from '../assets/images/Youtube.svg';
+import Instagram from '../assets/images/Instagram.svg';
+import GooglePlus from '../assets/images/GooglePlus.svg';
+import Pinterest from '../assets/images/Pinterest.svg';
+import RSS from '../assets/images/RSS.svg';
 
 function Footer () {
     return (

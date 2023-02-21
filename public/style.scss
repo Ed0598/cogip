@@ -1,3 +1,5 @@
+@import "../login/_Login.scss";
+
 * {
     padding: 0;
     margin: 0;
@@ -113,6 +115,10 @@ html,
         }
 
         //table
+        .search{
+            width: 25vw;
+            margin: 2%;
+        }
         .over {
             overflow-x: auto;
             margin: auto;
@@ -197,6 +203,7 @@ html,
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
+            padding-top: 1rem;
             margin-left: 2rem;
             margin-right: 2rem;
 
@@ -413,9 +420,8 @@ html,
 
     .dashboard {
         background-color: #E7E7E7;
+        padding-bottom: 2rem;
 
-
-        //padding-bottom: 2rem;
         h2 {
             padding-top: 2rem;
             padding-left: 2rem;
@@ -448,8 +454,11 @@ html,
         margin-left: 2rem;
         margin-top: 3rem;
         margin-right: 3rem;
+        display: flex;
+        flex-direction: row;
         border-radius: 20px;
         background-color: #9698D6;
+        max-height: 8rem;
         color: #F5F5F5;
         padding: 2rem;
 
@@ -459,24 +468,33 @@ html,
             }
 
 
-            h3 {
-                font-family: Roboto;
-                font-size: 1rem;
-                margin-top: 1rem;
-                margin-bottom: 0.5rem;
-            }
+            .texte{
+                flex-direction: column;
 
-            p {
-                font-family: Inter;
-                font-size: 0.6rem;
+                h3 {
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+    
+                p {
+                    font-family: Inter;
+                    font-size: 0.6rem;
+                }
             }
+            
 
+        }
+
+        
         }
 
         .table_cards {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            background-color: #E7E7E7;
 
         .statistics {
             background-color: white;
@@ -604,19 +622,18 @@ html,
                     }
                 }
             }
-        }
     }
        
     .body_dashboard_invoice {
         padding: 2rem;
-        //margin-bottom:-2rem;
+        padding-top: 0.5rem;
         background-color: #E7E7E7;
         height: 100%;
     }
 
     //page Newinvoice
     .new_invoice {
-        padding-top: 2rem;
+        //padding-top: 2rem;
         padding-left: 2rem;
         height: 100vh;
 
@@ -679,10 +696,10 @@ html,
         background-color: white;
         border-radius: 20px;
         margin: 2rem;
+        margin-top: 2rem;
         margin-right: 4rem;
         padding-top: 1rem;
         padding-right: 1rem;
-        //margin-bottom: 4rem;
         font-family: Inter;
         font-size: 1rem;
 
@@ -908,29 +925,16 @@ html,
             //down_body
 
             .work {
-                height: 50vh;
-                margin: 0;
-                //padding: 0;
                 display: flex;
-                flex-direction: row;    
-                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: center;    
 
                 .title_work {
-                    margin: 0;
                     max-width: 50%;
-
-                    h2 {
-                        display: flex;
-                        align-items: center;
-                    }
                 }
 
-                .illus {
-                    margin: 0;
-
-                    img {
-                        max-width: 50%;
-                    }
+                .illus {       
+                    max-width: 50%;
                 }
             }
 
