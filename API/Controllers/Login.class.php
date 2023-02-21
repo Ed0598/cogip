@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+
 class Login extends Controler{
     private function createUser($payload)
     {
@@ -80,6 +81,7 @@ class Login extends Controler{
         {
             $sqlRequest= createRequest($sqlRequest);
             echo ($password===($sqlRequest[0]['password']) && $email === $sqlRequest[0]['email']) ? json_gen(true, 'password ok'): json_gen(false, 'password no');
+            session_start();
         }
         catch (\Exception $e){ echo json_gen(false, $error . $e->getCode() . " " . $e->getMessage()); }
     }
