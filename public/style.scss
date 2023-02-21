@@ -1,4 +1,5 @@
-@import "../login/_Login.scss";
+
+//@import "../login/_Login.scss";
 
 * {
     padding: 0;
@@ -874,6 +875,66 @@ html,
         }
     }
 
+//login.html
+    .main{
+        background-color: #E7E7E7;
+        padding: 6rem;
+    }
+    .container{
+        background-color: white;
+        border-radius: 20px;
+        margin: 2rem;
+        margin-top: 2rem;
+        margin-right: 4rem;
+        padding-top: 1rem;
+        padding-right: 1rem;
+        font-family: Inter;
+        font-size: 1rem;
+
+        label {
+            margin-left: 2rem;
+            font-size: 0.8rem;
+            padding-bottom: 0.5rem;
+            padding-top: 0.8rem;
+            //margin: 0.5rem;
+        }
+
+        select {
+            margin-left: 2rem;
+            padding: 0.4rem;
+            border: none;
+            width: 80%;
+        }
+
+        input {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            margin-bottom: 0.5rem;
+            padding: 0.3rem;
+            width: 80%;
+            background-color: #E7E7E7;
+            border: none;
+
+        }
+
+        button {
+            margin: 2rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            width: 80%;
+            background-color: #9698D6;
+            font-size: 1rem;
+            color: white;
+            font-family: Roboto;
+            border: none;
+
+            #signUp {
+                background-color: white;
+            }
+        }
+    
+
+    }
 
     //VERSION DESKTOP
 
