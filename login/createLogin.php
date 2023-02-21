@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-            let addUserUrl= 'https://api.hugoorickx.tech/login/adduser'
+            let addUserUrl= 'http://localhost:8001/login/adduser'
             fetch(addUserUrl,
             {
                 method:'post',

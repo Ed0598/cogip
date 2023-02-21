@@ -36,13 +36,13 @@
 
             }
             
-            let test= 'http://localhost:8001/generate-jwt'
-            fetch(test,{
-                method:"POST",
-                headers: { 'Content-Type': 'application/json' , key:'gen'},
-                body: JSON.stringify({ userId : "test"})})
-                .then((response) => { return response.json(); })
-                .then((data) => { verifyAndGetPassword(key = data.jwt)})
+            // let test= 'http://localhost:8001/generate-jwt'
+            // fetch(test,{
+            //     method:"POST",
+            //     headers: { 'Content-Type': 'application/json' , key:'gen'},
+            //     body: JSON.stringify({ userId : "test"})})
+            //     .then((response) => { return response.json(); })
+            //     .then((data) => { verifyAndGetPassword(key = data.jwt)})
     </script>        
 </body>
 </html>
