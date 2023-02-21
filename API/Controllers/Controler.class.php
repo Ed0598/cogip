@@ -52,6 +52,11 @@ class Controler
         return (self::errorRequest($this->defaultRequestPrivate." WHERE $this->tablePrivate.id=$id"));
     }
 
+    public function getCompany($id,$colonne)
+    {
+        return (self::errorRequest($this->defaultRequestPrivate." WHERE $colonne=$id limit 5"));
+    }
+
     /**
      * Exécute la requête et renvoie un JSON avec le statut et un message
      * @param mixed $request
@@ -79,36 +84,17 @@ class Controler
     private function executeRequest($request)
     {
         $success = 'La requête a été exécutée avec succès';
-        $error = "La requête n'a pas fonctionné car ";
+        $error = "La requête n'a pas fonctionné car : Code Erreur ";
         try {
             createRequest($request);
-            return json_encode([
-                'success' => true,
-                'message' => $success,
-            ]); 
-        } catch (\Exception $e) {
-            $recup = $e->getMessage();
-            return json_encode([
-                'success' => false,
-                'message' => $error . $recup,
-            ]);
-        } 
+            return json_gen(true, $success);
+        } catch (\Exception $e) { return json_gen(false, $error . $e->getCode() . $e->getMessage()); } 
     }
     private function errorRequest($request)
     {
-        $error = "La requête n'a pas fonctionné car ";
-        try {
-            $success = createRequest($request);
-            return json_encode([
-                'success' => true,
-                'message' => $success,
-            ]); 
-        } catch (\Exception $e) {
-            $recup = $e->getMessage();
-            return json_encode([
-                'success' => false,
-                'message' => $error.$recup,
-            ]);
-        } 
-    }  
+        $error = "La requête n'a pas fonctionné car : Code Erreur ";
+        try { return json_gen(true, createRequest($request)); }
+        catch (\Exception $e) { return json_gen(false, $error . $e->getCode() . $e->getMessage()); } 
+    }
+    
 }
