@@ -50,4 +50,4 @@ namespace App\Controller ;
 //         try { return \Firebase\JWT\JWT::decode($jwt, new \Firebase\JWT\Key($secretKey, 'HS256')); }
 //         catch (\Exception $e) { return false; }
 //     }
-// }
+}
