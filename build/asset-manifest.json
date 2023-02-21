@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.js": "/static/js/main.3b0b80d4.js",
+    "static/media/Boy.svg": "/static/media/Boy.8d98520a4bc919cdf78a67633c9dc79b.svg",
+    "static/media/Illu_header.svg": "/static/media/Illu_header.e13c9dc64bf455418944a3d03b56afb0.svg",
+    "static/media/Group_work.svg": "/static/media/Group_work.bcf358bcfee725aa0262d71aa4ae7019.svg",
+    "static/media/Main.svg": "/static/media/Main.cd7687a97cf7231810f356e300d0f2d4.svg",
+    "static/media/Illu_dashboard.svg": "/static/media/Illu_dashboard.2b35e926aa29f8c83e7817836f1b682d.svg",
+    "static/media/Instagram.svg": "/static/media/Instagram.5c900f19d26f5f9419a2fd8acf5f2b49.svg",
+    "static/media/Pinterest.svg": "/static/media/Pinterest.6545aed002946571c67680a5aba7b894.svg",
+    "static/media/Youtube.svg": "/static/media/Youtube.656fb316c288bd55af360830b4a61ca7.svg",
+    "static/media/Twitter.svg": "/static/media/Twitter.d886efd3b66c4c37d3d895157e7c41fa.svg",
+    "static/media/LinkedIn.svg": "/static/media/LinkedIn.25c0a86afc95a3cd2066d595305bb0ee.svg",
+    "static/media/GooglePlus.svg": "/static/media/GooglePlus.e2907c789f561961dbe051da5cc9f5ff.svg",
+    "index.html": "/index.html",
+    "static/media/RSS.svg": "/static/media/RSS.2e581a5e918be0126629929099c589ad.svg",
+    "static/media/Facebook.svg": "/static/media/Facebook.3f116f1a68b1e1f1b2a233bbea31fd14.svg",
+    "static/media/Fax.svg": "/static/media/Fax.0598a5f0e7fe693be56597170ad83d22.svg",
+    "static/media/Tel.svg": "/static/media/Tel.a5e00eec31a2f515f02b2a23cbd985a4.svg",
+    "static/media/Companies.svg": "/static/media/Companies.7f65e4d0a59b1a825d4890d90e820b55.svg",
+    "static/media/Map.svg": "/static/media/Map.3a2d6e33b950c650b617bd6f7c8efcf4.svg",
+    "static/media/Invoices.svg": "/static/media/Invoices.7ac65f7831adf781b14e45463df2777f.svg",
+    "static/media/Contact.svg": "/static/media/Contact.def06cfa4695b027ce6b2df9fb121f81.svg",
+    "static/media/Dashboard.svg": "/static/media/Dashboard.d5981652da71d768f6a63ade61992ab0.svg",
+    "static/media/Rectangle_blanc.svg": "/static/media/Rectangle_blanc.3e00fe5c146a82a765dabd0500559358.svg",
+    "main.3b0b80d4.js.map": "/static/js/main.3b0b80d4.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3b0b80d4.js"
+  ]
+}
