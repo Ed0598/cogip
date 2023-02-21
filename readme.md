@@ -52,6 +52,8 @@ JSON
 
 - [@Hugo-Goorickx](https://github.com/Hugo-Goorickx)
 - [@Edouard de Romrée](https://github.com/Ed0598)
+- [@Lysie Soyez](https://github.com/LysieSoyez)
+- [@Nathalie Goffette](https://github.com/nathaliegoffette)
 
 
 ## Features
