@@ -5,7 +5,7 @@ function LogInApp() {
 
   const handleLogin = async (email, password) => {
     
-    const userUrl = 'http://localhost:8001/login/user';
+    const userUrl = 'https://api.hugoorickx.tech/login/user';
     const userResponse = await fetch(userUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
@@ -13,7 +13,7 @@ function LogInApp() {
     });
     const userData = await userResponse.json();
     if (userData.success) {
-      const passwordUrl = 'http://localhost:8001/login/password';
+      const passwordUrl = 'https://api.hugoorickx.tech/login/password';
       const passwordResponse = await fetch(passwordUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
