@@ -78,3 +78,4 @@ Dashboard :
 
 <img width="1501" alt="Capture d’écran 2023-02-21 à 16 43 51" src="https://user-images.githubusercontent.com/117506113/220394708-998e0f37-be36-4567-b8e1-ccc676ea3c96.png">
 
+Here the project deployed : https://cogip-3ubzgqgdi-ed0598.vercel.app/
