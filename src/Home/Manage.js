@@ -1,5 +1,5 @@
-import Illu_header from './assets/images/Illu_header.svg';
-import Rectangle_blanc from './assets/images/Rectangle_blanc.svg';
+import Illu_header from '../assets/images/Illu_header.svg';
+import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 function Manage(){
     return(
         <>

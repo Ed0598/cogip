@@ -1,10 +1,10 @@
-import Footer from '../Footer';
-import Navigation from '../Navigation';
+import Footer from '../Home/Footer';
+import Navigation from '../Home/Navigation';
 import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 
 
 import { ChakraProvider } from '@chakra-ui/react'
-import TablePagination from '../Pagination';
+import TablePagination from '../Tables/Pagination';
 
 
 function Invoices() {
@@ -23,7 +23,8 @@ function Invoices() {
             <div className='over'>
                     <TablePagination table='factures' display="all" itemsPerPage={10}
                     id="id" td1="ref" td2="update_at" td3="name" td4="created_at" 
-                    th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" lien="Invoices" />
+                    th1="Invoice number" th2="Dates due" th3="Company" th4="Created at" lien="Invoices"
+                    input="Number" />
             </div>
             </main>
             <Footer />

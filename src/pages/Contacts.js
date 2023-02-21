@@ -1,9 +1,9 @@
-import Footer from '../Footer';
-import Navigation from '../Navigation';
+import Footer from '../Home/Footer';
+import Navigation from '../Home/Navigation';
 import Rectangle_blanc from '../assets/images/Rectangle_blanc.svg';
 
 import { ChakraProvider } from '@chakra-ui/react'
-import TablePagination from '../Pagination';
+import TablePagination from '../Tables/Pagination';
 
 
 function Contacts() {
@@ -20,7 +20,8 @@ function Contacts() {
                 <div className='over'>
                     <TablePagination table='contacts' display="all" itemsPerPage={10}
                     id="id" td1="name" td2="phone" td3="email" td4="name_compagnie" td5="created_at" 
-                    th1="Name" th2="Phone" th3="Mail" th4="Company" th5="Created at" lien="Contacts"/>
+                    th1="Name" th2="Phone" th3="Mail" th4="Company" th5="Created at" lien="Contacts"
+                    input="Name" />
                 </div> 
             </main>
             <Footer />
