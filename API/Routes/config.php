@@ -105,5 +105,10 @@ $router->mount('/login', function () use ($router) {
     });
 });
 
+$router->post('/logout', function () {
+    $controller = new App\Controller\Logout('','');
+    echo $controller->post(json_decode(file_get_contents('php://input'), true));
+});
+
 
 $router->run();
